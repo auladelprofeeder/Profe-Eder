@@ -4046,5 +4046,39 @@ input, select, textarea {
 
 #footer .copyright {
     text-align: left !important;
-}   
+}
+/* Forzar que el texto del header respete mayúsculas/minúsculas originales */
+#header .logo strong,
+#header .logo span,
+#header nav a {
+    text-transform: none !important;
+}
+x/* Convertir texto del banner a título (primera letra de cada palabra en mayúscula) */
+#banner .content p {
+    text-transform: capitalize !important;
+}
 
+#banner .content p::first-letter {
+    text-transform: uppercase !important;
+}
+/* ============================================ */
+/* TEXTO DEL BANNER: MÁS GRANDE Y TITLE CASE   */
+/* ============================================ */
+
+#banner .content p {
+    font-size: 1.2em !important;
+    text-transform: capitalize !important;
+    font-weight: 500 !important;
+}
+/* ============================================ */
+/* PRIMERA LETRA DE CADA PALABRA EN MAYÚSCULA  */
+/* ============================================ */
+
+.tiles article p {
+    text-transform: capitalize !important;
+}
+.tiles article p {
+    font-size: 1.2em !important;
+    text-transform: capitalize !important;
+    font-weight: 500 !important;
+}
