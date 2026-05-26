@@ -4080,5 +4080,64 @@ x/* Convertir texto del banner a título (primera letra de cada palabra en mayú
 .tiles article p {
     font-size: 1.2em !important;
     text-transform: capitalize !important;
-    font-weight: 500 !important;
+    font-weight: 800 !important;
+    color: white !important;
+
+    -webkit-text-stroke: 0.5px rgba(0,0,0,0.5);
+
+    text-shadow:
+        0 0 2px rgba(0,0,0,0.8),
+        0 0 10px #ffffff,
+        0 0 20px #38bdf8;
+
+    transition: 0.3s ease;
+	}
+/* ============================================ */
+/* IGUALACIÓN DEL TONO DEL TEXTO EN TODAS LAS GUÍAS */
+/* Sistemas de numeración, Suma y resta, Multiplicación, etc. */
+/* ============================================ */
+
+/* Texto descriptivo de todas las tarjetas (spotlights) */
+.spotlights section .inner p {
+    color: #f0f3f8 !important;  /* Tono claro y armonizado con el banner */
+    font-weight: 400;
+    line-height: 1.6;
+    transition: color 0.2s ease;
+}
+
+/* Hover suave para mantener legibilidad */
+.spotlights section:hover .inner p {
+    color: white !important;
+}
+
+/* También ajustamos el párrafo de la sección "one" (intro) para que coincida */
+#one .inner p {
+    color: white !important;
+}
+
+/* Aseguramos que el banner tenga el mismo tono base */
+#banner .content p {
+    color: white !important;
+}
+/* ============================================ */
+/* CORRECCIÓN: UNIFICAR TONOS - SECCIÓN ONE Y THREE */
+/* ============================================ */
+
+/* Forzar que título y párrafo de la sección three sean BLANCOS */
+#three .inner h2,
+#three .inner p {
+    color: white !important;
+}
+#one .inner p,
+#three .inner p {
+    color: #ffffff !important;
+    font-weight: 400 !important;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.spotlights section .inner p {
+    color: #ffffff !important;
+    font-weight: 400 !important;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
