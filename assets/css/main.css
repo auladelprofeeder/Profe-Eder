@@ -4141,3 +4141,21 @@ x/* Convertir texto del banner a título (primera letra de cada palabra en mayú
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
+.flecha-roja {
+  width: 40px; /* Longitud de la flecha */
+  height: 12px; /* Grosor reducido para que se adapte mejor a la altura del texto */
+  background-color: #ff6b6b; /* Tono rojo suave */
+  display: inline-block; /* Hace que se comporte como texto */
+  vertical-align: middle; /* Centra la flecha verticalmente con las letras */
+  margin: 0 10px; /* Añade espacio a los lados para que no choque con las palabras */
+  clip-path: polygon(0 35%, 85% 35%, 85% 0, 100% 50%, 85% 100%, 85% 65%, 0 65%);
+}
+.flecha-roja2 {
+  width: 60px; /* Longitud de la flecha */
+  height: 12px; /* Grosor reducido para que se adapte mejor a la altura del texto */
+  background-color: #ff6b6b; /* Tono rojo suave */
+  display: inline-block; /* Hace que se comporte como texto */
+  vertical-align: middle; /* Centra la flecha verticalmente con las letras */
+  margin: 0 10px; /* Añade espacio a los lados para que no choque con las palabras */
+  clip-path: polygon(0 35%, 85% 35%, 85% 0, 100% 50%, 85% 100%, 85% 65%, 0 65%);
+}
