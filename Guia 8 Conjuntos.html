@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <title>Guía 8 – Conjuntos | Matemáticas 6º</title>
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <style>
+        /* ── Contenedor principal de la guía ── */
+        .guia-wrapper {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2em 2em 3em;
+            color: #ffffff;
+            font-family: "Source Sans Pro", Helvetica, sans-serif;
+            font-weight: 400;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Encabezado institucional */
+        .inst-header {
+            text-align: center;
+            border: 2px solid rgba(56,189,248,0.4);
+            border-radius: 20px;
+            padding: 1.8em;
+            margin-bottom: 2.5em;
+            background: rgba(56,189,248,0.05);
+            backdrop-filter: blur(6px);
+        }
+        .inst-header h2 {
+            font-size: 1.4em;
+            font-weight: 800;
+            letter-spacing: 0.05em;
+            color: #38bdf8;
+            margin-bottom: 0.5em;
+        }
+        .inst-header p {
+            font-size: 0.85em;
+            color: rgba(255,255,255,0.7);
+            margin-bottom: 0.8em;
+            line-height: 1.5;
+        }
+        .inst-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 1rem;
+        }
+        .inst-meta span {
+            background: rgba(139, 92, 246, 0.15);
+            padding: 0.4em 1.2em;
+            border-radius: 40px;
+            font-size: 0.85rem;
+            border-left: 3px solid #8b5cf6;
+            color: #e2e8f0;
+        }
+        .inst-meta span strong {
+            color: #38bdf8;
+        }
+
+        /* Títulos y secciones */
+        .guia-wrapper h1 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #38bdf8;
+            border-left: 6px solid #38bdf8;
+            padding-left: 1rem;
+            margin: 1.8em 0 0.8em;
+        }
+        .guia-wrapper h2 {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: #f0f9ff;
+            margin: 1.8em 0 0.6em;
+            border-bottom: 2px solid rgba(56,189,248,0.4);
+            padding-bottom: 0.3em;
+        }
+        .guia-wrapper h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #c084fc;
+            margin: 1.2em 0 0.5em;
+        }
+        .guia-wrapper p, li {
+            line-height: 1.65;
+            margin-bottom: 0.8rem;
+            color: #f1f5f9;
+        }
+
+        /* Cajas de ejemplo */
+        .ejemplo-box {
+            background: rgba(34,197,94,0.1);
+            border: 1px solid rgba(34,197,94,0.3);
+            border-radius: 20px;
+            padding: 1.2rem 1.8rem;
+            margin: 1.8rem 0;
+        }
+        .ejemplo-label {
+            display: inline-block;
+            background: #22c55e;
+            color: #0f172a;
+            font-size: 0.7rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+            padding: 0.2rem 1rem;
+            border-radius: 30px;
+            margin-bottom: 1rem;
+        }
+
+        /* Tablas y diagramas */
+        .diagrama-texto {
+            background: #111827;
+            border-radius: 20px;
+            padding: 1rem;
+            font-family: monospace;
+            white-space: pre;
+            overflow-x: auto;
+            margin: 1rem 0;
+            line-height: 1.4;
+            color: #86efac;
+        }
+        .conjunto-ejemplo {
+            background: #0f172a;
+            padding: 0.5rem 1rem;
+            border-radius: 12px;
+            display: inline-block;
+            margin: 0.2rem 0;
+        }
+        .grid-ejercicios {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 0.8rem;
+            list-style: none;
+            padding: 0;
+        }
+        .grid-ejercicios li {
+            background: rgba(255,255,255,0.05);
+            border-radius: 16px;
+            padding: 0.6rem 1rem;
+            border: 1px solid #334155;
+        }
+        .badge {
+            background: #f97316;
+            color: black;
+            border-radius: 20px;
+            padding: 0.1rem 0.6rem;
+            font-weight: bold;
+            margin-right: 0.6rem;
+            display: inline-block;
+        }
+        hr.sep {
+            border-top: 1px solid #38bdf830;
+            margin: 2rem 0;
+        }
+        .nota {
+            background: #111827;
+            border-left: 4px solid #facc15;
+            padding: 0.8rem 1.2rem;
+            border-radius: 16px;
+            margin: 1rem 0;
+        }
+        .subrayado {
+            border-bottom: 1px dashed #facc15;
+        }
+        .set-list {
+            display: inline-block;
+            background: #0f172a;
+            padding: 0.2rem 0.6rem;
+            border-radius: 12px;
+            font-family: monospace;
+        }
+    </style>
+    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+</head>
+<body class="is-preload">
+<div id="wrapper">
+
+    <!-- Header -->
+    <header id="header" class="alt style2">
+        <a href="Matemática 6º.html" class="logo" style="font-size:1.3em;"><strong>← Atrás</strong></a>
+        <nav><a href="#menu">Menú</a></nav>
+    </header>
+
+    <!-- Menú -->
+    <nav id="menu">
+        <ul class="links">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="Matemáticas.html">Matemáticas</a></li>
+        </ul>
+    </nav>
+
+    <!-- Banner adaptado a Conjuntos -->
+    <section id="banner" class="style2">
+        <div class="inner">
+            <header class="major" style="padding-left:7em;">
+                <h1>Teoría de Conjuntos<br>Relaciones y Operaciones</h1>
+            </header>
+            <div class="content" style="padding-left:14em;">
+                <p>🔢 Unión · Intersección · Diagramas de Venn · Guía 8 · Matemáticas 6º</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contenido principal: Guía 8 Conjuntos -->
+    <div id="main">
+        <section id="one">
+            <div class="guia-wrapper">
+                <!-- Encabezado institucional -->
+                <div class="inst-header">
+                    <h2>REPÚBLICA DE COLOMBIA<br>DEPARTAMENTO DE SUCRE · MUNICIPIO DE MAJAGUAL</h2>
+                    <p><strong>Institución Educativa Palmarito</strong><br>
+                    DANE: 270429000014  NIT. 823001728-3<br>
+                    REG. ICFES No. 135418 / REG. ICFES No. 186304<br>
+                    Jornada Única y Educación de Adultos<br>
+                    iepalmar@iepalmaritomajagual-sucre.edu.co  |  ie.palmarito@sucre.edu.co</p>
+                    <div class="inst-meta">
+                        <span><strong>Asignatura:</strong> Matemática</span>
+                        <span><strong>Guía:</strong> 8 – Conjuntos</span>
+                        <span><strong>Grado:</strong> 6°</span>
+                        <span><strong>Docente:</strong> Eder David Sequeda Martínez</span>
+                    </div>
+                </div>
+
+                <!-- 1. Relaciones entre conjuntos -->
+                <h1>📌 Relaciones entre conjuntos</h1>
+                <p>Dados dos conjuntos A y B, entre ellos se pueden presentar las siguientes relaciones:</p>
+                
+                <h3>🔹 Inclusión (⊆)</h3>
+                <p>Un conjunto A está <strong>incluido</strong> en B (es subconjunto de B) si y sólo si todos los elementos de A son elementos de B. Se simboliza <strong>A ⊆ B</strong>.<br>
+                <em>Es decir: A ⊆ B ⇔ ∀ x (x ∈ A ⇒ x ∈ B)</em></p>
+                
+                <h3>🔹 Igualdad (=)</h3>
+                <p>Dos conjuntos A y B son <strong>iguales</strong> si todos los elementos de A están en B y todos los elementos de B están en A. Se simboliza <strong>A = B</strong>.</p>
+                
+                <h3>🔹 Intersecantes</h3>
+                <p>Dos conjuntos A y B son <strong>intersecantes</strong> cuando tienen elementos comunes, pero ninguno está contenido en el otro.</p>
+                
+                <h3>🔹 Disyuntos</h3>
+                <p>Dos conjuntos A y B son <strong>disyuntos</strong> cuando no tienen ningún elemento en común.</p>
+
+                <div class="ejemplo-box">
+                    <div class="ejemplo-label">EJEMPLOS</div>
+                    <p><strong>Inclusión:</strong> A = {1, 2}, B = {1, 2, 3} → A ⊆ B.<br>
+                    <strong>Igualdad:</strong> C = {a, b, c}, D = {c, a, b} → C = D.<br>
+                    <strong>Intersecantes:</strong> E = {1, 2, 3}, F = {3, 4, 5} → comparten el 3.<br>
+                    <strong>Disyuntos:</strong> G = {rojo, azul}, H = {verde, amarillo} → ningún elemento en común.</p>
+                </div>
+
+                <!-- 2. Operaciones entre conjuntos -->
+                <h1>🧩 Operaciones entre conjuntos</h1>
+                <p>Las operaciones básicas son: unión, intersección, complemento, diferencia y diferencia simétrica. Aquí estudiaremos la <strong>unión</strong> y la <strong>intersección</strong>.</p>
+
+                <h2>🔗 Unión (A ∪ B)</h2>
+                <p>La <strong>unión</strong> de A y B es el conjunto formado por los elementos que pertenecen a A, a B o a ambos.<br>
+                Por comprensión: <strong>A ∪ B = { x | x ∈ A ∨ x ∈ B }</strong>.</p>
+                
+                <h3>Propiedades de la unión</h3>
+                <ul>
+                    <li><strong>Conmutativa:</strong> A ∪ B = B ∪ A</li>
+                    <li><strong>Asociativa:</strong> (A ∪ B) ∪ C = A ∪ (B ∪ C)</li>
+                    <li><strong>Elemento neutro:</strong> A ∪ ∅ = A</li>
+                    <li><strong>Absorción con el universal:</strong> A ∪ U = U</li>
+                </ul>
+
+                <div class="ejemplo-box">
+                    <div class="ejemplo-label">EJEMPLOS UNIÓN</div>
+                    <p><strong>1.</strong> A = {1, 2, 4, 5} , B = {1, 2, 3, 6} → A ∪ B = {1, 2, 3, 4, 5, 6}.</p>
+                    <p><strong>2.</strong> A = {AM, AZ, RO} , B = {NE, BL, AM, AZ, MO} → A ∪ B = {AM, AZ, RO, NE, BL, MO}.</p>
+                    <div class="diagrama-texto">
+                        Representación gráfica (Venn): 
+                        [A] contiene AM, AZ, RO ; [B] contiene NE, BL, AM, AZ, MO.
+                        La unión reúne todos los elementos sin repetir.
+                    </div>
+                </div>
+
+                <h2>✂️ Intersección (A ∩ B)</h2>
+                <p>La <strong>intersección</strong> de A y B es el conjunto formado por los elementos comunes a ambos.<br>
+                <strong>A ∩ B = { x | x ∈ A ∧ x ∈ B }</strong>.</p>
+                
+                <h3>Propiedades de la intersección</h3>
+                <ul>
+                    <li><strong>Conmutativa:</strong> A ∩ B = B ∩ A</li>
+                    <li><strong>Asociativa:</strong> (A ∩ B) ∩ C = A ∩ (B ∩ C)</li>
+                    <li><strong>Distributiva:</strong> A ∩ (B ∪ C) = (A ∩ B) ∪ (A ∩ C)</li>
+                    <li><strong>Elemento absorbente:</strong> A ∩ ∅ = ∅</li>
+                    <li><strong>Neutro respecto al universal:</strong> A ∩ U = A</li>
+                </ul>
+
+                <div class="ejemplo-box">
+                    <div class="ejemplo-label">EJEMPLOS INTERSECCIÓN</div>
+                    <p><strong>1.</strong> A = {1, 2, 4, 5} , B = {1, 2, 3, 6} → A ∩ B = {1, 2}.</p>
+                    <p><strong>2.</strong> A = {AM, AZ, RO} , B = {NE, BL, AM, AZ, MO} → A ∩ B = {AM, AZ}.</p>
+                </div>
+
+                <!-- Ejemplos con diagramas de Venn (textual) -->
+                <h2>📊 Ejemplos con diagramas de Venn</h2>
+                <div class="ejemplo-box">
+                    <div class="ejemplo-label">DIAGRAMA: Fútbol y Natación</div>
+                    <p>Según el gráfico (descripción textual):</p>
+                    <ul>
+                        <li>Estudiantes que gustan <strong>fútbol y natación</strong>: 7</li>
+                        <li>Gustan <strong>solo fútbol</strong>: 13</li>
+                        <li>Gustan <strong>solo natación</strong>: 4</li>
+                        <li>Gustan <strong>fútbol</strong>: 20 (13+7)</li>
+                        <li>Gustan <strong>natación</strong>: 11 (4+7)</li>
+                        <li>No gustan <strong>ni fútbol ni natación</strong>: 6</li>
+                        <li>Gustan <strong>fútbol o natación</strong>: 17 (13+4)</li>
+                    </ul>
+                </div>
+
+                <div class="ejemplo-box">
+                    <div class="ejemplo-label">DIAGRAMA: Manzana, Pera, Sandía</div>
+                    <p>Según el diagrama (con intersecciones):</p>
+                    <ul>
+                        <li><strong>Manzana y Pera:</strong> 8 (5+3)</li>
+                        <li><strong>Pera y Sandía:</strong> 5 (3+2)</li>
+                        <li><strong>Manzana y Sandía:</strong> 7 (3+4)</li>
+                        <li><strong>Solo manzana:</strong> 8</li>
+                        <li><strong>Solo pera:</strong> 7</li>
+                        <li><strong>Solo sandía:</strong> 6</li>
+                        <li><strong>Gustan manzana:</strong> 20 (8+5+3+4)</li>
+                        <li><strong>Gustan pera:</strong> 17 (7+5+3+2)</li>
+                        <li><strong>Gustan sandía:</strong> 15 (6+4+3+2)</li>
+                        <li><strong>Gustan las tres frutas:</strong> 3</li>
+                        <li><strong>Ninguna de las tres:</strong> 9</li>
+                    </ul>
+                </div>
+
+                <!-- EJERCICIOS PROPUESTOS -->
+                <h1>✏️ Ejercicios propuestos</h1>
+                
+                <h2>📌 Unión de conjuntos</h2>
+                <ul class="grid-ejercicios">
+                    <li><span class="badge">1a</span> A = {1, 2, 3, 5, 7, 11} , B = {2, 4, 6, 8, 10}. Hallar A ∪ B.</li>
+                    <li><span class="badge">1b</span> F = {ma, pe, uv, sa, me} , C = {pi, uv, fr, ma, an}. Hallar F ∪ C.</li>
+                    <li><span class="badge">1c</span> V = {a, e, i, o, u} , C = {a, b, c, d, e, f, g, h, i}. Hallar V ∪ C.</li>
+                </ul>
+
+                <h2>📌 Intersección de conjuntos</h2>
+                <ul class="grid-ejercicios">
+                    <li><span class="badge">2a</span> Z = {1, 2, 3, 4, 5, 6} , P = {1, 3, 5, 7, 9, 11}. Hallar Z ∩ P.</li>
+                    <li><span class="badge">2b</span> R = {paloma, águila, canario, garza, tucán} , S = {gallo, pato, águila, tucán, mosca, garza}. Hallar R ∩ S.</li>
+                    <li><span class="badge">2c</span> W = {5, 10, 15, 20, 25, 30} , Q = {10, 20, 30, 40, 50}. Hallar W ∩ Q.</li>
+                </ul>
+
+                <h2>📌 Interpretación de diagrama (AM, AZ, RO)</h2>
+                <p>Usando la gráfica (descripción textual de un diagrama de Venn con tres conjuntos), responde:</p>
+                <ul class="grid-ejercicios">
+                    <li><span class="badge">3</span> ¿A cuántos estudiantes les gusta <strong>AM y AZ</strong>? ______</li>
+                    <li><span class="badge">3</span> ¿A cuántos les gusta <strong>RO y AM</strong>? ______</li>
+                    <li><span class="badge">3</span> ¿<strong>Solo RO</strong>? ______</li>
+                    <li><span class="badge">3</span> ¿<strong>Solo AM</strong>? ______</li>
+                    <li><span class="badge">3</span> ¿Cantidad que gusta <strong>AZ</strong>? ______</li>
+                    <li><span class="badge">3</span> ¿Cantidad que gusta <strong>RO</strong>? ______</li>
+                    <li><span class="badge">3</span> ¿Gustan <strong>AM, AZ y RO a la vez</strong>? ______</li>
+                    <li><span class="badge">3</span> ¿<strong>Ninguna</strong> de las tres? ______</li>
+                </ul>
+
+                <!-- Nota final -->
+                <hr class="sep">
+                <div class="nota">
+                    💡 <strong>Recuerda:</strong> En la unión los elementos repetidos se escriben una sola vez. En la intersección solo se escriben los elementos comunes. Los diagramas de Venn son herramientas visuales que facilitan la comprensión de las relaciones entre conjuntos.
+                </div>
+                <div style="border-top: 2px solid #1e293b; margin-top: 2rem; padding-top: 1rem; text-align: center; font-size: 0.75rem; color:#94a3b8;">
+                    Guía 8 – Matemáticas 6° | Teoría de conjuntos: relaciones (inclusión, igualdad, intersecantes, disyuntos), operaciones de unión e intersección, diagramas de Venn.<br>
+                    Institución Educativa Palmarito – Majagual, Sucre. Material de apoyo basado en el currículo.
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer id="footer">
+        <div class="inner">
+            <ul class="icons">
+                <li><a href="https://x.com/ederdavid1986" class="icon brands fa-x-twitter alt"><span class="label">X</span></a></li>
+                <li><a href="https://www.facebook.com/ederdavids" class="icon brands alt fa-facebook-f" target="_blank"><span class="label">Facebook</span></a></li>
+                <li><a href="https://www.instagram.com/ederdavid1986" class="icon brands alt fa-instagram" target="_blank"><span class="label">Instagram</span></a></li>
+                <li><a href="https://github.com/auladelprofeeder" class="icon brands alt fa-github" target="_blank"><span class="label">GitHub</span></a></li>
+                <li><a href="https://www.tiktok.com/@eldavidedd" class="icon brands alt fa-tiktok" target="_blank"><span class="label">TikTok</span></a></li>
+            </ul>
+            <div class="copyright">&copy; 2026 MathEscape | Guía completa de conjuntos - Diseño: <a href="https://html5up.net">HTML5 UP</a></div>
+        </div>
+    </footer>
+</div>
+
+<!-- Scripts base -->
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/jquery.scrolly.min.js"></script>
+<script src="assets/js/jquery.scrollex.min.js"></script>
+<script src="assets/js/browser.min.js"></script>
+<script src="assets/js/breakpoints.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>

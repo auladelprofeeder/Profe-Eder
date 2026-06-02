@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <title>Guía 7 – Lógica Matemática | Matemáticas 6º</title>
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <style>
+        /* ── Contenedor principal de la guía ── */
+        .guia-wrapper {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2em 2em 3em;
+            color: #ffffff;
+            font-family: "Source Sans Pro", Helvetica, sans-serif;
+            font-weight: 400;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Encabezado institucional */
+        .inst-header {
+            text-align: center;
+            border: 2px solid rgba(56,189,248,0.4);
+            border-radius: 20px;
+            padding: 1.8em;
+            margin-bottom: 2.5em;
+            background: rgba(56,189,248,0.05);
+            backdrop-filter: blur(6px);
+        }
+        .inst-header h2 {
+            font-size: 1.4em;
+            font-weight: 800;
+            letter-spacing: 0.05em;
+            color: #38bdf8;
+            margin-bottom: 0.5em;
+        }
+        .inst-header p {
+            font-size: 0.85em;
+            color: rgba(255,255,255,0.7);
+            margin-bottom: 0.8em;
+            line-height: 1.5;
+        }
+        .inst-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 1rem;
+        }
+        .inst-meta span {
+            background: rgba(139, 92, 246, 0.15);
+            padding: 0.4em 1.2em;
+            border-radius: 40px;
+            font-size: 0.85rem;
+            border-left: 3px solid #8b5cf6;
+            color: #e2e8f0;
+        }
+        .inst-meta span strong {
+            color: #38bdf8;
+        }
+
+        /* Títulos y secciones */
+        .guia-wrapper h1 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #38bdf8;
+            border-left: 6px solid #38bdf8;
+            padding-left: 1rem;
+            margin: 1.8em 0 0.8em;
+        }
+        .guia-wrapper h2 {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: #f0f9ff;
+            margin: 1.8em 0 0.6em;
+            border-bottom: 2px solid rgba(56,189,248,0.4);
+            padding-bottom: 0.3em;
+        }
+        .guia-wrapper h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #c084fc;
+            margin: 1.2em 0 0.5em;
+        }
+        .guia-wrapper p, li {
+            line-height: 1.65;
+            margin-bottom: 0.8rem;
+            color: #f1f5f9;
+        }
+
+        /* Cajas de ejemplo */
+        .ejemplo-box {
+            background: rgba(34,197,94,0.1);
+            border: 1px solid rgba(34,197,94,0.3);
+            border-radius: 20px;
+            padding: 1.2rem 1.8rem;
+            margin: 1.8rem 0;
+        }
+        .ejemplo-label {
+            display: inline-block;
+            background: #22c55e;
+            color: #0f172a;
+            font-size: 0.7rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+            padding: 0.2rem 1rem;
+            border-radius: 30px;
+            margin-bottom: 1rem;
+        }
+
+        /* Tablas de verdad */
+        .truth-table {
+            width: 100%;
+            background: #0f172a;
+            border-radius: 16px;
+            border-collapse: collapse;
+            margin: 1rem 0;
+            font-family: monospace;
+            font-size: 0.9rem;
+            text-align: center;
+        }
+        .truth-table th, .truth-table td {
+            border: 1px solid #334155;
+            padding: 8px 12px;
+        }
+        .truth-table th {
+            background: #1e293b;
+            color: #38bdf8;
+        }
+
+        .grid-ejercicios {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 0.8rem;
+            list-style: none;
+            padding: 0;
+        }
+        .grid-ejercicios li {
+            background: rgba(255,255,255,0.05);
+            border-radius: 16px;
+            padding: 0.6rem 1rem;
+            border: 1px solid #334155;
+        }
+        .badge {
+            background: #f97316;
+            color: black;
+            border-radius: 20px;
+            padding: 0.1rem 0.6rem;
+            font-weight: bold;
+            margin-right: 0.6rem;
+            display: inline-block;
+        }
+        hr.sep {
+            border-top: 1px solid #38bdf830;
+            margin: 2rem 0;
+        }
+        .nota {
+            background: #111827;
+            border-left: 4px solid #facc15;
+            padding: 0.8rem 1.2rem;
+            border-radius: 16px;
+            margin: 1rem 0;
+        }
+        .simbologia {
+            font-family: monospace;
+            font-size: 1.1rem;
+            background: #0f172a;
+            padding: 0.2rem 0.5rem;
+            border-radius: 8px;
+        }
+    </style>
+    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+</head>
+<body class="is-preload">
+<div id="wrapper">
+
+    <!-- Header -->
+    <header id="header" class="alt style2">
+        <a href="Matemática 6º.html" class="logo" style="font-size:1.3em;"><strong>← Atrás</strong></a>
+        <nav><a href="#menu">Menú</a></nav>
+    </header>
+
+    <!-- Menú -->
+    <nav id="menu">
+        <ul class="links">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="Matemáticas.html">Matemáticas</a></li>
+        </ul>
+    </nav>
+
+    <!-- Banner adaptado a Lógica -->
+    <section id="banner" class="style2">
+        <div class="inner">
+            <header class="major" style="padding-left:7em;">
+                <h1>Lógica Matemática<br>Proposiciones y Conectivos</h1>
+            </header>
+            <div class="content" style="padding-left:14em;">
+                <p>🧠 Verdad · Falsedad · Conjunción · Disyunción · Implicación · Equivalencia · Guía 7 · 6º</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contenido principal: Guía 7 Lógica Matemática -->
+    <div id="main">
+        <section id="one">
+            <div class="guia-wrapper">
+                <!-- Encabezado institucional -->
+                <div class="inst-header">
+                    <h2>REPÚBLICA DE COLOMBIA<br>DEPARTAMENTO DE SUCRE · MUNICIPIO DE MAJAGUAL</h2>
+                    <p><strong>Institución Educativa Palmarito</strong><br>
+                    DANE: 270429000014  NIT. 823001728-3<br>
+                    REG. ICFES No. 135418 / REG. ICFES No. 186304<br>
+                    Jornada Única y Educación de Adultos<br>
+                    iepalmar@iepalmaritomajagual-sucre.edu.co  |  ie.palmarito@sucre.edu.co</p>
+                    <div class="inst-meta">
+                        <span><strong>Asignatura:</strong> Matemática</span>
+                        <span><strong>Guía:</strong> 7 – Lógica Matemática</span>
+                        <span><strong>Grado:</strong> 6°</span>
+                        <span><strong>Docente:</strong> Eder David Sequeda Martínez</span>
+                    </div>
+                </div>
+
+                <!-- 1. ¿QUÉ ES UNA PROPOSICIÓN? -->
+                <h1>📌 ¿Qué es una proposición?</h1>
+                <p>Una <strong>proposición</strong> es una afirmación de la que podemos decir con seguridad si es <strong>VERDADERA (V)</strong> o <strong>FALSA (F)</strong>. Las preguntas, órdenes y exclamaciones NO son proposiciones. Para nombrar las proposiciones usamos letras minúsculas como p, q, r, s, t.</p>
+
+                <div class="ejemplo-box">
+                    <div class="ejemplo-label">EJEMPLO RESUELTO</div>
+                    <p><strong>a)</strong> "Los flamencos viven en los ciénagos de la Mojana." → Sí es proposición, verdadera (V).</p>
+                    <p><strong>b)</strong> "¿Cuántos peces hay en el caño Mojana?" → No es proposición (es pregunta).</p>
+                    <p><strong>c)</strong> "¡Estudia mucho!" → No es proposición (es orden).</p>
+                    <p><strong>d)</strong> "El número 15 es primo." → Sí es proposición, falsa (F).</p>
+                </div>
+
+                <h2>✏️ Ejercicios propuestos (1 al 8)</h2>
+                <ul class="grid-ejercicios">
+                    <li><span class="badge">1</span> El corregimiento de Palmarito queda en el departamento de Sucre.</li>
+                    <li><span class="badge">2</span> ¡Qué calor hace hoy!</li>
+                    <li><span class="badge">3</span> El caño Mojana desemboca en el río San Jorge.</li>
+                    <li><span class="badge">4</span> ¿Cuántos habitantes tiene Palmarito?</li>
+                    <li><span class="badge">5</span> Los manatíes son mamíferos acuáticos.</li>
+                    <li><span class="badge">6</span> Cierra la puerta, por favor.</li>
+                    <li><span class="badge">7</span> El número 8 es par.</li>
+                    <li><span class="badge">8</span> La bandera de Colombia tiene tres colores: amarillo, azul y rojo.</li>
+                </ul>
+                <p><em>Respuestas: 1. Sí (V), 2. No, 3. Sí (V), 4. No, 5. Sí (V), 6. No, 7. Sí (V), 8. Sí (V).</em></p>
+
+                <!-- 2. PROPOSICIONES SIMPLES Y COMPUESTAS -->
+                <h1>🔤 Proposiciones simples y compuestas</h1>
+                <h2>📌 Proposición simple</h2>
+                <p>Es una afirmación con una sola oración gramatical, sin conectivos como "y", "o", "si... entonces".</p>
+                <div class="ejemplo-box">
+                    <div class="ejemplo-label">EJEMPLO</div>
+                    <p>p: "El bocachico es un pez del río Mojana." → Simple.<br>
+                    m: "La mojarra es sabrosa y el bocachico es nutritivo." → Compuesta (usa 'y').</p>
+                </div>
+
+                <h2>🚫 Negación de una proposición (¬p)</h2>
+                <p>La negación invierte el valor de verdad. Símbolo: ¬. Si p es V, ¬p es F; si p es F, ¬p es V.</p>
+                <table class="truth-table">
+                    <thead><tr><th>p</th><th>¬p</th></tr></thead>
+                    <tbody><tr><td>V</td><td>F</td></tr>
+                    <tr><td>F</td><td>V</td></tr>
+                    </tbody>
+                </table>
+
+                <div class="ejemplo-box">
+                    <div class="ejemplo-label">EJEMPLO NEGACIÓN</div>
+                    <p>p: "La iguana es un reptil." (V) → ¬p: "La iguana NO es un reptil." (F)<br>
+                    q: "El caño Mojana está en el desierto." (F) → ¬q: "El caño Mojana NO está en el desierto." (V)</p>
+                </div>
+
+                <h2>✏️ Ejercicios 9 al 11 (Negación)</h2>
+                <ul class="grid-ejercicios">
+                    <li><span class="badge">9</span> p: "Palmarito es un corregimiento de Sucre." (V) → ¬p: _________________</li>
+                    <li><span class="badge">10</span> q: "El número 12 es impar." (F) → ¬q: _________________</li>
+                    <li><span class="badge">11</span> r: "Los caimanes viven en el mar." (F) → ¬r: _________________</li>
+                </ul>
+
+                <!-- 3. PROPOSICIONES COMPUESTAS Y CONECTIVOS LÓGICOS -->
+                <h1>🧩 Conectivos lógicos</h1>
+                <table class="truth-table">
+                    <thead><tr><th>Conectivo</th><th>Símbolo</th><th>Se lee</th></tr></thead>
+                    <tbody>
+                        <tr><td>y</td><td>∧</td><td>Conjunción (p ∧ q)</td></tr>
+                        <tr><td>o</td><td>∨</td><td>Disyunción (p ∨ q)</td></tr>
+                        <tr><td>si... entonces</td><td>⇒</td><td>Implicación (p ⇒ q)</td></tr>
+                        <tr><td>si y sólo si</td><td>⇔</td><td>Equivalencia (p ⇔ q)</td></tr>
+                        <tr><td>no</td><td>¬</td><td>Negación (¬p)</td></tr>
+                    </tbody>
+                </table>
+
+                <h2>🔗 Conjunción (p ∧ q)</h2>
+                <p>Verdadera solo si ambas proposiciones son verdaderas.</p>
+                <table class="truth-table">
+                    <thead><tr><th>p</th><th>q</th><th>p ∧ q</th></tr></thead>
+                    <tbody><tr><td>V</td><td>V</td><td>V</td></tr><tr><td>V</td><td>F</td><td>F</td></tr><tr><td>F</td><td>V</td><td>F</td></tr><tr><td>F</td><td>F</td><td>F</td></tr></tbody>
+                </table>
+                <div class="ejemplo-box">
+                    <div class="ejemplo-label">EJEMPLO</div>
+                    <p>p: "El bocachico es un pez" (V), q: "Vive en el desierto" (F) → p ∧ q es FALSA.<br>
+                    r: "La Mojana es región de Colombia" (V), s: "El manatí es mamífero" (V) → r ∧ s es VERDADERA.</p>
+                </div>
+
+                <h2>✏️ Ejercicios 12 al 14 (Conjunción)</h2>
+                <p>Usa: p (Verdadera), q (Verdadera), r (Verdadera), s (Falsa).</p>
+                <ul class="grid-ejercicios">
+                    <li><span class="badge">12</span> p ∧ q → _________________</li>
+                    <li><span class="badge">13</span> p ∧ s → _________________</li>
+                    <li><span class="badge">14</span> r ∧ s → _________________</li>
+                </ul>
+
+                <h2>🔗 Disyunción (p ∨ q)</h2>
+                <p>Falsa solo si ambas proposiciones son falsas.</p>
+                <table class="truth-table">
+                    <thead><tr><th>p</th><th>q</th><th>p ∨ q</th></tr></thead>
+                    <tbody><tr><td>V</td><td>V</td><td>V</td></tr><tr><td>V</td><td>F</td><td>V</td></tr><tr><td>F</td><td>V</td><td>V</td></tr><tr><td>F</td><td>F</td><td>F</td></tr></tbody>
+                </table>
+                <div class="ejemplo-box">
+                    <div class="ejemplo-label">EJEMPLO</div>
+                    <p>a: "Sucre es departamento" (V), b: "25 es divisible entre 4" (F) → a ∨ b es VERDADERA.<br>
+                    k: "El agua sube a los cerros" (F), m: "El fuego es frío" (F) → k ∨ m es FALSA.</p>
+                </div>
+
+                <h2>✏️ Ejercicios 15 al 17 (Disyunción)</h2>
+                <p>a: V, b: F, c: F</p>
+                <ul class="grid-ejercicios">
+                    <li><span class="badge">15</span> a ∨ b → Valor: _____</li>
+                    <li><span class="badge">16</span> b ∨ c → Valor: _____</li>
+                    <li><span class="badge">17</span> a ∨ c → Valor: _____</li>
+                </ul>
+
+                <h2>🔗 Implicación (p ⇒ q)</h2>
+                <p>Falsa solo cuando el antecedente (p) es verdadero y el consecuente (q) es falso.</p>
+                <table class="truth-table">
+                    <thead><tr><th>p</th><th>q</th><th>p ⇒ q</th></tr></thead>
+                    <tbody><tr><td>V</td><td>V</td><td>V</td></tr><tr><td>V</td><td>F</td><td>F</td></tr><tr><td>F</td><td>V</td><td>V</td></tr><tr><td>F</td><td>F</td><td>V</td></tr></tbody>
+                </table>
+                <div class="ejemplo-box">
+                    <div class="ejemplo-label">EJEMPLO</div>
+                    <p>"Si un animal es pez, entonces respira por branquias" → V ⇒ V = V.<br>
+                    "Si 4 es impar, entonces 4 es divisible entre 2" → F ⇒ V = V.</p>
+                </div>
+
+                <h2>✏️ Ejercicios 18 al 20 (Implicación)</h2>
+                <ul class="grid-ejercicios">
+                    <li><span class="badge">18</span> "Si el caño Mojana se seca, entonces los peces desaparecen."</li>
+                    <li><span class="badge">19</span> "Si 10 es múltiplo de 3, entonces 10 es par."</li>
+                    <li><span class="badge">20</span> "Si estudio con dedicación, entonces aprendo matemáticas."</li>
+                </ul>
+
+                <h2>🔗 Equivalencia (p ⇔ q)</h2>
+                <p>Verdadera cuando ambas tienen el mismo valor de verdad.</p>
+                <table class="truth-table">
+                    <thead><tr><th>p</th><th>q</th><th>p ⇔ q</th></tr></thead>
+                    <tbody><tr><td>V</td><td>V</td><td>V</td></tr><tr><td>V</td><td>F</td><td>F</td></tr><tr><td>F</td><td>V</td><td>F</td></tr><tr><td>F</td><td>F</td><td>V</td></tr></tbody>
+                </table>
+                <div class="ejemplo-box">
+                    <div class="ejemplo-label">EJEMPLO</div>
+                    <p>"Un triángulo tiene tres lados si y sólo si tiene tres ángulos" → V ⇔ V = V.<br>
+                    "28 es múltiplo de 4 si y sólo si 4 es primo" → V ⇔ F = F.</p>
+                </div>
+
+                <h2>✏️ Ejercicios 21 al 23 (Equivalencia)</h2>
+                <p>p: "Sucre es un departamento de Colombia" (V), q: "15 es primo" (F), r: "Los peces son vertebrados" (V), s: "El fuego es frío" (F)</p>
+                <ul class="grid-ejercicios">
+                    <li><span class="badge">21</span> p ⇔ r → Valor: _____</li>
+                    <li><span class="badge">22</span> q ⇔ s → Valor: _____</li>
+                    <li><span class="badge">23</span> p ⇔ q → Valor: _____</li>
+                </ul>
+
+                <!-- 4. ACTIVIDAD INTEGRADORA: LA MOJANA Y LA LÓGICA -->
+                <h1>🌿 Actividad integradora: La Mojana y la lógica</h1>
+                <div class="nota">
+                    <strong>📖 La región de la Mojana</strong><br>
+                    La Mojana es una subregión ubicada en el departamento de Sucre, Colombia. Está bañada por el caño Mojana y el río San Jorge. Es famosa por su gran biodiversidad: en sus ciénagas habitan el manatí, el caimán, el bocachico y diversas aves. La economía de sus habitantes se basa principalmente en la pesca, la agricultura y la ganadería. El corregimiento de Palmarito es uno de los asentamientos humanos de esta región.
+                </div>
+
+                <h2>✏️ Ejercicios 24 al 28 (basados en el texto)</h2>
+                <ul class="grid-ejercicios" style="grid-template-columns: 1fr;">
+                    <li><span class="badge">24</span> Escribe TRES proposiciones simples extraídas o relacionadas con el texto. Indica si son verdaderas o falsas.<br>
+                        p: _________________________________ (Valor: ____)<br>
+                        q: _________________________________ (Valor: ____)<br>
+                        r: _________________________________ (Valor: ____)</li>
+                    <li><span class="badge">25</span> Con p y q forma una conjunción (p ∧ q) y determina su valor.<br> p ∧ q: ________________________ Valor: _____</li>
+                    <li><span class="badge">26</span> Con p y r forma una disyunción (p ∨ r) y su valor de verdad.<br> p ∨ r: ________________________ Valor: _____</li>
+                    <li><span class="badge">27</span> Escribe la negación de p (¬p) y su valor de verdad.<br> ¬p: ________________________ Valor: _____</li>
+                    <li><span class="badge">28</span> Forma una implicación "Si p, entonces r" (p ⇒ r) y evalúa.<br> p ⇒ r: ________________________ Valor: _____</li>
+                </ul>
+
+                <!-- 5. RESUMEN: TABLAS DE VERDAD COMPLETAS -->
+                <h1>📊 Resumen: Tablas de verdad</h1>
+                <table class="truth-table">
+                    <thead><tr><th>p</th><th>q</th><th>¬p</th><th>¬q</th><th>p ∧ q</th><th>p ∨ q</th><th>p ⇒ q</th><th>p ⇔ q</th></tr></thead>
+                    <tbody>
+                        <tr><td>V</td><td>V</td><td>F</td><td>F</td><td>V</td><td>V</td><td>V</td><td>V</td></tr>
+                        <tr><td>V</td><td>F</td><td>F</td><td>V</td><td>F</td><td>V</td><td>F</td><td>F</td></tr>
+                        <tr><td>F</td><td>V</td><td>V</td><td>F</td><td>F</td><td>V</td><td>V</td><td>F</td></tr>
+                        <tr><td>F</td><td>F</td><td>V</td><td>V</td><td>F</td><td>F</td><td>V</td><td>V</td></tr>
+                    </tbody>
+                </table>
+
+                <hr class="sep">
+                <div class="nota">
+                    💡 <strong>Recuerda:</strong> La lógica nos ayuda a razonar correctamente. Practica identificando proposiciones y aplicando los conectivos en tu vida diaria.
+                </div>
+                <div style="border-top: 2px solid #1e293b; margin-top: 2rem; padding-top: 1rem; text-align: center; font-size: 0.75rem; color:#94a3b8;">
+                    Guía 7 – Matemáticas 6° | Lógica matemática: proposiciones, negación, conjunción, disyunción, implicación y equivalencia.<br>
+                    Institución Educativa Palmarito – Majagual, Sucre. Material de apoyo basado en el currículo.
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer id="footer">
+        <div class="inner">
+            <ul class="icons">
+                <li><a href="https://x.com/ederdavid1986" class="icon brands fa-x-twitter alt"><span class="label">X</span></a></li>
+                <li><a href="https://www.facebook.com/ederdavids" class="icon brands alt fa-facebook-f" target="_blank"><span class="label">Facebook</span></a></li>
+                <li><a href="https://www.instagram.com/ederdavid1986" class="icon brands alt fa-instagram" target="_blank"><span class="label">Instagram</span></a></li>
+                <li><a href="https://github.com/auladelprofeeder" class="icon brands alt fa-github" target="_blank"><span class="label">GitHub</span></a></li>
+                <li><a href="https://www.tiktok.com/@eldavidedd" class="icon brands alt fa-tiktok" target="_blank"><span class="label">TikTok</span></a></li>
+            </ul>
+            <div class="copyright">&copy; 2026 MathEscape | Guía completa de lógica matemática - Diseño: <a href="https://html5up.net">HTML5 UP</a></div>
+        </div>
+    </footer>
+</div>
+
+<!-- Scripts base -->
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/jquery.scrolly.min.js"></script>
+<script src="assets/js/jquery.scrollex.min.js"></script>
+<script src="assets/js/browser.min.js"></script>
+<script src="assets/js/breakpoints.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>

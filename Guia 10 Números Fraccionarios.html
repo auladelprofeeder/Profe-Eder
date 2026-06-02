@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <title>Guía 10 – Números Fraccionarios | Matemáticas 6º</title>
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <style>
+        /* ── Contenedor principal de la guía ── */
+        .guia-wrapper {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2em 2em 3em;
+            color: #ffffff;
+            font-family: "Source Sans Pro", Helvetica, sans-serif;
+            font-weight: 400;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Encabezado institucional */
+        .inst-header {
+            text-align: center;
+            border: 2px solid rgba(56,189,248,0.4);
+            border-radius: 20px;
+            padding: 1.8em;
+            margin-bottom: 2.5em;
+            background: rgba(56,189,248,0.05);
+            backdrop-filter: blur(6px);
+        }
+        .inst-header h2 {
+            font-size: 1.4em;
+            font-weight: 800;
+            letter-spacing: 0.05em;
+            color: #38bdf8;
+            margin-bottom: 0.5em;
+        }
+        .inst-header p {
+            font-size: 0.85em;
+            color: rgba(255,255,255,0.7);
+            margin-bottom: 0.8em;
+            line-height: 1.5;
+        }
+        .inst-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 1rem;
+        }
+        .inst-meta span {
+            background: rgba(139, 92, 246, 0.15);
+            padding: 0.4em 1.2em;
+            border-radius: 40px;
+            font-size: 0.85rem;
+            border-left: 3px solid #8b5cf6;
+            color: #e2e8f0;
+        }
+        .inst-meta span strong {
+            color: #38bdf8;
+        }
+
+        /* Títulos y secciones */
+        .guia-wrapper h1 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #38bdf8;
+            border-left: 6px solid #38bdf8;
+            padding-left: 1rem;
+            margin: 1.8em 0 0.8em;
+        }
+        .guia-wrapper h2 {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: #f0f9ff;
+            margin: 1.8em 0 0.6em;
+            border-bottom: 2px solid rgba(56,189,248,0.4);
+            padding-bottom: 0.3em;
+        }
+        .guia-wrapper h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #c084fc;
+            margin: 1.2em 0 0.5em;
+        }
+        .guia-wrapper p, li {
+            line-height: 1.65;
+            margin-bottom: 0.8rem;
+            color: #f1f5f9;
+        }
+
+        /* Estilo para fracciones visuales (numerador/denominador con línea) */
+        .frac {
+            display: inline-block;
+            text-align: center;
+            vertical-align: middle;
+            font-size: 1.1em;
+            margin: 0 0.1em;
+        }
+        .frac .num {
+            display: block;
+            border-bottom: 1px solid #ddd;
+            padding: 0 0.2em;
+        }
+        .frac .den {
+            display: block;
+            padding-top: 0.1em;
+        }
+        .inline-frac {
+            display: inline-block;
+            font-size: 0.9em;
+        }
+        .formula {
+            background: rgba(0,0,0,0.35);
+            border-radius: 12px;
+            padding: 0.8rem 1.2rem;
+            font-family: monospace;
+            font-size: 1.1rem;
+            margin: 1rem 0;
+            color: #86efac;
+        }
+        .operacion-linea {
+            font-family: monospace;
+            font-size: 1.1rem;
+            background: #0f172a;
+            padding: 0.3rem 0.8rem;
+            border-radius: 12px;
+            display: inline-block;
+        }
+
+        /* Cuadrículas para ejercicios */
+        .grid-ejercicios {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 0.8rem;
+            list-style: none;
+            padding: 0;
+        }
+        .grid-ejercicios li {
+            background: rgba(255,255,255,0.05);
+            border-radius: 16px;
+            padding: 0.8rem 1rem;
+            border: 1px solid #334155;
+        }
+        .badge {
+            background: #f97316;
+            color: black;
+            border-radius: 20px;
+            padding: 0.1rem 0.6rem;
+            font-weight: bold;
+            margin-right: 0.6rem;
+            display: inline-block;
+        }
+        hr.sep {
+            border-top: 1px solid #38bdf830;
+            margin: 2rem 0;
+        }
+        .nota {
+            background: #111827;
+            border-left: 4px solid #facc15;
+            padding: 0.8rem 1.2rem;
+            border-radius: 16px;
+            margin: 1rem 0;
+        }
+        .two-columns {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            justify-content: space-between;
+        }
+        .two-columns > div {
+            flex: 1;
+            min-width: 200px;
+        }
+    </style>
+    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+</head>
+<body class="is-preload">
+<div id="wrapper">
+
+    <!-- Header -->
+    <header id="header" class="alt style2">
+        <a href="Matemática 6º.html" class="logo" style="font-size:1.3em;"><strong>← Atrás</strong></a>
+        <nav><a href="#menu">Menú</a></nav>
+    </header>
+
+    <!-- Menú -->
+    <nav id="menu">
+        <ul class="links">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="Matemáticas.html">Matemáticas</a></li>
+        </ul>
+    </nav>
+
+    <!-- Banner adaptado a Fracciones -->
+    <section id="banner" class="style2">
+        <div class="inner">
+            <header class="major" style="padding-left:7em;">
+                <h1>Números Fraccionarios<br>Fracciones y Operaciones</h1>
+            </header>
+            <div class="content" style="padding-left:14em;">
+                <p>🧮 Partes de un todo · Equivalencias · Suma · Resta · Multiplicación · División · Guía 10 · 6º</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contenido principal: Guía 10 Números Fraccionarios -->
+    <div id="main">
+        <section id="one">
+            <div class="guia-wrapper">
+                <!-- Encabezado institucional -->
+                <div class="inst-header">
+                    <h2>REPÚBLICA DE COLOMBIA<br>DEPARTAMENTO DE SUCRE · MUNICIPIO DE MAJAGUAL</h2>
+                    <p><strong>Institución Educativa Palmarito</strong><br>
+                    DANE: 270429000014  NIT. 823001728-3<br>
+                    REG. ICFES No. 135418 / REG. ICFES No. 186304<br>
+                    Jornada Única y Educación de Adultos<br>
+                    iepalmar@iepalmaritomajagual-sucre.edu.co  |  ie.palmarito@sucre.edu.co</p>
+                    <div class="inst-meta">
+                        <span><strong>Asignatura:</strong> Matemática</span>
+                        <span><strong>Guía:</strong> 10 – Números Fraccionarios</span>
+                        <span><strong>Grado:</strong> 6°</span>
+                        <span><strong>Docente:</strong> Eder David Sequeda Martínez</span>
+                    </div>
+                </div>
+
+                <!-- 1. ¿Qué es una fracción? -->
+                <h1>📌 ¿Qué es una fracción?</h1>
+                <p>Una fracción representa una o varias partes iguales en que se divide una unidad. Se escribe con un numerador y un denominador separados por una línea horizontal. El denominador (abajo) indica en cuántas partes se divide la unidad, y el numerador (arriba) cuántas se toman. El denominador nunca puede ser cero.</p>
+                
+                <h2>Tipos de fracciones</h2>
+                <div class="two-columns">
+                    <div>
+                        <p><strong>📘 Fracciones propias:</strong> Numerador < denominador.<br>Ej: <span class="frac"><span class="num">2</span><span class="den">5</span></span></p>
+                        <p><strong>📘 Fracciones impropias:</strong> Numerador ≥ denominador.<br>Ej: <span class="frac"><span class="num">7</span><span class="den">4</span></span></p>
+                    </div>
+                    <div>
+                        <p><strong>📘 Número mixto:</strong> Parte entera + fracción propia.<br>Ej: 1 <span class="frac"><span class="num">3</span><span class="den">4</span></span></p>
+                        <p><strong>📘 Fracciones equivalentes:</strong> Representan la misma cantidad.<br>Ej: <span class="frac"><span class="num">1</span><span class="den">2</span></span> = <span class="frac"><span class="num">2</span><span class="den">4</span></span> = <span class="frac"><span class="num">4</span><span class="den">8</span></span></p>
+                    </div>
+                </div>
+
+                <div class="ejemplo-box">
+                    <div class="ejemplo-label">EJEMPLOS</div>
+                    <p><strong>1. Interpretar <span class="frac"><span class="num">3</span><span class="den">5</span></span>:</strong> Se divide la unidad en 5 partes iguales y se toman 3.</p>
+                    <p><strong>2. Fracción equivalente a <span class="frac"><span class="num">2</span><span class="den">3</span></span>:</strong> Multiplicamos numerador y denominador por 2 → <span class="frac"><span class="num">4</span><span class="den">6</span></span>.</p>
+                    <p><strong>3. Problema en Palmarito:</strong> Don José pescó 12 bocachicos. Regala <span class="frac"><span class="num">3</span><span class="den">4</span></span> a sus vecinos. ¿Cuántos regala?<br>
+                    Dividimos 12 entre 4 = 3 (cada grupo), luego 3×3 = 9. Respuesta: 9 bocachicos.</p>
+                </div>
+
+                <h2>📝 Ejercicios iniciales (1 al 6)</h2>
+                <ul class="grid-ejercicios">
+                    <li><span class="badge">1</span> Doña Marta dividió 1 kg de queso en 8 porciones. Vendió 5. ¿Fracción vendida?</li>
+                    <li><span class="badge">2</span> En una finca hay 20 vacas, <span class="frac"><span class="num">2</span><span class="den">5</span></span> son café. ¿Cuántas vacas café hay?</li>
+                    <li><span class="badge">3</span> Representa gráficamente (en tu cuaderno) <span class="frac"><span class="num">2</span><span class="den">3</span></span>.</li>
+                    <li><span class="badge">4</span> Encuentra una fracción equivalente a: a) <span class="frac"><span class="num">1</span><span class="den">2</span></span> b) <span class="frac"><span class="num">3</span><span class="den">4</span></span> c) <span class="frac"><span class="num">2</span><span class="den">5</span></span></li>
+                    <li><span class="badge">5</span> Escribe qué representa: <span class="frac"><span class="num">1</span><span class="den">3</span></span>, <span class="frac"><span class="num">4</span><span class="den">5</span></span>, <span class="frac"><span class="num">2</span><span class="den">6</span></span>.</li>
+                    <li><span class="badge">6</span> Identifica numerador y denominador: <span class="frac"><span class="num">7</span><span class="den">8</span></span>, <span class="frac"><span class="num">3</span><span class="den">9</span></span>.</li>
+                </ul>
+
+                <!-- 2. Operaciones con fracciones -->
+                <h1>🧮 Operaciones con fracciones</h1>
+                
+                <h2>➕ Suma y resta de fracciones homogéneas (mismo denominador)</h2>
+                <p>Se deja el mismo denominador y se suman/restan los numeradores.</p>
+                <div class="ejemplo-box">
+                    <div class="ejemplo-label">EJEMPLO</div>
+                    <p>Luis bebió <span class="frac"><span class="num">2</span><span class="den">6</span></span> y Marcela <span class="frac"><span class="num">3</span><span class="den">6</span></span> de un garrafón. Total: <span class="frac"><span class="num">2+3</span><span class="den">6</span></span> = <span class="frac"><span class="num">5</span><span class="den">6</span></span>.<br>
+                    Pedro dejó <span class="frac"><span class="num">1</span><span class="den">4</span></span> y Juan dejó <span class="frac"><span class="num">2</span><span class="den">4</span></span> de pizza → <span class="frac"><span class="num">3</span><span class="den">4</span></span>.</p>
+                </div>
+                <p><strong>Problema:</strong> Un tanque lleno en <span class="frac"><span class="num">9</span><span class="den">9</span></span> se usan <span class="frac"><span class="num">4</span><span class="den">9</span></span>. Queda <span class="frac"><span class="num">5</span><span class="den">9</span></span>.</p>
+                
+                <h2>➕ Suma y resta de fracciones heterogéneas (distinto denominador)</h2>
+                <p>Método 1: usando mínimo común múltiplo (m.c.m.).<br>
+                Método 2: productos cruzados (carita feliz).</p>
+                <div class="ejemplo-box">
+                    <div class="ejemplo-label">EJEMPLO m.c.m.</div>
+                    <p><span class="frac"><span class="num">5</span><span class="den">7</span></span> + <span class="frac"><span class="num">1</span><span class="den">4</span></span> - <span class="frac"><span class="num">1</span><span class="den">2</span></span>: m.c.m(7,4,2)=28. Amplificamos: <span class="frac"><span class="num">20</span><span class="den">28</span></span> + <span class="frac"><span class="num">7</span><span class="den">28</span></span> - <span class="frac"><span class="num">14</span><span class="den">28</span></span> = <span class="frac"><span class="num">13</span><span class="den">28</span></span>.</p>
+                </div>
+                <div class="ejemplo-box">
+                    <div class="ejemplo-label">MÉTODO CARITA FELIZ (para dos fracciones)</div>
+                    <p><span class="frac"><span class="num">a</span><span class="den">b</span></span> + <span class="frac"><span class="num">c</span><span class="den">d</span></span> = <span class="frac"><span class="num">a·d + c·b</span><span class="den">b·d</span></span>.<br>
+                    Ejemplo: <span class="frac"><span class="num">1</span><span class="den">2</span></span> + <span class="frac"><span class="num">2</span><span class="den">5</span></span> = <span class="frac"><span class="num">1·5+2·2</span><span class="den">2·5</span></span> = <span class="frac"><span class="num">5+4</span><span class="den">10</span></span> = <span class="frac"><span class="num">9</span><span class="den">10</span></span>. Además, para comparar: 1·5=5 > 2·2=4 ⇒ <span class="frac"><span class="num">1</span><span class="den">2</span></span> > <span class="frac"><span class="num">2</span><span class="den">5</span></span>.</p>
+                </div>
+
+                <h2>📝 Ejercicios de suma y resta (fracciones heterogéneas)</h2>
+                <ul class="grid-ejercicios">
+                    <li><span class="badge">1</span> <span class="frac"><span class="num">1</span><span class="den">3</span></span> + <span class="frac"><span class="num">1</span><span class="den">4</span></span></li>
+                    <li><span class="badge">2</span> <span class="frac"><span class="num">5</span><span class="den">6</span></span> - <span class="frac"><span class="num">1</span><span class="den">2</span></span></li>
+                    <li><span class="badge">3</span> <span class="frac"><span class="num">3</span><span class="den">5</span></span> + <span class="frac"><span class="num">2</span><span class="den">3</span></span></li>
+                    <li><span class="badge">4</span> <span class="frac"><span class="num">7</span><span class="den">8</span></span> - <span class="frac"><span class="num">1</span><span class="den">4</span></span></li>
+                    <li><span class="badge">5</span> <span class="frac"><span class="num">1</span><span class="den">2</span></span> + <span class="frac"><span class="num">1</span><span class="den">3</span></span></li>
+                    <li><span class="badge">6</span> <span class="frac"><span class="num">5</span><span class="den">6</span></span> - <span class="frac"><span class="num">1</span><span class="den">3</span></span></li>
+                </ul>
+                <h3>Problemas de suma/resta (contexto)</h3>
+                <ul class="grid-ejercicios">
+                    <li><span class="badge">Problema 1</span> Familia come <span class="frac"><span class="num">1</span><span class="den">2</span></span> de torta en la mañana y <span class="frac"><span class="num">1</span><span class="den">4</span></span> en la tarde. Total comido?</li>
+                    <li><span class="badge">Problema 2</span> Un niño tiene <span class="frac"><span class="num">3</span><span class="den">5</span></span> de panela y regala <span class="frac"><span class="num">1</span><span class="den">10</span></span>. ¿Qué fracción le queda?</li>
+                    <li><span class="badge">Problema 3</span> Pescador recorre <span class="frac"><span class="num">2</span><span class="den">3</span></span> del caño en la mañana y <span class="frac"><span class="num">1</span><span class="den">6</span></span> en la tarde. Total recorrido?</li>
+                    <li><span class="badge">Problema 4</span> Tanque con <span class="frac"><span class="num">5</span><span class="den">6</span></span> de agua, se usan <span class="frac"><span class="num">1</span><span class="den">3</span></span>. ¿Cuánta agua queda?</li>
+                    <li><span class="badge">Problema 5</span> Estudiante resuelve <span class="frac"><span class="num">3</span><span class="den">4</span></span> de tarea y borra <span class="frac"><span class="num">1</span><span class="den">6</span></span>. ¿Cuánto le queda hecho?</li>
+                    <li><span class="badge">Problema 6</span> Grupo recoge <span class="frac"><span class="num">2</span><span class="den">5</span></span> de frutas en la mañana y <span class="frac"><span class="num">3</span><span class="den">10</span></span> en la tarde. Total?</li>
+                </ul>
+
+                <!-- Multiplicación de fracciones -->
+                <h2>✖️ Multiplicación de fracciones</h2>
+                <p>Se multiplican numeradores entre sí y denominadores entre sí: <span class="frac"><span class="num">a</span><span class="den">b</span></span> × <span class="frac"><span class="num">c</span><span class="den">d</span></span> = <span class="frac"><span class="num">a·c</span><span class="den">b·d</span></span>. Se puede simplificar antes de multiplicar.</p>
+                <div class="ejemplo-box">
+                    <div class="ejemplo-label">EJEMPLOS</div>
+                    <p><span class="frac"><span class="num">2</span><span class="den">3</span></span> × <span class="frac"><span class="num">4</span><span class="den">5</span></span> = <span class="frac"><span class="num">8</span><span class="den">15</span></span><br>
+                    <span class="frac"><span class="num">3</span><span class="den">4</span></span> × <span class="frac"><span class="num">8</span><span class="den">9</span></span>: simplificamos 3 con 9 (queda 1 y 3) y 4 con 8 (queda 1 y 2) → <span class="frac"><span class="num">1</span><span class="den">1</span></span> × <span class="frac"><span class="num">2</span><span class="den">3</span></span> = <span class="frac"><span class="num">2</span><span class="den">3</span></span>.<br>
+                    Problema: Doña Ana usa <span class="frac"><span class="num">2</span><span class="den">3</span></span> L de leche por queso. Para 6 quesos: <span class="frac"><span class="num">2</span><span class="den">3</span></span> × 6 = <span class="frac"><span class="num">12</span><span class="den">3</span></span> = 4 litros.<br>
+                    El rector comió <span class="frac"><span class="num">1</span><span class="den">3</span></span> de <span class="frac"><span class="num">1</span><span class="den">2</span></span> de bandeja → <span class="frac"><span class="num">1</span><span class="den">6</span></span>.</p>
+                </div>
+                <h2>📝 Ejercicios de multiplicación</h2>
+                <ul class="grid-ejercicios">
+                    <li><span class="badge">1</span> <span class="frac"><span class="num">1</span><span class="den">2</span></span> × <span class="frac"><span class="num">3</span><span class="den">5</span></span></li>
+                    <li><span class="badge">2</span> <span class="frac"><span class="num">4</span><span class="den">7</span></span> × <span class="frac"><span class="num">2</span><span class="den">3</span></span></li>
+                    <li><span class="badge">3</span> <span class="frac"><span class="num">5</span><span class="den">8</span></span> × <span class="frac"><span class="num">4</span><span class="den">10</span></span></li>
+                    <li><span class="badge">4</span> <span class="frac"><span class="num">2</span><span class="den">9</span></span> × <span class="frac"><span class="num">3</span><span class="den">4</span></span></li>
+                    <li><span class="badge">5</span> <span class="frac"><span class="num">7</span><span class="den">10</span></span> × <span class="frac"><span class="num">5</span><span class="den">14</span></span></li>
+                    <li><span class="badge">6</span> <span class="frac"><span class="num">3</span><span class="den">2</span></span> × <span class="frac"><span class="num">4</span><span class="den">9</span></span></li>
+                    <li><span class="badge">7</span> <span class="frac"><span class="num">6</span><span class="den">11</span></span> × 12</li>
+                    <li><span class="badge">8</span> <span class="frac"><span class="num">1</span><span class="den">3</span></span> × 5</li>
+                    <li><span class="badge">9</span> <span class="frac"><span class="num">3</span><span class="den">7</span></span> × 7</li>
+                    <li><span class="badge">10</span> <span class="frac"><span class="num">4</span><span class="den">5</span></span> × <span class="frac"><span class="num">10</span><span class="den">8</span></span></li>
+                </ul>
+                <h3>Problemas de multiplicación</h3>
+                <ul class="grid-ejercicios">
+                    <li><span class="badge">11</span> Luis pescó <span class="frac"><span class="num">3</span><span class="den">4</span></span> kg, Pedro el doble. ¿Cuánto pescó Pedro?</li>
+                    <li><span class="badge">12</span> Se siembra <span class="frac"><span class="num">5</span><span class="den">6</span></span> ha de plátano, se daña <span class="frac"><span class="num">2</span><span class="den">3</span></span> de esa siembra. ¿Fracción dañada del total?</li>
+                    <li><span class="badge">13</span> Receta necesita <span class="frac"><span class="num">2</span><span class="den">5</span></span> L de leche. Para <span class="frac"><span class="num">1</span><span class="den">4</span></span> de receta, ¿cuánta leche?</li>
+                    <li><span class="badge">14</span> Pedro vive a <span class="frac"><span class="num">7</span><span class="den">8</span></span> km del colegio, recorre <span class="frac"><span class="num">4</span><span class="den">7</span></span> de ese camino. ¿Fracción de km caminado?</li>
+                    <li><span class="badge">15</span> Un balde contiene <span class="frac"><span class="num">3</span><span class="den">5</span></span> L, se llenan 9 baldes. ¿Litros totales?</li>
+                    <li><span class="badge">16</span> Doña Julia compra <span class="frac"><span class="num">4</span><span class="den">5</span></span> kg de queso. El kg cuesta $12.000. ¿Cuánto pagó?</li>
+                </ul>
+
+                <!-- División de fracciones -->
+                <h2>➗ División de fracciones</h2>
+                <p>Se invierte la segunda fracción y se multiplica: <span class="frac"><span class="num">a</span><span class="den">b</span></span> ÷ <span class="frac"><span class="num">c</span><span class="den">d</span></span> = <span class="frac"><span class="num">a</span><span class="den">b</span></span> × <span class="frac"><span class="num">d</span><span class="den">c</span></span>.</p>
+                <div class="ejemplo-box">
+                    <div class="ejemplo-label">EJEMPLOS</div>
+                    <p><span class="frac"><span class="num">5</span><span class="den">6</span></span> ÷ <span class="frac"><span class="num">2</span><span class="den">3</span></span> = <span class="frac"><span class="num">5</span><span class="den">6</span></span> × <span class="frac"><span class="num">3</span><span class="den">2</span></span> = <span class="frac"><span class="num">15</span><span class="den">12</span></span> = <span class="frac"><span class="num">5</span><span class="den">4</span></span> = 1 <span class="frac"><span class="num">1</span><span class="den">4</span></span>.<br>
+                    <span class="frac"><span class="num">2</span><span class="den">3</span></span> ÷ 7 = <span class="frac"><span class="num">2</span><span class="den">3</span></span> ÷ <span class="frac"><span class="num">7</span><span class="den">1</span></span> = <span class="frac"><span class="num">2</span><span class="den">3</span></span> × <span class="frac"><span class="num">1</span><span class="den">7</span></span> = <span class="frac"><span class="num">2</span><span class="den">21</span></span>.<br>
+                    Problema: Juan tiene <span class="frac"><span class="num">3</span><span class="den">4</span></span> de pizza y la reparte entre 2 amigos: <span class="frac"><span class="num">3</span><span class="den">4</span></span> ÷ 2 = <span class="frac"><span class="num">3</span><span class="den">8</span></span> cada uno.<br>
+                    Don José tiene <span class="frac"><span class="num">15</span><span class="den">4</span></span> kg de abono y lo empaca en bolsas de <span class="frac"><span class="num">3</span><span class="den">4</span></span> kg: <span class="frac"><span class="num">15</span><span class="den">4</span></span> ÷ <span class="frac"><span class="num">3</span><span class="den">4</span></span> = <span class="frac"><span class="num">15</span><span class="den">4</span></span> × <span class="frac"><span class="num">4</span><span class="den">3</span></span> = <span class="frac"><span class="num">60</span><span class="den">12</span></span> = 5 bolsas.</p>
+                </div>
+                <h2>📝 Ejercicios de división</h2>
+                <ul class="grid-ejercicios">
+                    <li><span class="badge">1</span> <span class="frac"><span class="num">2</span><span class="den">3</span></span> ÷ <span class="frac"><span class="num">4</span><span class="den">5</span></span></li>
+                    <li><span class="badge">2</span> <span class="frac"><span class="num">5</span><span class="den">6</span></span> ÷ <span class="frac"><span class="num">1</span><span class="den">2</span></span></li>
+                    <li><span class="badge">3</span> <span class="frac"><span class="num">7</span><span class="den">8</span></span> ÷ <span class="frac"><span class="num">3</span><span class="den">4</span></span></li>
+                    <li><span class="badge">4</span> <span class="frac"><span class="num">3</span><span class="den">10</span></span> ÷ <span class="frac"><span class="num">6</span><span class="den">5</span></span></li>
+                    <li><span class="badge">5</span> <span class="frac"><span class="num">9</span><span class="den">4</span></span> ÷ <span class="frac"><span class="num">2</span><span class="den">3</span></span></li>
+                    <li><span class="badge">6</span> <span class="frac"><span class="num">1</span><span class="den">5</span></span> ÷ 3</li>
+                    <li><span class="badge">7</span> <span class="frac"><span class="num">8</span><span class="den">9</span></span> ÷ <span class="frac"><span class="num">2</span><span class="den">3</span></span></li>
+                    <li><span class="badge">8</span> <span class="frac"><span class="num">4</span><span class="den">7</span></span> ÷ 21</li>
+                    <li><span class="badge">9</span> <span class="frac"><span class="num">6</span><span class="den">11</span></span> ÷ <span class="frac"><span class="num">12</span><span class="den">33</span></span></li>
+                    <li><span class="badge">10</span> <span class="frac"><span class="num">5</span><span class="den">2</span></span> ÷ <span class="frac"><span class="num">7</span><span class="den">10</span></span></li>
+                </ul>
+                <h3>Problemas de división</h3>
+                <ul class="grid-ejercicios">
+                    <li><span class="badge">11</span> Doña Carmen tiene <span class="frac"><span class="num">9</span><span class="den">4</span></span> de bollo de yuca, reparte entre 3 personas. ¿Fracción por persona?</li>
+                    <li><span class="badge">12</span> Una canoa lleva <span class="frac"><span class="num">3</span><span class="den">4</span></span> de su capacidad, que es <span class="frac"><span class="num">2</span><span class="den">5</span></span> de la carga máxima. ¿Fracción de carga máxima total?</li>
+                    <li><span class="badge">13</span> Tanque con <span class="frac"><span class="num">1</span><span class="den">4</span></span> L de agua, se reparte en botellas de <span class="frac"><span class="num">1</span><span class="den">4</span></span> L. ¿Cuántas botellas?</li>
+                    <li><span class="badge">14</span> Campesino tiene <span class="frac"><span class="num">5</span><span class="den">6</span></span> ha de maíz, divide en parcelas de <span class="frac"><span class="num">1</span><span class="den">12</span></span> ha. ¿Número de parcelas?</li>
+                    <li><span class="badge">15</span> Con <span class="frac"><span class="num">4</span><span class="den">5</span></span> L de leche se hace un queso. Don Antonio tiene 8 L. ¿Cuántos quesos puede hacer?</li>
+                    <li><span class="badge">16</span> Canoa recorre <span class="frac"><span class="num">15</span><span class="den">4</span></span> km/h. Distancia a la ciénaga es <span class="frac"><span class="num">3</span><span class="den">2</span></span> km. ¿Fracción de hora que tarda?</li>
+                </ul>
+
+                <!-- Nota final -->
+                <hr class="sep">
+                <div class="nota">
+                    💡 <strong>Recuerda:</strong> Para sumar/restar fracciones con distinto denominador, halla el m.c.m. o usa productos cruzados. Para multiplicar, multiplica en línea recta. Para dividir, invierte la segunda y multiplica. Siempre simplifica si es posible.
+                </div>
+                <div style="border-top: 2px solid #1e293b; margin-top: 2rem; padding-top: 1rem; text-align: center; font-size: 0.75rem; color:#94a3b8;">
+                    Guía 10 – Matemáticas 6° | Números fraccionarios: definición, tipos, equivalencias, operaciones y problemas.<br>
+                    Institución Educativa Palmarito – Majagual, Sucre. Material de apoyo basado en el currículo.
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer id="footer">
+        <div class="inner">
+            <ul class="icons">
+                <li><a href="https://x.com/ederdavid1986" class="icon brands fa-x-twitter alt"><span class="label">X</span></a></li>
+                <li><a href="https://www.facebook.com/ederdavids" class="icon brands alt fa-facebook-f" target="_blank"><span class="label">Facebook</span></a></li>
+                <li><a href="https://www.instagram.com/ederdavid1986" class="icon brands alt fa-instagram" target="_blank"><span class="label">Instagram</span></a></li>
+                <li><a href="https://github.com/auladelprofeeder" class="icon brands alt fa-github" target="_blank"><span class="label">GitHub</span></a></li>
+                <li><a href="https://www.tiktok.com/@eldavidedd" class="icon brands alt fa-tiktok" target="_blank"><span class="label">TikTok</span></a></li>
+            </ul>
+            <div class="copyright">&copy; 2026 MathEscape | Guía completa de números fraccionarios - Diseño: <a href="https://html5up.net">HTML5 UP</a></div>
+        </div>
+    </footer>
+</div>
+
+<!-- Scripts base -->
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/jquery.scrolly.min.js"></script>
+<script src="assets/js/jquery.scrollex.min.js"></script>
+<script src="assets/js/browser.min.js"></script>
+<script src="assets/js/breakpoints.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>

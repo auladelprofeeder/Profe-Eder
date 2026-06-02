@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <title>Guía 11 – Números Decimales | Matemáticas 6º</title>
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <style>
+        /* ── Contenedor principal de la guía ── */
+        .guia-wrapper {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2em 2em 3em;
+            color: #ffffff;
+            font-family: "Source Sans Pro", Helvetica, sans-serif;
+            font-weight: 400;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Encabezado institucional */
+        .inst-header {
+            text-align: center;
+            border: 2px solid rgba(56,189,248,0.4);
+            border-radius: 20px;
+            padding: 1.8em;
+            margin-bottom: 2.5em;
+            background: rgba(56,189,248,0.05);
+            backdrop-filter: blur(6px);
+        }
+        .inst-header h2 {
+            font-size: 1.4em;
+            font-weight: 800;
+            letter-spacing: 0.05em;
+            color: #38bdf8;
+            margin-bottom: 0.5em;
+        }
+        .inst-header p {
+            font-size: 0.85em;
+            color: rgba(255,255,255,0.7);
+            margin-bottom: 0.8em;
+            line-height: 1.5;
+        }
+        .inst-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 1rem;
+        }
+        .inst-meta span {
+            background: rgba(139, 92, 246, 0.15);
+            padding: 0.4em 1.2em;
+            border-radius: 40px;
+            font-size: 0.85rem;
+            border-left: 3px solid #8b5cf6;
+            color: #e2e8f0;
+        }
+        .inst-meta span strong {
+            color: #38bdf8;
+        }
+
+        /* Títulos y secciones */
+        .guia-wrapper h1 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #38bdf8;
+            border-left: 6px solid #38bdf8;
+            padding-left: 1rem;
+            margin: 1.8em 0 0.8em;
+        }
+        .guia-wrapper h2 {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: #f0f9ff;
+            margin: 1.8em 0 0.6em;
+            border-bottom: 2px solid rgba(56,189,248,0.4);
+            padding-bottom: 0.3em;
+        }
+        .guia-wrapper h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #c084fc;
+            margin: 1.2em 0 0.5em;
+        }
+        .guia-wrapper p, li {
+            line-height: 1.65;
+            margin-bottom: 0.8rem;
+            color: #f1f5f9;
+        }
+
+        /* Cajas de ejemplo */
+        .ejemplo-box {
+            background: rgba(34,197,94,0.1);
+            border: 1px solid rgba(34,197,94,0.3);
+            border-radius: 20px;
+            padding: 1.2rem 1.8rem;
+            margin: 1.8rem 0;
+        }
+        .ejemplo-label {
+            display: inline-block;
+            background: #22c55e;
+            color: #0f172a;
+            font-size: 0.7rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+            padding: 0.2rem 1rem;
+            border-radius: 30px;
+            margin-bottom: 1rem;
+        }
+
+        /* Tablas auxiliares */
+        .tabla-decimal {
+            width: 100%;
+            background: #0f172a;
+            border-radius: 16px;
+            border-collapse: collapse;
+            margin: 1rem 0;
+            font-size: 0.9rem;
+            text-align: left;
+        }
+        .tabla-decimal th, .tabla-decimal td {
+            border: 1px solid #334155;
+            padding: 8px 12px;
+        }
+        .tabla-decimal th {
+            background: #1e293b;
+            color: #38bdf8;
+        }
+
+        .formula {
+            background: rgba(0,0,0,0.35);
+            border-radius: 12px;
+            padding: 0.8rem 1.2rem;
+            font-family: monospace;
+            font-size: 1rem;
+            margin: 1rem 0;
+            color: #86efac;
+        }
+        .grid-ejercicios {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 0.8rem;
+            list-style: none;
+            padding: 0;
+        }
+        .grid-ejercicios li {
+            background: rgba(255,255,255,0.05);
+            border-radius: 16px;
+            padding: 0.6rem 1rem;
+            border: 1px solid #334155;
+        }
+        .badge {
+            background: #f97316;
+            color: black;
+            border-radius: 20px;
+            padding: 0.1rem 0.6rem;
+            font-weight: bold;
+            margin-right: 0.6rem;
+            display: inline-block;
+        }
+        hr.sep {
+            border-top: 1px solid #38bdf830;
+            margin: 2rem 0;
+        }
+        .nota {
+            background: #111827;
+            border-left: 4px solid #facc15;
+            padding: 0.8rem 1.2rem;
+            border-radius: 16px;
+            margin: 1rem 0;
+        }
+        .subrayado {
+            border-bottom: 1px dashed #facc15;
+        }
+    </style>
+    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+</head>
+<body class="is-preload">
+<div id="wrapper">
+
+    <!-- Header -->
+    <header id="header" class="alt style2">
+        <a href="Matemática 6º.html" class="logo" style="font-size:1.3em;"><strong>← Atrás</strong></a>
+        <nav><a href="#menu">Menú</a></nav>
+    </header>
+
+    <!-- Menú -->
+    <nav id="menu">
+        <ul class="links">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="Matemáticas.html">Matemáticas</a></li>
+        </ul>
+    </nav>
+
+    <!-- Banner adaptado a Decimales -->
+    <section id="banner" class="style2">
+        <div class="inner">
+            <header class="major" style="padding-left:7em;">
+                <h1>Números Decimales<br>Operaciones y Problemas</h1>
+            </header>
+            <div class="content" style="padding-left:14em;">
+                <p>🔢 Suma · Resta · Multiplicación · División · Porcentajes · Guía 11 · 6º</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contenido principal: Guía 11 Números Decimales -->
+    <div id="main">
+        <section id="one">
+            <div class="guia-wrapper">
+                <!-- Encabezado institucional -->
+                <div class="inst-header">
+                    <h2>REPÚBLICA DE COLOMBIA<br>DEPARTAMENTO DE SUCRE · MUNICIPIO DE MAJAGUAL</h2>
+                    <p><strong>Institución Educativa Palmarito</strong><br>
+                    DANE: 270429000014  NIT. 823001728-3<br>
+                    REG. ICFES No. 135418 / REG. ICFES No. 186304<br>
+                    Jornada Única y Educación de Adultos<br>
+                    iepalmar@iepalmaritomajagual-sucre.edu.co  |  ie.palmarito@sucre.edu.co</p>
+                    <div class="inst-meta">
+                        <span><strong>Asignatura:</strong> Matemática</span>
+                        <span><strong>Guía:</strong> 11 – Números Decimales</span>
+                        <span><strong>Grado:</strong> 6°</span>
+                        <span><strong>Docente:</strong> Eder David Sequeda Martínez</span>
+                    </div>
+                </div>
+
+                <!-- 1. ¿Qué es un número decimal? -->
+                <h1>📌 ¿Qué es un número decimal?</h1>
+                <p>Un <strong>número decimal</strong> es una forma de escribir números que no son enteros, usando una coma (,) que separa la parte entera de la parte decimal.</p>
+                <p><strong>Ejemplo:</strong> En el número <strong>3,25</strong> → parte entera: 3 ; parte decimal: 25 (centésimas).</p>
+
+                <h2>Relación con las fracciones</h2>
+                <p>Una fracción decimal tiene denominador 10, 100, 1000, etc.</p>
+                <table class="tabla-decimal">
+                    <thead><tr><th>Fracción</th><th>Número decimal</th><th>Se lee</th></tr></thead>
+                    <tbody>
+                        <tr><td><span class="frac"><span class="num">3</span><span class="den">10</span></span></td><td>0,3</td><td>Tres décimas</td></tr>
+                        <tr><td><span class="frac"><span class="num">7</span><span class="den">100</span></span></td><td>0,07</td><td>Siete centésimas</td></tr>
+                        <tr><td><span class="frac"><span class="num">25</span><span class="den">1000</span></span></td><td>0,025</td><td>Veinticinco milésimas</td></tr>
+                    </tbody>
+                </table>
+                <p><strong>Importante:</strong> Toda fracción con denominador 2 o 5 (o sus potencias) se convierte en decimal exacto. Si el denominador tiene otros factores primos, el decimal será periódico.</p>
+
+                <h2>Clasificación de los decimales</h2>
+                <ul>
+                    <li><strong>Decimal exacto:</strong> cantidad finita de cifras decimales (ej: 0,75 = 75/100).</li>
+                    <li><strong>Decimal periódico puro:</strong> las cifras se repiten desde el principio (ej: 0,333... = 0,<span class="subrayado">3</span>).</li>
+                    <li><strong>Decimal periódico mixto:</strong> hay cifras que no se repiten y luego un período (ej: 0,4272727...).</li>
+                </ul>
+                <div class="nota">
+                    💡 Recuerda: Los decimales periódicos vienen de fracciones como 1/3 = 0,333... o 7/6 = 1,1666...
+                </div>
+
+                <h2>Porcentaje y decimal</h2>
+                <p>Un porcentaje (%) es una fracción con denominador 100. Por eso, todo porcentaje se puede escribir como decimal: <strong>25% = 25/100 = 0,25</strong>.</p>
+
+                <!-- 2. Operaciones con decimales -->
+                <h1>🧮 Operaciones con números decimales</h1>
+                
+                <h2>➕ Suma de decimales</h2>
+                <p>Se escriben los números alineando las comas. Si es necesario, se agregan ceros para igualar cifras decimales. Luego se suma como naturales y se baja la coma.</p>
+                <div class="ejemplo-box">
+                    <div class="ejemplo-label">EJEMPLO</div>
+                    <p>Luis pescó 2,35 kg y Pedro 1,8 kg. Total: 2,35 + 1,80 = <strong>4,15 kg</strong>.<br>
+                    María compró 0,75 kg de queso y 1,5 kg de yuca: 0,75 + 1,50 = <strong>2,25 kg</strong>.</p>
+                </div>
+
+                <h2>➖ Resta de decimales</h2>
+                <p>Se alinean las comas, se agregan ceros y se resta como naturales. Luego se coloca la coma.</p>
+                <div class="ejemplo-box">
+                    <div class="ejemplo-label">EJEMPLO</div>
+                    <p>Tanque con 15,75 litros, se gastan 8,2 litros: 15,75 - 8,20 = <strong>7,55 litros</strong>.<br>
+                    Pedro tenía 10,3 m de cuerda y usó 4,75 m: 10,30 - 4,75 = <strong>5,55 m</strong>.</p>
+                </div>
+
+                <h2>✖️ Multiplicación de decimales</h2>
+                <p>Se multiplican como naturales (ignorando las comas). Luego, en el resultado se cuentan las cifras decimales de los dos factores juntos y se coloca la coma desde la derecha esa cantidad de lugares.</p>
+                <div class="ejemplo-box">
+                    <div class="ejemplo-label">EJEMPLO</div>
+                    <p>Metro de tela cuesta $12,50. 3,5 metros cuestan: 1250 × 35 = 43750 → 2+1=3 decimales → 43,750 = <strong>$43,75</strong>.<br>
+                    Terreno 4,2 m × 6,25 m: 42×625=26250 → 3 decimales → 26,250 = <strong>26,25 m²</strong>.</p>
+                </div>
+
+                <h2>➗ División de decimales</h2>
+                <p>Para dividir, multiplicamos dividendo y divisor por 10, 100 o 1000 hasta que el divisor sea natural. Luego dividimos normalmente.</p>
+                <div class="ejemplo-box">
+                    <div class="ejemplo-label">EJEMPLO</div>
+                    <p>32,5 kg de arroz entre 5 familias: 32,5 ÷ 5 = <strong>6,5 kg</strong> cada una.<br>
+                    15 litros de jugo en botellas de 0,75 L: 15 ÷ 0,75 = 1500 ÷ 75 = <strong>20 botellas</strong>.</p>
+                </div>
+
+                <!-- Ejercicios de operaciones básicas -->
+                <h2>📝 Ejercicios: Suma de decimales</h2>
+                <ul class="grid-ejercicios">
+                    <li><span class="badge">1</span> 2,5 + 3,7</li><li><span class="badge">2</span> 4,23 + 1,5</li>
+                    <li><span class="badge">3</span> 0,75 + 0,25</li><li><span class="badge">4</span> 12,8 + 9,47</li>
+                    <li><span class="badge">5</span> 0,005 + 3,12</li><li><span class="badge">6</span> 6,34 + 2,9</li>
+                    <li><span class="badge">7</span> 123,45 + 67,8</li><li><span class="badge">8</span> 0,999 + 0,001</li>
+                    <li><span class="badge">9</span> 8,5 + 8,5</li><li><span class="badge">10</span> 3,75 + 4,25</li>
+                </ul>
+                
+                <h2>📝 Ejercicios: Resta de decimales</h2>
+                <ul class="grid-ejercicios">
+                    <li><span class="badge">1</span> 5,8 - 2,3</li><li><span class="badge">2</span> 10,5 - 4,75</li>
+                    <li><span class="badge">3</span> 9,34 - 3,2</li><li><span class="badge">4</span> 15,2 - 7,98</li>
+                    <li><span class="badge">5</span> 100 - 99,99</li><li><span class="badge">6</span> 6,75 - 0,5</li>
+                    <li><span class="badge">7</span> 45,6 - 12,34</li><li><span class="badge">8</span> 3,2 - 1,99</li>
+                    <li><span class="badge">9</span> 20 - 0,57</li><li><span class="badge">10</span> 8,88 - 4,44</li>
+                </ul>
+
+                <h2>📝 Ejercicios: Multiplicación de decimales</h2>
+                <ul class="grid-ejercicios">
+                    <li><span class="badge">1</span> 2,5 × 1,2</li><li><span class="badge">2</span> 0,75 × 4</li>
+                    <li><span class="badge">3</span> 3,2 × 1,5</li><li><span class="badge">4</span> 0,25 × 0,4</li>
+                    <li><span class="badge">5</span> 6,75 × 2</li><li><span class="badge">6</span> 1,25 × 0,8</li>
+                    <li><span class="badge">7</span> 4,5 × 3,2</li><li><span class="badge">8</span> 0,125 × 8</li>
+                    <li><span class="badge">9</span> 2,34 × 1,5</li><li><span class="badge">10</span> 7,5 × 0,2</li>
+                </ul>
+
+                <h2>📝 Ejercicios: División de decimales</h2>
+                <ul class="grid-ejercicios">
+                    <li><span class="badge">1</span> 6,4 ÷ 2</li><li><span class="badge">2</span> 15 ÷ 0,5</li>
+                    <li><span class="badge">3</span> 4,5 ÷ 1,5</li><li><span class="badge">4</span> 0,75 ÷ 0,25</li>
+                    <li><span class="badge">5</span> 10 ÷ 0,2</li><li><span class="badge">6</span> 3,6 ÷ 1,2</li>
+                    <li><span class="badge">7</span> 8,4 ÷ 2,1</li><li><span class="badge">8</span> 0,125 ÷ 0,5</li>
+                    <li><span class="badge">9</span> 100 ÷ 2,5</li><li><span class="badge">10</span> 5,55 ÷ 1,5</li>
+                </ul>
+
+                <!-- Problemas contextualizados -->
+                <h1>🌿 Problemas de aplicación (contexto regional)</h1>
+                
+                <h2>➕ Suma de decimales - problemas</h2>
+                <ul class="grid-ejercicios">
+                    <li><span class="badge">1</span> Luis pescó 1,75 kg de bocachico y María 2,3 kg. Total kg?</li>
+                    <li><span class="badge">2</span> Andrés compró 0,5 kg de panela y 0,75 kg de arroz. Peso total?</li>
+                    <li><span class="badge">3</span> Pedro camina 1,25 km al colegio y 0,8 km a la tienda. Total recorrido?</li>
+                    <li><span class="badge">4</span> Mezcla: 0,6 L agua + 0,25 L jugo limón + 0,1 L azúcar. Litros de limonada?</li>
+                    <li><span class="badge">5</span> Siembra: 3,45 ha en la mañana + 2,8 ha en la tarde. Total hectáreas?</li>
+                    <li><span class="badge">6</span> Canoa: 2,5 m casco + 1,75 m remos. Madera total?</li>
+                </ul>
+
+                <h2>➖ Resta de decimales - problemas</h2>
+                <ul class="grid-ejercicios">
+                    <li><span class="badge">1</span> Tanque 25,5 L, se usan 12,75 L. ¿Agua que queda?</li>
+                    <li><span class="badge">2</span> Distancia Palmarito-ciénaga: 8,4 km; recorridos 5,25 km. ¿Faltan?</li>
+                    <li><span class="badge">3</span> Balde lleno 15,75 kg, vacío 2,5 kg. Peso del pescado?</li>
+                    <li><span class="badge">4</span> Juan tenía $50.000, gastó $32,75. ¿Dinero restante?</li>
+                    <li><span class="badge">5</span> Cuerda de 12,3 m; se cortan 4,75 m. ¿Longitud restante?</li>
+                    <li><span class="badge">6</span> Terreno 9,5 ha, se siembran yuca en 5,25 ha. ¿Hectáreas libres?</li>
+                </ul>
+
+                <h2>✖️ Multiplicación de decimales - problemas</h2>
+                <ul class="grid-ejercicios">
+                    <li><span class="badge">1</span> Kilo de mojarra $8.500. ¿Costo de 2,5 kg?</li>
+                    <li><span class="badge">2</span> Huerta: 4,2 m ancho × 6,5 m largo. ¿Área?</li>
+                    <li><span class="badge">3</span> Auto consume 7,5 L cada 100 km. ¿Consumo en 250 km?</li>
+                    <li><span class="badge">4</span> Salario $12.500 por hora. ¿Gana en 3,5 horas?</li>
+                    <li><span class="badge">5</span> Cada caja pesa 2,75 kg. ¿Peso de 8 cajas?</li>
+                    <li><span class="badge">6</span> Terreno cuadrado de 5,25 m de lado. ¿Perímetro?</li>
+                </ul>
+
+                <h2>➗ División de decimales - problemas</h2>
+                <ul class="grid-ejercicios">
+                    <li><span class="badge">1</span> 12,5 kg de pescado entre 5 familias. ¿Kg por familia?</li>
+                    <li><span class="badge">2</span> Tanque 15 L, botellas de 0,75 L. ¿Número de botellas?</li>
+                    <li><span class="badge">3</span> Ciclista recorre 45,6 km en 3 horas. ¿Velocidad media (km/h)?</li>
+                    <li><span class="badge">4</span> Por 4,5 kg de queso se pagaron $36.000. ¿Precio por kg?</li>
+                    <li><span class="badge">5</span> Tela de 10,5 m se corta en trozos de 1,75 m. ¿Cuántos trozos?</li>
+                    <li><span class="badge">6</span> Canoa recorre 24 km a 4,8 km/h. ¿Horas de viaje?</li>
+                </ul>
+
+                <!-- Conversión fracción -> decimal y porcentaje -->
+                <h1>📊 Conversión: fracción → decimal → porcentaje</h1>
+                <p>Convierte las siguientes fracciones a número decimal y a porcentaje:</p>
+                <ul class="grid-ejercicios">
+                    <li><span class="badge">1</span> <span class="frac"><span class="num">1</span><span class="den">3</span></span></li>
+                    <li><span class="badge">2</span> <span class="frac"><span class="num">2</span><span class="den">3</span></span></li>
+                    <li><span class="badge">3</span> <span class="frac"><span class="num">5</span><span class="den">8</span></span></li>
+                    <li><span class="badge">4</span> <span class="frac"><span class="num">7</span><span class="den">20</span></span></li>
+                    <li><span class="badge">5</span> <span class="frac"><span class="num">9</span><span class="den">25</span></span></li>
+                </ul>
+
+                <hr class="sep">
+                <div class="nota">
+                    💡 <strong>Recuerda:</strong> Para sumar o restar decimales, alinea bien la coma. Para multiplicar, cuenta las cifras decimales. Para dividir, convierte el divisor en natural multiplicando por 10, 100 o 1000.
+                </div>
+                <div style="border-top: 2px solid #1e293b; margin-top: 2rem; padding-top: 1rem; text-align: center; font-size: 0.75rem; color:#94a3b8;">
+                    Guía 11 – Matemáticas 6° | Números decimales: definición, clasificación, operaciones (suma, resta, multiplicación, división) y problemas.<br>
+                    Institución Educativa Palmarito – Majagual, Sucre. Material de apoyo basado en el currículo.
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer id="footer">
+        <div class="inner">
+            <ul class="icons">
+                <li><a href="https://x.com/ederdavid1986" class="icon brands fa-x-twitter alt"><span class="label">X</span></a></li>
+                <li><a href="https://www.facebook.com/ederdavids" class="icon brands alt fa-facebook-f" target="_blank"><span class="label">Facebook</span></a></li>
+                <li><a href="https://www.instagram.com/ederdavid1986" class="icon brands alt fa-instagram" target="_blank"><span class="label">Instagram</span></a></li>
+                <li><a href="https://github.com/auladelprofeeder" class="icon brands alt fa-github" target="_blank"><span class="label">GitHub</span></a></li>
+                <li><a href="https://www.tiktok.com/@eldavidedd" class="icon brands alt fa-tiktok" target="_blank"><span class="label">TikTok</span></a></li>
+            </ul>
+            <div class="copyright">&copy; 2026 MathEscape | Guía completa de números decimales - Diseño: <a href="https://html5up.net">HTML5 UP</a></div>
+        </div>
+    </footer>
+</div>
+
+<!-- Scripts base -->
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/jquery.scrolly.min.js"></script>
+<script src="assets/js/jquery.scrollex.min.js"></script>
+<script src="assets/js/browser.min.js"></script>
+<script src="assets/js/breakpoints.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>

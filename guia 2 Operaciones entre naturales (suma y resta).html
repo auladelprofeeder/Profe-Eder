@@ -181,6 +181,22 @@
             padding: 0;
             margin: 0;
         }
+        .ejercicio-lista2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 0.6em;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .ejercicio-lista3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(550px, 1fr));
+            gap: 0.6em;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
         .ejercicio-lista li {
             background: rgba(255,255,255,0.04);
             border: 1px solid rgba(255,255,255,0.08);
@@ -189,7 +205,34 @@
             font-size: 0.88em;
             color: #ffffff;
         }
+        .ejercicio-lista2 li {
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 8px;
+            padding: 0.5em 0.9em;
+            font-size: 0.88em;
+            color: #ffffff;
+        }
+        .ejercicio-lista3 li {
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 8px;
+            padding: 0.5em 0.9em;
+            font-size: 1.0em;
+            font-family: 'Bold', monospace
+            color: #ffffff;
+        }
         .ejercicio-lista li span {
+            color: #f87171;
+            font-weight: 700;
+            margin-right: 0.4em;
+        }
+        .ejercicio-lista2 li span {
+            color: #f87171;
+            font-weight: 700;
+            margin-right: 0.4em;
+        }
+        .ejercicio-lista3 li span {
             color: #f87171;
             font-weight: 700;
             margin-right: 0.4em;
@@ -226,19 +269,25 @@
     }
        .cuadro {
         display:inline-block;
-        width:25px;
-        height:25px;
-        border:2px solid #ffffff;
-        background:rgba(15, 14, 14, 0.15);
-        border-radius:6px;
-        text-align:center;
-        line-height:31px;
-        margin:1 5px;
-        font-family:'Courier New',monospace;
-        font-size:0.5rem;
-        color:#ffffff;
-        font-weight:bold;
-    }
+        width:1.2em;
+        height:1.2em;
+        background-color: #ffffff;
+        border:1px solid #cccccc;
+        border-radius:4px;
+        vertical-align: middle;
+        box-shadow: inset 0 1px 2px rgba(0,0,0,0.05);
+        margin: 0 2px;
+        }
+    .img-icon {
+    font-size: 1.8rem;      /* Ajusta este valor para el tamaño que quieras */
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 8px;      /* Opcional: separación del texto */
+}
+
+    .tabla-precios td:first-child {
+    vertical-align: middle;  /* Alinea verticalmente el contenido de la celda */
+}
 </style>
     </style>
     <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
@@ -576,54 +625,54 @@ Las 17 centenas se reagrupan en 1 unidad de mil y 7 centenas, que se escriben en
                             <li><span>a.</span> 5 643 – 762</li>
                             <li><span>b.</span> 893 – 79</li>
                             <li><span>c.</span> 802 – 148</li>
-                            <li><span>d.</span> 26538 – 14 148</li>
+                            <li><span>d.</span> 26.538 – 14.148</li>
                         </ul><br>
-                        <p style="font-size: 1.3rem; font-weight: bold;color:#ffffff">Verifica en cada caso que:<p style="font-size: 1.3rem; font-weight: bold;color:#ffffff";><span class="content" style="padding-left:9em;">• Diferencia + Sustraendo = Minuendo</span>
+                        <p style="font-size: 1.0rem; font-weight: bold;">Verifica en cada caso que:<p style="font-size: 1.3rem; font-weight: bold;color:#ffffff";><span class="content" style="padding-left:9em;">• Diferencia + Sustraendo = Minuendo</span>
                     </div>
 
                     <div class="ejercicio-grupo">
                         <p>3. Reconstruye cada una de las operaciones, ubicando las cifras desaparecidas en cada espacio.</p>
-                        <ul class="ejercicio-lista">
-                            <li><span>a.</span><span style="font-family:'Courier New',monospace;font-size:1.3rem;">43<span class="cuadro"></span> + 2<span class="cuadro"></span>5 + <span class="cuadro"></span>87 = 1.068</span></li>
-                            <li><span>b.</span> 8.22_ – 2.5_7 = _.555</li>
-                            <li><span>c.</span> 5.6_ + 8__ + 4.09_ + _.856 = 13._49</li>
-                            <li><span>d.</span> 1.8_ + 6_ – 3._ = 8.27</li>
-                        </ul>
+                        <ul class="ejercicio-lista2">
+                            <li><span>a.</span><span style="font-family:'bold',monospace;font-size:1.1rem;">43<span class="cuadro"></span> + 2<span class="cuadro"></span>5 + <span class="cuadro"></span>87 = 1.068</span></li>
+                            <li><span>b.</span><span style="font-family:'bold',monospace;font-size:1.1rem;">8.<span class="cuadro"></span>22 - 2.5<span class="cuadro"></span>=<span class="cuadro"></span>.555</li>
+                            <li><span>c.</span><span style="font-family:'bold',monospace;font-size:0.9rem;">5.6<span class="cuadro"></span>8 + 4.09<span class="cuadro"></span>+<span class="cuadro"></span>.856 = 13.<span class="cuadro"></span>13</li>
+                            <li><span>d.</span><span style="font-family:'bold',monospace;font-size:1.1rem;"><span class="cuadro"></span>1.8<span class="cuadro"></span>6 - 3.<span class="cuadro"></span>52 = 8.27<span class="cuadro"></li>
+                            </ul>
                     </div>
 
                     <div class="ejercicio-grupo">
                         <p>4. Relaciona cada adición con su respectivo resultado.</p>
-                        <ul class="ejercicio-lista">
-                            <li><span>a.</span> 18.516 + 14.341 &nbsp;→&nbsp; i. 787.082</li>
-                            <li><span>b.</span> 8.267 + 73.656 &nbsp;→&nbsp; ii. 101.975.898</li>
-                            <li><span>c.</span> 747.915 + 39.167 &nbsp;→&nbsp; iii. 81.923</li>
-                            <li><span>d.</span> 26.820.934 + 3.256.268 → iv. 32.857</li>
-                            <li><span>e.</span> 34.408.573 + 67.567.325 → v. 30.077.202</li>
+                        <ul class="ejercicio-lista2">
+                            <li><span>a.</span> 18.516 + 14.341</li><li><span>i.</span> 787.08</li>
+                            <li><span>b.</span> 8.267 + 73.656</li><li><span>ii.</span> 101.975.898</li>
+                            <li><span>c.</span> 747.915 + 39.167</li><li><span>iii.</span> 81.923</li>
+                            <li><span>d.</span> 26.820.934 + 3.256.268</li><li><span>iv.</span> 32.857</li>
+                            <li><span>e.</span> 34.408.573 + 67.567.325</li><li><span>v.</span> 30.077.202</li>
                         </ul>
                     </div>
 
                     <div class="ejercicio-grupo">
                         <p>5. Resuelve.</p>
-                        <ul class="ejercicio-lista">
-                            <li><span>a.</span> Una prrmora a incam núneo a 27.564 y 99.290 zotal!</li>
-                            <li><span>b.</span> Una congrianca 70 mitereas de hacer dosas, el 24.070 mi cidn prosel?</li>
-                            <li><span>c.</span> Una ompieita a 40 orvide se 197.660 años que 10. 70 en totas?</li>
-                            <li><span>d.</span> Una anaimes/e decaba 60.000, 3 rosas, d 5.300 y ciriia de una 100 songenos. ¿Cuánt a a résalar me es la mididos?</li>
-                            <li><span>e.</span> Una participaicin der ámero de bilta basica a las 30 años de excaviano?</li>
-                            <li><span>f.</span> Una empresa de 200.571 606 orquídeas. ¿Cuántas ain para fiorna?</li>
-                            <li><span>g.</span> Una empresa robertó 243.005 orquídea 185.562 ros. ¿Cuántas totas en 2017?</li>
-                            <li><span>h.</span> Una empresa 679.247 de un 30 helenos. ¿Cuántas cerarto 30 años?</li>
-                            <li><span>i.</span> Una empresa hace: co cmon una obecto integrellr. ¿Cuántas año de 30 años?</li>
-                            <li><span>j.</span> Una empresa cabe 130 kol de, nuevo munta, acrio y cuántas plantas amgránitas?</li>
+                        <ul class="ejercicio-lista3">
+                            <li><span>a.</span> En una biblioteca escolar hay 76.543 libros de matemáticas y 43.765 de ciencias. ¿Cuántos libros más hay de matemáticas que de ciencias?!</li>
+                            <li><span>b.</span> Un almacén tiene 81.298 camisetas y vendió 45.792 durante una promoción. ¿Cuántas camisetas quedan en el almacén??</li>
+                            <li><span>c.</span> Una campaña solidaria logró reunir 43.765 pesos, pero necesita llegar a 100.000 pesos para cumplir la meta. ¿Cuánto dinero falta recaudar?</li>
+                            <li><span>d.</span> En un estadio asistieron 65.498 personas, pero la capacidad recomendada era de 32.987. ¿En cuántas personas se excedió el aforo?</li>
+                            <li><span>e.</span> Una empresa tenía 567.894 litros de agua almacenados y después de una sequía solo quedaron 125.000 litros. ¿Cuántos litros se consumieron?</li>
+                            <li><span>f.</span> Un colegio recolectó 54.987 tapas plásticas para reciclar y quiere completar 100.000. ¿Cuántas tapas le faltan por recolectar??</li>
+                            <li><span>g.</span> En dos ciudades se registraron 65.434 y 34.965 habitantes respectivamente. ¿Cuál es la diferencia de población entre ambas ciudades?</li>
+                            <li><span>h.</span> Un deportista ha recorrido 64.219 metros en una maratón virtual y su meta es llegar a 100.000 metros. ¿Cuántos metros le faltan??</li>
+                            <li><span>i.</span> Una fábrica produjo 65.432 botellas, pero debe reducir la producción hasta llegar a 50.000. ¿Cuántas botellas debe disminuir?</li>
+                            <li><span>j.</span> Una tienda tenía 78.321 juguetes y después de varias ventas quedaron 23.432. ¿Cuántos juguetes se vendieron?</li>
                             <li><span>k.</span> Una empresa dedicada a la producción de plantas exportó 563.256 orquídeas, 185.562 helechos y 368.850 rosas. ¿Cuántas plantas exportó en total?</li>
                             <li><span>l.</span> Roberto nace en 1928 y se casa a los 30 años. Dos años después nace su hija y él muere cuando ella tiene 30 años. ¿En qué año muere Roberto?</li>
                         </ul>
                     </div>
 
                     <div class="ejercicio-grupo">
-                        <p>6. Observa los letreros que se encuentran en la Figura 1.3 y contesta las preguntas.</p>
-                        <p><strong>Figura 1.3</strong> (referencia de precios: carne $4.200 libra, pera $600 c/u, zanahoria $300 c/u, papa $1.200 libra, arveja $2.500 media libra, arroz $2.800 libra)</p>
-                        <ul class="ejercicio-lista">
+                        <p>6. Observa los letreros que se encuentran en la siguiente figura y contesta las preguntas.</p>
+                        <div style="text-align:center; margin:1em 0;"><img src="images/Matemáticas/6/Tablero-ventas.png" alt="Industria" style="width:400px; max-width:100%; border-radius:12px;"></div>
+                        <ul class="ejercicio-lista3">
                             <li><span>a.</span> ¿Cuánto dinero se requiere para comprar una libra de carne, tres peras, cinco zanahorias, una libra de papa, media libra de arveja y dos libras de arroz? ¿Es suficiente con $15000? Determina cuánto dinero falta o cuánto sobra.</li>
                             <li><span>b.</span> Supón que quieres comprar 3 kilogramos de arroz y 2 kilogramos de arveja. Si llevas $10000, ¿podrás hacer esa compra? Explica cuánto dinero falta o cuánto sobra en uno u otro caso.</li>
                         </ul>
@@ -631,10 +680,8 @@ Las 17 centenas se reagrupan en 1 unidad de mil y 7 centenas, que se escriben en
                 </div>
 
                 <!-- Nota: el texto de los ejercicios 5 y 6 se ha transcrito literalmente como aparece en el PDF, incluyendo las erratas o estilo original -->
-                <p class="sangria" style="font-size:0.85rem; color:#aaa;">*Los enunciados del punto 5 se presentan exactamente como figuran en el documento original, conservando su redacción auténtica.</p>
                 <hr class="sep">
-                <p style="text-align:center; font-size:0.8rem;">Fin de la guía — Operaciones entre números naturales (suma y resta).<br>Docente: Eder David Sequeda Martínez</p>
-            </div>
+                </div>
         </section>
     </div>
 

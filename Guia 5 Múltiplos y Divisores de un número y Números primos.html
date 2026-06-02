@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <title>Guía 5 – Múltiplos y Divisores | Matemáticas 6º</title>
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <style>
+        /* ── Contenedor principal de la guía ── */
+        .guia-wrapper {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2em 2em 3em;
+            color: #ffffff;
+            font-family: "Source Sans Pro", Helvetica, sans-serif;
+            font-weight: 400;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Encabezado institucional */
+        .inst-header {
+            text-align: center;
+            border: 2px solid rgba(56,189,248,0.4);
+            border-radius: 20px;
+            padding: 1.8em;
+            margin-bottom: 2.5em;
+            background: rgba(56,189,248,0.05);
+            backdrop-filter: blur(6px);
+        }
+        .inst-header h2 {
+            font-size: 1.4em;
+            font-weight: 800;
+            letter-spacing: 0.05em;
+            color: #38bdf8;
+            margin-bottom: 0.5em;
+        }
+        .inst-header p {
+            font-size: 0.85em;
+            color: rgba(255,255,255,0.7);
+            margin-bottom: 0.8em;
+            line-height: 1.5;
+        }
+        .inst-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 1rem;
+        }
+        .inst-meta span {
+            background: rgba(139, 92, 246, 0.15);
+            padding: 0.4em 1.2em;
+            border-radius: 40px;
+            font-size: 0.85rem;
+            border-left: 3px solid #8b5cf6;
+            color: #e2e8f0;
+        }
+        .inst-meta span strong {
+            color: #38bdf8;
+        }
+
+        /* Títulos y secciones */
+        .guia-wrapper h1 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #38bdf8;
+            border-left: 6px solid #38bdf8;
+            padding-left: 1rem;
+            margin: 1.8em 0 0.8em;
+        }
+        .guia-wrapper h2 {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: #f0f9ff;
+            margin: 1.8em 0 0.6em;
+            border-bottom: 2px solid rgba(56,189,248,0.4);
+            padding-bottom: 0.3em;
+        }
+        .guia-wrapper h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #c084fc;
+            margin: 1.2em 0 0.5em;
+        }
+        .guia-wrapper p {
+            line-height: 1.65;
+            margin-bottom: 1rem;
+            color: #f1f5f9;
+        }
+
+        /* Cajas de ejemplo */
+        .ejemplo-box {
+            background: rgba(34,197,94,0.1);
+            border: 1px solid rgba(34,197,94,0.3);
+            border-radius: 20px;
+            padding: 1.2rem 1.8rem;
+            margin: 1.8rem 0;
+        }
+        .ejemplo-label {
+            display: inline-block;
+            background: #22c55e;
+            color: #0f172a;
+            font-size: 0.7rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+            padding: 0.2rem 1rem;
+            border-radius: 30px;
+            margin-bottom: 1rem;
+        }
+        .criterios-tabla {
+            width: 100%;
+            background: rgba(0,0,0,0.35);
+            border-radius: 16px;
+            overflow: hidden;
+            margin: 1.2rem 0;
+            border-collapse: collapse;
+        }
+        .criterios-tabla th, .criterios-tabla td {
+            border: 1px solid rgba(255,255,255,0.2);
+            padding: 10px 12px;
+            text-align: left;
+            vertical-align: top;
+        }
+        .criterios-tabla th {
+            background: #0f172a;
+            color: #38bdf8;
+            font-weight: 700;
+        }
+
+        .factor-tree {
+            font-family: 'Courier New', monospace;
+            background: rgba(0,0,0,0.45);
+            border-radius: 18px;
+            padding: 1rem 2rem;
+            display: inline-block;
+            width: auto;
+            margin: 0.5rem 0;
+            color: #86efac;
+            line-height: 1.8;
+        }
+        .divisor-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            list-style: none;
+            padding-left: 0;
+        }
+        .divisor-list li {
+            background: #1e293b;
+            border-radius: 30px;
+            padding: 0.2rem 0.9rem;
+            font-size: 0.9rem;
+            font-weight: 500;
+            border: 1px solid #38bdf880;
+        }
+        .ejercicios-section {
+            background: rgba(239,68,68,0.05);
+            border: 2px solid rgba(239,68,68,0.4);
+            border-radius: 24px;
+            padding: 1.5rem 2rem;
+            margin: 2rem 0;
+        }
+        .ejercicios-section h2 {
+            color: #f87171;
+            border-bottom-color: #f8717160;
+            text-align: center;
+        }
+        .ejercicio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 0.6rem;
+            list-style: none;
+            padding: 0;
+        }
+        .ejercicio-grid li {
+            background: rgba(255,255,255,0.05);
+            border-radius: 12px;
+            padding: 0.5rem 1rem;
+            font-size: 0.9rem;
+            font-weight: 500;
+            border: 1px solid #334155;
+        }
+        .ejercicio-grid li span {
+            color: #f97316;
+            font-weight: 800;
+            margin-right: 0.6rem;
+        }
+        .badge-prime {
+            background: #22c55e20;
+            border-radius: 40px;
+            display: inline-block;
+            padding: 0.1rem 0.8rem;
+            font-size: 0.75rem;
+            font-weight: bold;
+            color: #86efac;
+        }
+        .nota-primos {
+            background: #0f172a;
+            border-left: 5px solid #facc15;
+            padding: 0.8rem 1.3rem;
+            border-radius: 20px;
+            margin: 1rem 0;
+            font-size: 0.9rem;
+        }
+        .factor-vertical {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            font-family: monospace;
+            background: #0a0f1e;
+            padding: 1rem 2rem;
+            border-radius: 20px;
+            width: fit-content;
+        }
+        .factor-line {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+            border-bottom: 1px dotted #2dd4bf40;
+            padding: 0.2rem 0;
+        }
+        .num-left {
+            min-width: 40px;
+            font-weight: 700;
+            color: #ffffff;
+        }
+        .prime-div {
+            color: #5eead4;
+            font-weight: 600;
+        }
+        hr.sep {
+            border-top: 1px solid #38bdf830;
+            margin: 2rem 0;
+        }
+        @media (max-width: 640px) {
+            .guia-wrapper {
+                padding: 1rem;
+            }
+            .ejemplo-box {
+                padding: 1rem;
+            }
+        }
+    </style>
+    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+</head>
+<body class="is-preload">
+<div id="wrapper">
+
+    <!-- Header con navegación -->
+    <header id="header" class="alt style2">
+        <a href="Matemática 6º.html" class="logo" style="font-size:1.3em;"><strong>← Atrás</strong></a>
+        <nav><a href="#menu">Menú</a></nav>
+    </header>
+
+    <!-- Menú -->
+    <nav id="menu">
+        <ul class="links">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="Matemáticas.html">Matemáticas</a></li>
+        </ul>
+    </nav>
+
+    <!-- Banner principal -->
+    <section id="banner" class="style2">
+        <div class="inner">
+            <header class="major" style="padding-left:7em;">
+                <h1>Múltiplos y Divisores</h1>
+            </header>
+            <div class="content" style="padding-left:14em;">
+                <p>🔢 Números primos · Criterios · Descomposición factorial · Guía 5 · 6º</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contenido principal: Transcripción Guía 5 -->
+    <div id="main">
+        <section id="one">
+            <div class="guia-wrapper">
+                <!-- Encabezado institucional (según PDF) -->
+                <div class="inst-header">
+                    <h2>REPÚBLICA DE COLOMBIA<br>DEPARTAMENTO DE SUCRE · MUNICIPIO DE MAJAGUAL</h2>
+                    <p><strong>Institución Educativa Palmarito</strong><br>
+                    DANE: 270429000014  NIT. 823001728-3<br>
+                    REG. ICFES No. 135418 / REG. ICFES No. 186304<br>
+                    Aprobada por Secretaría de Educación Departamental según Resoluciones No. 1953 y 4728 de julio 31 de 2007 y octubre 16 de 2013<br>
+                    Jornada Única y Educación de Adultos<br>
+                    iepalmar@iepalmaritomajagual-sucre.edu.co  |  ie.palmarito@sucre.edu.co</p>
+                    <div class="inst-meta">
+                        <span><strong>Asignatura:</strong> Matemáticas</span>
+                        <span><strong>Guía:</strong> 5 – Múltiplos, Divisores y Números primos</span>
+                        <span><strong>Grado:</strong> 6°</span>
+                        <span><strong>Docente:</strong> Eder David Sequeda Martínez</span>
+                    </div>
+                </div>
+
+                <!-- DIVISORES -->
+                <h1>📌 Divisores de un número natural</h1>
+                <p>Los <strong>divisores</strong> de un número natural son aquellos números naturales que lo pueden dividir de manera exacta, es decir, sin dejar residuo. Si <em>a ÷ b = c</em> exacto, entonces <strong>b</strong> es divisor de <strong>a</strong>.</p>
+                <p>Además, un número es <strong>múltiplo</strong> de otro si se obtiene multiplicándolo por un natural. Por ejemplo, 12 es múltiplo de 3 y 3 es divisor de 12.</p>
+
+                <h2>✅ Criterios de divisibilidad</h2>
+                <p>Permiten saber si un número es divisible por otro sin necesidad de efectuar la división.</p>
+                <table class="criterios-tabla">
+                    <thead><tr><th>Divisibilidad entre</th><th>Criterio</th></tr></thead>
+                    <tbody>
+                        <tr><td>2</td><td>La última cifra es par (0,2,4,6,8).</td></tr>
+                        <tr><td>3</td><td>La suma de sus cifras es múltiplo de 3.</td></tr>
+                        <tr><td>4</td><td>Sus dos últimas cifras son ceros o forman un múltiplo de 4.</td></tr>
+                        <tr><td>5</td><td>La última cifra es 0 o 5.</td></tr>
+                        <tr><td>6</td><td>Es divisible entre 2 y entre 3 a la vez.</td></tr>
+                        <tr><td>9</td><td>La suma de sus cifras es múltiplo de 9.</td></tr>
+                        <tr><td>10</td><td>Termina en 0.</td></tr>
+                    </tbody>
+                </table>
+
+                <!-- Ejemplo 480 -->
+                <div class="ejemplo-box">
+                    <div class="ejemplo-label">EJEMPLO</div>
+                    <p><strong>Determinar si 480 es divisible entre 2, 3, 4, 5 y 6:</strong></p>
+                    <ul style="color:#e2e8f0; margin-left:1rem;">
+                        <li>✔️ 480 es divisible entre 2 porque es cifra par.</li>
+                        <li>✔️ 480 es divisible entre 3 porque 4+8+0=12 y 12 es múltiplo de 3.</li>
+                        <li>✔️ 480 es divisible entre 4 porque sus dos últimas cifras (80) es múltiplo de 4.</li>
+                        <li>✔️ 480 es divisible entre 5 porque termina en 0.</li>
+                        <li>✔️ 480 es divisible entre 6 porque es divisible entre 2 y entre 3.</li>
+                    </ul>
+                </div>
+
+                <h3>🔍 Divisores de 24 y 30 (ejemplos paso a paso)</h3>
+                <p><strong>Divisores de 24:</strong> Buscamos pares de números cuyo producto sea 24: 1×24, 2×12, 3×8, 4×6. Por tanto:</p>
+                <ul class="divisor-list"><li>D(24) = {1, 2, 3, 4, 6, 8, 12, 24}</li></ul>
+                <p><strong>Divisores de 30:</strong> Pares: 1×30, 2×15, 3×10, 5×6 → </p>
+                <ul class="divisor-list"><li>D(30) = {1, 2, 3, 5, 6, 10, 15, 30}</li></ul>
+
+                <h2>📝 Ejercicios propuestos: Calcula los divisores</h2>
+                <div class="ejercicios-section">
+                    <ul class="ejercicio-grid">
+                        <li><span>1.</span> D(4)</li><li><span>2.</span> D(10)</li><li><span>3.</span> D(18)</li>
+                        <li><span>4.</span> D(15)</li><li><span>5.</span> D(25)</li><li><span>6.</span> D(48)</li>
+                        <li><span>7.</span> D(75)</li><li><span>8.</span> D(20)</li><li><span>9.</span> D(100)</li>
+                        <li><span>10.</span> D(9)</li>
+                    </ul>
+                </div>
+
+                <!-- NÚMEROS PRIMOS Y COMPUESTOS -->
+                <h1>🔢 Números primos y compuestos</h1>
+                <h2>✨ Números primos</h2>
+                <p>Son aquellos que <strong>solo son divisibles entre ellos mismos y el 1</strong>. Es decir, tienen exactamente dos divisores. Por ejemplo, el 5 solo se puede escribir como 1×5, no hay otra multiplicación de naturales. Sus divisores: {1,5} → es primo.</p>
+                <div class="nota-primos">
+                    📌 <strong>Números primos del 1 al 100:</strong> 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97.
+                </div>
+
+                <h2>🧩 Números compuestos</h2>
+                <p>Son aquellos que tienen más de dos divisores. Por ejemplo, el 8: se puede escribir como 1×8 y 2×4; divisores: 1,2,4,8 → es compuesto.</p>
+
+                <!-- DESCOMPOSICIÓN EN FACTORES PRIMOS -->
+                <h1>⚙️ Descomposición en factores primos</h1>
+                <p>Todo número compuesto se puede descomponer de forma única (salvo el orden) en producto de factores primos. Pasos:</p>
+                <ul>
+                    <li>Trazamos una línea vertical. Escribimos el número a la izquierda.</li>
+                    <li>Dividimos por el menor número primo posible (2,3,5...).</li>
+                    <li>El divisor primo se coloca a la derecha y el cociente abajo a la izquierda.</li>
+                    <li>Repetimos hasta obtener 1 en la izquierda.</li>
+                </ul>
+
+                <div class="ejemplo-box">
+                    <div class="ejemplo-label">EJEMPLO: Descomposición de 60</div>
+                    <div class="factor-tree" style="background:#0f172a;">
+                        <div style="display:flex; gap:2rem; justify-content:space-between; max-width:220px;">
+                            <div>
+                                60<br>30<br>15<br>5<br>1
+                            </div>
+                            <div style="color:#5eead4;">
+                                | 2<br>| 2<br>| 3<br>| 5<br>
+                            </div>
+                        </div>
+                    </div>
+                    <p>Por tanto, <strong>60 = 2 × 2 × 3 × 5 = 2² × 3 × 5</strong></p>
+                </div>
+
+                <h2>📌 Ejercicios: Descomposición en factores primos</h2>
+                <div class="ejercicios-section">
+                    <ul class="ejercicio-grid">
+                        <li><span>1.</span> 14</li><li><span>2.</span> 10</li><li><span>3.</span> 18</li>
+                        <li><span>4.</span> 35</li><li><span>5.</span> 25</li><li><span>6.</span> 48</li>
+                        <li><span>7.</span> 75</li><li><span>8.</span> 20</li><li><span>9.</span> 100</li>
+                        <li><span>10.</span> 19</li>
+                    </ul>
+                    <p style="margin-top:1rem; font-size:0.85rem;">💡 Recuerda: 19 es primo, su descomposición es él mismo.</p>
+                </div>
+
+                <!-- Descomposición visual extra y explicación adicional -->
+                <div class="nota-primos" style="background:#0f212e;">
+                    <p><strong>📐 Factorización paso a paso (ejemplo adicional):</strong> Para descomponer 48: 48 ÷ 2 = 24; 24 ÷ 2 = 12; 12 ÷ 2 = 6; 6 ÷ 2 = 3; 3 ÷ 3 = 1. → 48 = 2⁴ × 3.</p>
+                </div>
+
+                <!-- Tabla de contenido teórico extra (criterios aplicados) -->
+                <hr class="sep">
+                <h2>🎯 ¿Cómo saber si un número es primo?</h2>
+                <p>Calculamos sus divisores: si solo tiene dos divisores (1 y él mismo) es primo. Por ejemplo, el 7 solo se puede dividir exactamente entre 1 y 7. El 1 no es primo ni compuesto.</p>
+
+                <!-- Muestra de números primos relevantes -->
+                <div style="display:flex; flex-wrap:wrap; gap:0.5rem; justify-content:center; margin:1rem 0;">
+                    <span class="badge-prime">2</span> <span class="badge-prime">3</span> <span class="badge-prime">5</span> <span class="badge-prime">7</span> <span class="badge-prime">11</span> <span class="badge-prime">13</span> <span class="badge-prime">17</span> <span class="badge-prime">19</span> <span class="badge-prime">23</span> <span class="badge-prime">29</span> <span class="badge-prime">31</span>
+                </div>
+
+                <!-- Refuerzo de criterios de divisibilidad con ejemplos pequeños -->
+                <h2>➕ Refuerzo: Criterios de divisibilidad aplicados</h2>
+                <div class="ejemplo-box">
+                    <p>🔹 <strong>¿1.254 es divisible entre 3?</strong> Suma cifras: 1+2+5+4=12, 12 es múltiplo de 3 → Sí.</p>
+                    <p>🔹 <strong>¿3.420 es divisible entre 4?</strong> Últimas dos cifras: 20, 20÷4=5 → Sí divisible.</p>
+                    <p>🔹 <strong>¿5.230 es divisible entre 5?</strong> Termina en 0 → Sí.</p>
+                </div>
+                
+                <!-- Nota sobre la unicidad de la descomposición -->
+                <hr class="sep">
+                <div style="text-align: center; margin: 2em 0 1em;">
+                    <span style="background:#2dd4bf20; padding:0.2rem 1rem; border-radius:50px;">📘 Teorema fundamental de la aritmética: todo número entero mayor que 1 se descompone de forma única en factores primos.</span>
+                </div>
+
+                <!-- Actividad final de repaso rápido (preguntas mentales) -->
+                <div class="ejercicios-section">
+                    <h2 style="font-size:1.2rem;">🧠 Piensa y aplica</h2>
+                    <ul style="list-style: circle; padding-left:1.5rem;">
+                        <li>¿El número 91 es primo? (Pista: 91 = 7×13 → no es primo)</li>
+                        <li>¿Cuáles son los divisores de 36?</li>
+                        <li>Descompón 72 en factores primos.</li>
+                    </ul>
+                    <p style="margin-top:1rem;">✏️ Resuelve los ejercicios de divisor y factorización en tu cuaderno y verifica con la teoría.</p>
+                </div>
+                
+                <!-- Pie de guía: información académica (igual al PDF) -->
+                <div style="border-top: 2px solid #1e293b; margin-top: 2rem; padding-top: 1rem; text-align: center; font-size: 0.75rem; color:#94a3b8;">
+                    Guía 5 – Múltiplos, divisores y números primos | Matemáticas 6° | Institución Educativa Palmarito – Majagual, Sucre<br>
+                    Material de apoyo basado en contenidos oficiales. "La mejor forma de aprender es practicar".
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer id="footer">
+        <div class="inner">
+            <ul class="icons">
+                <li><a href="https://x.com/ederdavid1986" class="icon brands fa-x-twitter alt"><span class="label">X</span></a></li>
+                <li><a href="https://www.facebook.com/ederdavids" class="icon brands alt fa-facebook-f" target="_blank"><span class="label">Facebook</span></a></li>
+                <li><a href="https://www.instagram.com/ederdavid1986" class="icon brands alt fa-instagram" target="_blank"><span class="label">Instagram</span></a></li>
+                <li><a href="https://github.com/auladelprofeeder" class="icon brands alt fa-github" target="_blank"><span class="label">GitHub</span></a></li>
+                <li><a href="https://www.tiktok.com/@eldavidedd" class="icon brands alt fa-tiktok" target="_blank"><span class="label">TikTok</span></a></li>
+            </ul>
+            <div class="copyright">&copy; 2026 MathEscape | Guía completa de múltiplos, divisores y números primos - Diseño: <a href="https://html5up.net">HTML5 UP</a></div>
+        </div>
+    </footer>
+</div>
+
+<!-- Scripts de la plantilla base -->
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/jquery.scrolly.min.js"></script>
+<script src="assets/js/jquery.scrollex.min.js"></script>
+<script src="assets/js/browser.min.js"></script>
+<script src="assets/js/breakpoints.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
