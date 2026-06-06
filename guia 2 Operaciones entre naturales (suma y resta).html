@@ -219,7 +219,7 @@
             border-radius: 8px;
             padding: 0.5em 0.9em;
             font-size: 1.0em;
-            font-family: 'Bold', monospace
+            font-family: 'Bold', monospace;  
             color: #ffffff;
         }
         .ejercicio-lista li span {
@@ -288,6 +288,11 @@
     .tabla-precios td:first-child {
     vertical-align: middle;  /* Alinea verticalmente el contenido de la celda */
 }
+.emoticon-blanco {
+    color: white !important;
+    filter: brightness(0) invert(1);
+    display: inline-block;
+}
 </style>
     </style>
     <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
@@ -297,15 +302,25 @@
 
     <!-- Header -->
     <header id="header" class="alt style2">
+        <a href="index.html" class="logo"><strong>By Eder Sequeda</strong></a>
+        <nav>
         <a href="Matemática 6º.html" class="logo" style="font-size:1.3em;"><strong>← Atrás</strong></a>
-        <nav><a href="#menu">Menú</a></nav>
+        <a href="#menu">Menú</a>
+    </nav>
     </header>
 
     <!-- Menú -->
     <nav id="menu">
         <ul class="links">
             <li><a href="index.html">Inicio</a></li>
-            <li><a href="Matemáticas.html">Matemáticas</a></li>
+			<li><a href="Matemáticas.html">Matemáticas</a></li>
+			<li><a href="Estadística.html">Estadística</a></li>
+			<li><a href="Geometría.html">Geometría</a></li>
+			<li><a href="Física.html">Física</a></li>
+			<li><a href="Ética.html">Ética</a></li>
+			<li><a href="Religión.html">Religión</a></li>
+			<li><a href="Retos.html">Retos y Juegos</a></li>
+			<li><a href="Acerca.html">Acerca de</a></li>
         </ul>
     </nav>
 
@@ -315,8 +330,8 @@
             <header class="major" style="padding-left:7em;">
                 <h1>Operaciones entre Naturales</h1>
             </header>
-            <div class="content" style="padding-left:14em;">
-                <p>➕ Suma y Resta · Guía 2 · Matemáticas 6º ➖</p>
+            <div class="content" style="padding-left:20em;">
+                <p><span class="emoticon-blanco">➕ <span style="font-size: 2.0rem; font-weight: bold;">Suma y Resta<span class="emoticon-blanco">➖</span></p>
             </div>
         </div>
     </section>
@@ -334,7 +349,7 @@
     <div style="display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap;">
         <span style="background: rgba(139, 92, 246, 0.1); padding: 0.5em 1em; border-radius: 6px; border-left: 3px solid #8b5cf6; transition: all 0.3s ease; display: inline-block;">
             <strong style="color: #38bdf8;">Asignatura:</strong> Matemática
-        </span>
+        
         <span style="background: rgba(139, 92, 246, 0.1); padding: 0.5em 1em; border-radius: 6px; border-left: 3px solid #8b5cf6; transition: all 0.3s ease; display: inline-block;">
             <strong style="color: #38bdf8;">Tema:</strong> Operaciones entre Naturales (Suma y Resta)
         </span>
@@ -361,7 +376,7 @@
                 <h1>Operaciones entre Números Naturales</h1>
                 <p>En el conjunto de los números naturales se definen las siguientes operaciones: adición, sustracción, multiplicación, división, potenciación, radicación y logaritmación.</p>
 
-                <h2>Adición o Suma de números naturales</h2>
+                <h2>➕ Adición o Suma de números naturales</h2>
                 <p>La adición de números naturales es una operación que permite solucionar situaciones en las que se realizan actividades como agregar, agrupar o comparar. En esta operación los números a sumar reciben el nombre de sumandos y al resultado se le denomina suma.</p>
                 <p>El término "reagrupar" indica lo mismo que "llevar", y se basa en el hecho de que en el sistema de numeración decimal cada 10 unidades de un orden forman una unidad del orden siguiente. Así, 10 unidades corresponden a una decena, 10 decenas conforman una centena, 10 centenas forman una unidad de mil, etc.</p>
 
@@ -369,24 +384,23 @@
                 <p>Lina va de Bogotá a Buenos Aires por una aerolínea y recorre 4699 km. Una vez allí, toma otro avión que la conduce a Lima, volando esta vez 3151 km. Finalmente, en Lima toma un vuelo de regreso a Bogotá y vuela 1893 km.</p>
                 <p>¿Cuántos kilómetros voló Lina en total?</p>
                 <p>Para saber cuántos kilómetros voló Lina en total en los tres trayectos, se debe efectuar una adición.</p>
-                <div class="suma-visual">1. Se suman las unidades.<br>
-                    9 + 1 + 3 = 13 
+                <div class="suma-visual"><span style="font-weight:lighter; color: #ffffff;">1. Se suman las unidades.<br>
+                    <span style="font-weight:bold; color: #22c55e;">9 + 1 + 3 = 13 
 
-El 13 se reagrupa en 3 unidades y 1 decena, esta última se suma en la columna correspondiente.<br><p style="color: #ffffff;">                          1
-                  <span style="font-weight:lighter; color: #86efac;">    4 6 9 9<br>                  +   3 1 5 1<br>                      1 8 9 3</span><br>                  <span style="border-top:3px solid #86efac; display:inline-block; width:170px;">          3</span>
-<span style="font-weight:lighter; color: #86efac;">2. Se suman las decenas, incluida la que se reagrupó. 1 + 9 + 5 + 9 = 24. 
+<span style="font-weight:lighter; color: #ffffff;">El 13 se reagrupa en 3 unidades y 1 decena, esta última se suma en la columna correspondiente.<br><p style="color: #D3AF37;font-weight:bold;">                          1
+                  <span style="font-weight:bold; color: #22c55e;">    4 6 9 9<br>                  +   3 1 5 1<br>                      1 8 9 3</span><br>                  <span style="border-top:3px solid #22c55e; display:inline-block; width:170px;">          3</span>
+<span style="font-weight:lighter; color: #ffffff;">2. Se suman las decenas, incluida la que se reagrupó.<br></br><span style="font-weight:bold; color: #D3AF37;">                  1<span style="font-weight:bold; color: #22c55e;"> + 9 + 5 + 9 = 24. 
 
-Las 24 decenas que se obtienen se reagrupan en 4 decenas y 2 centenas. Se escriben las 4 decenas y se reagrupan 2 centenas en la columna correspondiente.<br><p style="color: #ffffff;">                        2 1
-                  <span style="font-weight:lighter; color: #86efac;">    4 6 9 9<br>                  +   3 1 5 1<br>                      1 8 9 3</span><br>                  <span style="border-top:3px solid #86efac; display:inline-block; width:170px;">        4 3</span>
+<span style="font-weight:lighter; color: #ffffff;">Las 24 decenas que se obtienen se reagrupan en 4 decenas y 2 centenas. Se escriben las 4 decenas y se reagrupan 2 centenas en la columna correspondiente.<br><span style="font-weight:bold; color: #D3AF37;">                        2 1
+                  <span style="font-weight:bold; color: #22c55e;">    4 6 9 9<br>                  +   3 1 5 1<br>                      1 8 9 3</span><br>                  <span style="border-top:3px solid #22c55e; display:inline-block; width:170px;">        4 3</span>
                 </div>
-                <div class="suma-visual">3. Se suman las centenas, incluidas las 2 que se reagruparon.<br>
-                    2 + 6 + 1 + 8 = 17<br>
-Las 17 centenas se reagrupan en 1 unidad de mil y 7 centenas, que se escriben en la columna que corresponde.<br><p style="color: #ffffff;">                      1 2 1
-                  <span style="font-weight:lighter; color: #86efac;">    4 6 9 9<br>                  +   3 1 5 1<br>                      1 8 9 3</span><br>                  <span style="border-top:3px solid #86efac; display:inline-block; width:170px;">      7 4 3</span>
-<span style="font-weight:lighter; color: #86efac;">4. Unidades de mil, incluyendo la que se reagrupó: 1 + 4 + 3 + 1 = 9.<br><p style="color: #ffffff;">                      1 2 1
-                  <span style="font-weight:lighter; color: #86efac;">    4 6 9 9<br>                  +   3 1 5 1<br>                      1 8 9 3</span><br>                  <span style="border-top:3px solid #86efac; display:inline-block; width:170px;">    9 7 4 3</span>
+                <div class="suma-visual"><span style="font-weight:lighter; color: #ffffff;">3. Se suman las centenas, incluidas las 2 que se reagruparon.<br><span style="font-weight:bold; color: #D3AF37;">               2 <span style="font-weight:bold; color: #22c55e;">+ 6 + 1 + 8 = 17<br>
+<span style="font-weight:lighter; color: #ffffff;">Las 17 centenas se reagrupan en 1 unidad de mil y 7 centenas, que se escriben en la columna que corresponde.<br><span style="font-weight:bold; color: #D3AF37;">                      1 2 1
+                  <span style="font-weight:bold; color: #22c55e;">    4 6 9 9<br>                  +   3 1 5 1<br>                      1 8 9 3</span><br>                  <span style="border-top:3px solid #22c55e; display:inline-block; width:170px;">      7 4 3</span>
+<span style="font-weight:lighter; color: #ffffff;">4. Unidades de mil, incluyendo la que se reagrupó:</p><span style="font-weight:bold; color: #D3AF37;">               1 <span style="font-weight:bold; color: #22c55e;">+ 4 + 3 + 1 = 9.<br></br><span style="font-weight:bold; color: #D3AF37;">                      1 2 1
+                  <span style="font-weight:bold; color: #22c55e;">    4 6 9 9<br>                  +   3 1 5 1<br>                      1 8 9 3</span><br>                  <span style="border-top:3px solid #22c55e; display:inline-block; width:170px;">    9 7 4 3</span>
 
-<span style="font-weight:lighter; color: #86efac;">Lina voló en total 9.743 km.<br></div>
+<span style="font-weight:lighter; color: #ffffff;">Lina voló en total 9.743 km.<br></div>
                 <h2>Propiedades de la adición</h2>
                 <p>La adición de números naturales satisface las siguientes propiedades:</p>
                 <p class="content" style="padding-left:4em;">• Clausurativa: La suma de dos números naturales es otro número natural.</p>
@@ -415,14 +429,13 @@ Las 17 centenas se reagrupan en 1 unidad de mil y 7 centenas, que se escriben en
                 <p class="content" style="padding-left:4em;">• 7.542.600 + 3.135.590 = 10.000.000 + 677.000 + 1.190 = 10.678.190<br>
                 <p>Por tanto, 7.542.600 + 3.135.590 = 10.678.190.</p>
 
-                <h2>Sustracción o Resta de Números Naturales</h2>
+                <h2>➖ Sustracción o Resta de Números Naturales</h2>
                 <p>Es la operación inversa a la adición y es por la cual se determina la diferencia, es decir, en cuánto es mayor un número, llamado minuendo, con respecto a otro, denominado sustraendo.</p>
                 <p>En el proceso de sustracción se debe desagrupar siempre que sea necesario.</p>
 
                 <h3>EJEMPLOS:</h3>
                 <p>1. Hay 395 654 animales en una reserva forestal y 683 732 en otra. ¿Cuál de las dos reservas tiene mayor número de animales? ¿Cuántos más? Para responder, debemos efectuar la sustracción 683 732 — 395 654.</p>
-                <div class="resta-visual";><span style="font-weight:lighter;">                      6 8 3 7 3 2<br>                  -   3 9 5 6 5 4<br>                     <span style="border-top:3px solid #86efac; display:inline-block; width:170px;"> 2 8 8 0 7 8</span>
-                </div>
+                <div class="resta-visual";><span style="font-weight:lighter;">                      6 8 3 7 3 2<br>                  -   3 9 5 6 5 4<br>                     <span style="border-top:3px solid #86efac; display:inline-block; width:170px;"> 2 8 8 0 7 8</div>
                 <p>Hay 288.078 animales más en la segunda reserva que en la primera.</p>
                 <div style="border-top:2px solid #2b7bea; border-bottom:2px solid #2b7bea; width:800px; height:8px; margin:10px 0;"></div>
                 <p>2. Calcula en cuánto es mayor 8 738 que 1 376.</p>El problema se resuelveefectuando la operación: 8 738 - 1 376
@@ -519,7 +532,8 @@ Las 17 centenas se reagrupan en 1 unidad de mil y 7 centenas, que se escriben en
                 <div style="position: absolute; left: -190px; transform: translateX(-50%); top: 50px; width: 0; height: 0; border-left: 8px solid transparent; border-right: 8px solid transparent; border-top: 10px solid #ff6b6b;"></div>
                 </div>
         </div>
-        <span style="position: absolute; left: 150px;; padding: 2px 10px; border-radius: 5px; font-size: 1.2rem;">25</span></div>
+        <span style="position: absolute; left: 150px;; padding: 2px 10px; border-radius: 5px; font-size: 1.2rem;">25</span>
+    </div>
 </div>
 
                 <h3>EJEMPLOS:</h3>

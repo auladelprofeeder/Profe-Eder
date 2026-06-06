@@ -4159,3 +4159,27 @@ x/* Convertir texto del banner a título (primera letra de cada palabra en mayú
   margin: 0 10px; /* Añade espacio a los lados para que no choque con las palabras */
   clip-path: polygon(0 35%, 85% 35%, 85% 0, 100% 50%, 85% 100%, 85% 65%, 0 65%);
 }
+.raiz{
+    display:inline-flex;
+    align-items:flex-start;
+    font-family: Cambria, "Times New Roman", serif;
+    font-size: 2rem;
+}
+
+.indice{
+    font-size:0.5em;
+    position:relative;
+    top:0.15em;
+    left:0.15em;
+}
+
+.simbolo{
+    font-size:1em;
+    line-height:1;
+}
+
+.radicando{
+    border-top:2px solid #000;
+    padding:0 0.15em;
+    margin-left:-0.08em;
+}

@@ -1,4 +1,3 @@
-html
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -76,9 +75,7 @@ html
             border-left: 5px solid #38bdf8;
             padding-left: 0.6em;
             margin: 2em 0 0.8em;
-            
         }
-        
         .guia-wrapper h2 {
             font-size: 1.4em;
             font-weight: 700;
@@ -146,7 +143,7 @@ html
             overflow-x: auto;
         }
 
-        /* ── Divisor visual ── */
+        /* ── Divisor visual (antiguo, se mantiene por compatibilidad) ── */
         .division-box {
             display: inline-flex;
             align-items: stretch;
@@ -159,24 +156,109 @@ html
             padding: 0.6em 1em;
             margin: 0.5em 0;
             letter-spacing: 0.1em;
+            
         }
         .division-dividendo {
-            padding-right: 0.3em;
+            padding: -0.3em 0.5em;
+            margin: -0.5em 0em;
             border-right: 3px solid #86efac;
+            line-height: 1.5;
         }
         .division-derecha {
-            padding-left: 0.4em;
-            border-bottom: 2px solid #86efac;
-            padding-bottom: 0.2em;
-            min-width: 3em;
+            display: flex;
+            flex-direction: column;
+            padding-left: 0em;
+            margin: -0.6em -0.1em;
+            min-width: 5em;
         }
         .division-divisor {
+            color: #38bdf8;
+            font-weight: 700;
             border-bottom: 2px solid #86efac;
-            padding-bottom: 0.2em;
-            margin-bottom: 0.2em;
+            padding-bottom: 0.3em;
+            margin-bottom: 0.3em;
         }
         .division-cociente { color: #38bdf8; font-weight: 700; }
         .division-residuo { color: #f87171; }
+
+        /* ── División estilo colombiano ── */
+        .div-col {
+            font-family: 'Courier New', monospace;
+            font-size: 1.1em;
+            color: #86efac;
+            background: rgba(0,0,0,0.3);
+            border-radius: 10px;
+            padding: 1.2em 2.6em;
+            display: inline-block;
+            line-height: 1;
+            letter-spacing: 0.05em;
+        }
+        .div-col-top {
+            display: flex;
+            align-items: stretch;
+            margin-bottom: 0.2em;
+        }
+        .div-col-dividendo {
+            padding: 0.5em 0.5em;
+            margin: -0.5em 0;
+            border-right: 3px solid #86efac;
+            line-height: 1;
+            
+        }
+        .div-col-right {
+            display: flex;
+            flex-direction: column;
+            padding-left: 0em;
+            min-width: 5em;
+        }
+        .div-col-divisor {
+            color: #38bdf8;
+            font-weight: 700;
+            border-bottom: 2px solid #86efac;
+            padding-bottom: 0.3em;
+            margin-bottom: 0.3em;
+        }
+        .div-col-cociente {
+            color: #ffffff;
+            font-weight: 700;
+        }
+        .div-col-pasos {
+            padding-right: 0.5em;
+        }
+        .div-col-resta {
+            display: flex;
+            justify-content: left;
+            padding-right: 0.2em;
+            align-items: center;
+            margin: 0.25em 0;
+        }
+        .div-col-signo {
+            color: rgba(255,255,255,0.45);
+            margin-right: 0.4em;
+        }
+        .div-col-linea {
+            border-top: 2px solid rgb(8, 251, 97);
+            margin: 0.3em 0;
+            width: 4em;
+        }
+        .div-col-linea2 {
+            border-top: 2px solid rgb(8, 251, 97);
+            margin: 0.3em 0;
+            width: 5.2em;
+        }
+        .div-col-parcial {
+            display: flex;
+            justify-content: left;
+            padding-right: 0em;
+            margin: 0.25em 0;
+        }
+        .div-col-residuo-final {
+            display: flex;
+            justify-content: left;
+            padding-right: 0.4em;
+            align-items: center;
+            margin: 0.25em 0;
+        }
 
         /* ── Operación vertical (multiplicación) ── */
         .operacion-vertical {
@@ -195,7 +277,7 @@ html
             border-top: 2px solid #86efac;
             display: block;
             margin: 0.3em auto;
-            width: 200px;        /* ← ajusta este valor a tu gusto */
+            width: 200px;
         }
         .operacion-vertical .linea-doble {
             border-top: 4px double #86efac;
@@ -210,7 +292,7 @@ html
             color: #38bdf8;
         }
 
-        /* ── Pasos de multiplicación (imágenes en HTML) ── */
+        /* ── Pasos de multiplicación ── */
         .pasos-multi {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -232,7 +314,7 @@ html
             margin-bottom: 0.5em;
         }
         .paso-desc {
-            font-size: 0,95em;
+            font-size: 0.95em;
             color: #ffffff;
             line-height: 1.6;
             margin-top: 0.8em;
@@ -240,7 +322,7 @@ html
             padding-left: 0.8em;
         }
 
-        /* ── Tabla multiplicación ejercicios ── */
+        /* ── Ejercicios de multiplicación ── */
         .ejercicios-multi {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -270,7 +352,7 @@ html
         .celda-multi .linea-multi {
             border-top: 2px solid rgba(255,255,255,0.3);
             margin: 0.4em auto;
-            width: 100px;        /* ← ajusta este valor a tu gusto */
+            width: 100px;
         }
         .celda-multi .fila-vacia {
             height: 1.8em;
@@ -284,7 +366,7 @@ html
             height: 1.8em;
         }
 
-        /* ── Tabla division ejercicios ── */
+        /* ── Ejercicios de División — estilo colombiano ── */
         .ejercicios-div {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -295,26 +377,49 @@ html
             background: rgba(255,255,255,0.04);
             border: 1px solid rgba(255,255,255,0.1);
             border-radius: 10px;
-            padding: 1em;
-        }
-        .celda-div .div-display {
-            display: inline-flex;
-            align-items: stretch;
+            padding: 1em 1.2em;
             font-family: 'Courier New', monospace;
-            font-size: 1.1em;
+        }
+        .celda-div .ej-label {
+            font-size: 0.85em;
+            color: rgba(255,255,255,0.5);
+            margin-bottom: 0.7em;
+            font-family: "Source Sans Pro", Helvetica, sans-serif;
+        }
+        /* Notación colombiana dentro de ejercicios */
+        .celda-div .dc-wrap {
+            display: flex;
+            align-items: stretch;
+            font-size: 1.05em;
             font-weight: 600;
             color: #86efac;
+            letter-spacing: 0.05em;
         }
-        .celda-div .div-num {
-            padding-right: 0.4em;
+        .celda-div .dc-dividendo {
+            padding: 0.5em 0.5em;
+            margin: -0.2em 0;
             border-right: 3px solid #86efac;
+            line-height: 1;
         }
-        .celda-div .div-divisor {
-            padding-left: 0.4em;
-            border-bottom: 2px solid #86efac;
-            padding-bottom: 0.2em;
+        .celda-div .dc-right {
+            display: flex;
+            flex-direction: column;
+            padding-left: 0em;
             min-width: 3em;
+        }
+        .celda-div .dc-divisor {
             color: #38bdf8;
+            font-weight: 700;
+            border-bottom: 2px solid #86efac;
+            padding-bottom: 0.3em;
+            margin-bottom: 0.3em;
+            white-space: nowrap;
+        }
+        /* Espacio vacío para que el alumno escriba el cociente */
+        .celda-div .dc-cociente-vacio {
+            min-height: 1.4em;
+            min-width: 4em;
+            border-bottom: 1px dashed rgba(255,255,255,0.2);
         }
 
         /* ── Ejercicios propuestos ── */
@@ -421,6 +526,22 @@ html
             .ejercicios-div { grid-template-columns: 1fr; }
             .inst-meta-fila { flex-direction: column; gap: 0.8em; }
         }
+         .paso-lista {
+            list-style: none;
+            padding-left: 1em;
+        }
+        .paso-lista li {
+            margin: 0.8em 0;
+            padding-left: 2em;
+            position: relative;
+        }
+        .paso-lista li:before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: #fca5a5;
+            font-weight: bold;
+        }
     </style>
     <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 </head>
@@ -448,7 +569,7 @@ html
                 <h1>Operaciones entre Naturales II</h1>
             </header>
             <div class="content" style="padding-left:7em;">
-                <p><span style="color: white; filter: brightness(0) invert(1); display: inline-block;font-family:Arial Narrow Bold;">✖️</span> Multiplicación y División · Guía 3 · Matemáticas 6º <span style="color: white; filter: brightness(0) invert(1); display: inline-block;">➗</span></p>
+                <p><span style="color: white; filter: brightness(0) invert(1); display: inline-block; font-weight:Bold; font-size: 1.5em;">✖️</span><span  style="color: white; filter: brightness(0) invert(1); display: inline-block; font-weight:Bold; font-size: 1.5em;">Multiplicación y División<span style="color: white; filter: brightness(0) invert(1); display: inline-block;">➗</span></p>
             </div>
         </div>
     </section>
@@ -491,7 +612,7 @@ html
                         <tr>
                             <td class="termino">Factor</td>
                             <td>Cada uno de los números que se multiplican</td>
-                            <td><span style="color:#22c55e; font-family:monospace;font-weight:700">1234 y </span><span style="color:#22c55e; font-family:monospace;font-weight:700">567</span></td>
+                            <td><span style="color:#22c55e; font-family:monospace; font-weight:700;">1234 y 567</span></td>
                         </tr>
                         <tr>
                             <td class="termino">Producto</td>
@@ -508,9 +629,7 @@ html
                     <span class="ejemplo-label">EJEMPLO 1</span>
                     <p><strong>Multiplicar 1234 × 567</strong></p>
 
-                    <!-- Pasos visuales -->
                     <div class="pasos-multi">
-
                         <!-- Paso 1 -->
                         <div class="paso-box">
                             <div class="paso-num">PASO 1</div>
@@ -519,7 +638,7 @@ html
                                 <div class="fila-num" style="display:flex;justify-content:center;gap:0.3em;"><span class="op-simbolo">×</span> 5 6 7</div>
                                 <span class="linea"></span>
                             </div>
-                            <div class="paso-desc";>Se plantea la multiplicación colocando un término debajo del otro.</div>
+                            <div class="paso-desc">Se plantea la multiplicación colocando un término debajo del otro.</div>
                         </div>
 
                         <!-- Paso 2 -->
@@ -544,7 +663,7 @@ html
                                 <div style="display:flex;justify-content:center;gap:0.3em;">8 6 3 8</div>
                                 <div style="display:flex;justify-content:left;gap:0.8em;padding-left: 1.35em; color:#fbbf24;">7 4 0 4</div>
                             </div>
-                            <div class="paso-desc">Se multiplican <strong>6 decenas</strong> por 1234 <br>→ resultado: <strong style="color:#fbbf24;">7404</strong>, anotado desde las decenas.</div>
+                            <div class="paso-desc">Se multiplican <strong>6 decenas</strong> por 1234 → resultado: <strong style="color:#fbbf24;">7404</strong>, anotado desde las decenas.</div>
                         </div>
 
                         <!-- Paso 4 -->
@@ -558,11 +677,11 @@ html
                                 <div style="display:flex;justify-content:left;gap:0.3em;padding-left: 1.35em;">7 4 0 4</div>
                                 <div style="display:flex;gap: 0.3em;margin-left: 0.05em; color:#fbbf24;">6 1 7 0</div>
                             </div>
-                            <div class="paso-desc">Se multiplican <strong>5 centenas</strong> por 1234 <br>→ resultado: <strong style="color:#fbbf24;">6170</strong>, anotado desde las centenas.</div>
+                            <div class="paso-desc">Se multiplican <strong>5 centenas</strong> por 1234 → resultado: <strong style="color:#fbbf24;">6170</strong>, anotado desde las centenas.</div>
                         </div>
                     </div>
 
-                    <!-- Resultado final -->
+                    <!-- Resultado final multiplicación -->
                     <p style="margin-top: 1.5em; margin-bottom: 0.8em; color: rgba(255,255,255,0.8);">Se suman los tres productos parciales obtenidos:</p>
 
                     <div style="display:flex; justify-content:center;">
@@ -571,10 +690,10 @@ html
                             <div style="display:flex;gap:0.3em; margin-left: 3.8em;"><span class="op-simbolo">×</span> 5 6 7</div>
                             <span class="linea"></span>
                             <div style="display:flex;gap:0.3em; margin-left: 3.5em;">8 6 3 8</div>
-                            <div style="display:flex;gap:0.3em;margin-left: 1.0em;"><span class="op-simbolo" style="margin-right:-1em;">+<span style="color:#86efac;"> 7 4 0 4</div>
+                            <div style="display:flex;gap:0.3em;margin-left: 1.0em;"><span class="op-simbolo" style="margin-right:-1em;">+</span><span style="color:#86efac;"> 7 4 0 4</span></div>
                             <div style="display:flex;gap:0.3em; margin-left: 0.95em;">6 1 7 0</div>
                             <span class="linea-doble"></span>
-                            <div class="resultado" style="display:flex;gap:0.3em; margin-left: 0.85em;font-size:1em;">6 9 9.6 7 8</div>
+                            <div class="resultado" style="display:flex;gap:0.3em; margin-left: 0.85em;font-size:1em;">6 9 9 . 6 7 8</div>
                         </div>
                     </div>
 
@@ -584,12 +703,12 @@ html
                 </div>
 
                 <hr class="sep">
+
                 <!-- Ejercicios de multiplicación -->
                 <div class="ejercicios-section">
                     <h2>📌 Ejercicios Propuestos — Multiplicación</h2>
                     <p style="color:rgba(255,255,255,0.8); margin-bottom:1.5em;">Aplicando lo aprendido, resuelve las siguientes multiplicaciones.</p>
 
-                    <!-- Fila 1 -->
                     <div class="ejercicios-multi">
                         <div class="celda-multi">
                             <div class="fila-num" style="justify-content:center;">3 2 0</div>
@@ -608,7 +727,6 @@ html
                         </div>
                     </div>
 
-                    <!-- Fila 2 -->
                     <div class="ejercicios-multi">
                         <div class="celda-multi">
                             <div class="fila-num" style="justify-content:center;">5 3 2</div>
@@ -627,7 +745,6 @@ html
                         </div>
                     </div>
 
-                    <!-- Fila 3 -->
                     <div class="ejercicios-multi">
                         <div class="celda-multi">
                             <div class="fila-num" style="justify-content:center;">9 1 4 7</div>
@@ -685,10 +802,19 @@ html
 
                 <div class="propiedad-box">
                     <strong>Relación fundamental:</strong><br>
-                    <span style="font-family:'Courier New',monospace; margin: 7em;font-size:1.1em; color:#86efac;font-weight:700;">
+                    <span style="font-family:'Courier New',monospace; font-size:1.1em; color:#86efac; font-weight:700;">
                         Dividendo = Divisor × Cociente + Residuo
                     </span>
                 </div>
+                <h3>Procedimiento para la división</h3>
+
+                <ul class="paso-lista">
+                    <li><strong>Paso 1:</strong> Ver el número de cifras que tiene el divisor.</li>
+                    <li><strong>Paso 2:</strong> Tomar el mismo número de cifras que tiene el divisor en el dividendo.</li>
+                    <li><strong>Paso 3:</strong> Comparar las cifras del dividendo con las cifras del divisor. Si el número del dividendo es mayor, podemos empezar a dividir. Si es menor, tenemos que tomar una cifra más del dividendo.</li>
+                    <li><strong>Paso 4:</strong> Dividir las cifras del dividendo entre las cifras del divisor y multiplicar el divisor por el cociente obtenido. Colocar el resultado debajo de las cifras del dividendo y realizar la resta.</li>
+                    <li><strong>Paso 5:</strong> Bajar la cifra siguiente del dividendo y dividir como en el paso anterior hasta que no queden más cifras para bajar.</li>
+                </ul>
 
                 <!-- Ejemplo de División -->
                 <div class="ejemplo-box">
@@ -702,7 +828,7 @@ html
                                 <div class="division-box">
                                     <div class="division-dividendo">3 8 9 2</div>
                                     <div class="division-derecha">
-                                        <div style="padding-left:0.4em; font-size:0.85em; color:#38bdf8;">1 2 5</div>
+                                        <div class= "division-divisor"><span style= "padding-left:0.4em; color:#38bdf8;">1 2 5</div>
                                     </div>
                                 </div>
                             </div>
@@ -714,22 +840,9 @@ html
                             <div class="paso-num">PASO 2 — Tomar cifras del dividendo</div>
                             <div style="display:flex; justify-content:center; margin:1em 0;">
                                 <div class="division-box">
-                                    <div class="division-dividendo"><span style="color:#fbbf24; text-decoration:underline;">3 8 9</span> 2</div>
+                                    <div class="division-dividendo"><span style="color:#fbbf24;">3 8 9</span> 2</div>
                                     <div class="division-derecha">
-                                        <div style="padding-left:0.4em; color:#38bdf8;">1 2 5</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="paso-desc">Se toman las primeras <strong>3 cifras</strong> del dividendo: <span style="color:#fbbf24;">389</span>.</div>
-                        </div>
-                        <!-- Paso 3 -->
-                        <div class="paso-box">
-                            <div class="paso-num">PASO 3 — Comparar y empezar a dividir</div>
-                            <div style="display:flex; justify-content:center; margin:1em 0;">
-                                <div class="division-box">
-                                    <div class="division-dividendo"><span style="color:#fbbf24; text-decoration:underline;">3 8 9</span> 2</div>
-                                    <div class="division-derecha">
-                                        <div style="padding-left:0.4em; color:#38bdf8;">1 2 5</div>
+                                        <div class= "division-divisor"><span style= "padding-left:0.4em; color:#38bdf8;">1 2 5</div>
                                     </div>
                                 </div>
                             </div>
@@ -739,7 +852,7 @@ html
                         <!-- Paso 3 -->
                         <div class="paso-box">
                             <div class="paso-num">PASO 3 — Comparar y empezar a dividir</div>
-                            <div style="font-family:'Courier New',monospace; background:rgba(0,0,0,0.3); border-radius:8px; padding:1em; margin:0.8em 0; color:#86efac; text-align:center; font-size:0.95em; line-height:2;">
+                        <div style="font-family:'Courier New',monospace; background:rgba(0,0,0,0.3); border-radius:8px; padding:1em; margin:0.8em 0; color:#86efac; text-align:center; font-size:0.95em; line-height:2;">
                                 <div>389 &gt; 125 ✓ <span style="color:rgba(255,255,255,0.6);">podemos dividir</span></div>
                                 <div style="color:#fbbf24;">3 ÷ 1 ≈ 3</div>
                                 <div>125 × 3 = 375</div>
@@ -761,18 +874,49 @@ html
                         </div>
                     </div>
 
-                    <!-- Resultado completo -->
+                    <!-- Resultado completo — notación colombiana -->
                     <p style="margin: 1.2em 0 0.8em; font-weight:600; color:rgba(255,255,255,0.8);">Resultado completo:</p>
-                    <div style="display:flex; flex-wrap:wrap; gap:2em; align-items:center; justify-content:center;">
+                    <div style="display:flex; flex-wrap:wrap; gap:2em; align-items:flex-start; justify-content:center;">
 
-                        <div class="suma-visual" style="font-size:1em; line-height:2.2; padding:1em 2em; text-align:left; white-space:pre;">3 8 9 2 │ 1 2 5
-3 7 5   └─────────
-─────     3 1        ← Cociente
-  1 4 2
-  1 2 5
-  ─────
-    1 7              ← Residuo</div>
+                        <!-- División estilo colombiano -->
+                        <div class="div-col">
+                            <!-- Fila superior: dividendo | divisor / cociente -->
+                            <div class="div-col-top">
+                                <div class="div-col-dividendo">
+                                    <span style="color:#fbbf24;font-weight: 700;">3 8 9</span><span style="color:#86efac;font-weight: 700;"> 2</span>
+                                </div>
+                                <div class="div-col-right">
+                                    <div class="div-col-divisor"><span style="padding-left: 0.6em;">1 2 5</div>
+                                    
+                                </div>
+                            </div>
+                            <!-- Pasos de resta -->
+                            <div class="div-col-pasos">
+                                <!-- − 375 -->
+                                <div class="div-col-resta">
+                                    <span class="div-col-signo"><span style="display:flex;gap:0.3em; margin-left: -0.5em;color:#38bdf8">−
+                                    <span style="display:flex;gap:0.3em; margin-left: 0em; color:#86efac">3 7 5</span><div style="display:flex;gap:0.3em; margin-left: 2.2em; color: #ffffff; font-family:monospace;font-weight:700;">3 1</div>
+                                </div>
+                                <div class="div-col-linea"></div>
+                                <!-- parcial 142 (14 + baja 2) -->
+                                <div class="div-col-parcial">
+                                    <span style="color:#86efac;"><span style="padding-left: 0.45em;font-weight: 700;">0 1 4 </span><span style="color:#fbbf24;font-weight: 700;"><span style="padding-left: 0em;">2</span>
+                                </div>
+                                <!-- − 125 -->
+                                <div class="div-col-resta">
+                                    <span class="div-col-signo"><span style="display:flex;gap:0.3em; margin-left: 0.4em;color:#38bdf8">−
+                                    <span style="padding-left: 0.4em;color:#86efac">1 2 5</span>
+                                </div>
+                                <div class="div-col-linea2"></div>
+                                <!-- residuo -->
+                                <div class="div-col-residuo-final">
+                                    <span style="color:#f87171; font-weight:700;margin-left: 0.4em;">0 0 1 7</span>
+                                    <span style="color:rgba(255,255,255,0.4); font-size:0.8em; margin-left:0.8em;">← Residuo</span>
+                                </div>
+                            </div>
+                        </div>
 
+                        <!-- Verificación -->
                         <div style="font-family:'Courier New',monospace; background:rgba(56,189,248,0.08); border:1px solid rgba(56,189,248,0.3); border-radius:10px; padding:1.2em 2em; line-height:2.2;">
                             <div style="color:#38bdf8; font-weight:700; margin-bottom:0.5em;">Verificación:</div>
                             <div style="color:#86efac;">125 × 31 + 17</div>
@@ -789,10 +933,45 @@ html
                 <!-- División exacta -->
                 <div class="propiedad-box">
                     <strong>División exacta:</strong> Cuando el residuo de una división es 0, se dice que la división es <strong style="color:#22c55e;">exacta</strong>.<br><br>
-                    <div class="suma-visual" style="font-size:1em; line-height:2.2; padding:0.8em 1.5em; white-space:pre; display:inline-block;">4 2 0 │ 5
-4 2 0  └────────
-─────    8 4       ← Cociente
-    0              ← Residuo = 0</div><br>
+                    <!-- 420 ÷ 5 — notación colombiana -->
+                    <div class="div-col">
+                            <!-- Fila superior: dividendo | divisor / cociente -->
+                            <div class="div-col-top">
+                                <div class="div-col-dividendo">
+                                    <span style="color:#86efac;font-weight: 700;">4 2 0</span>
+                                </div>
+                                <div class="div-col-right">
+                                    <div class="div-col-divisor"><span style="padding-left: 0.6em;">5</div>
+                                    
+                                </div>
+                            </div>
+                            <!-- Pasos de resta -->
+                            <div class="div-col-pasos">
+                               
+                                <div class="div-col-resta">
+                                    <span class="div-col-signo"><span style="display:flex;gap:0.3em; margin-left: -0.5em;color:#38bdf8">−
+                                    <span style="display:flex;gap:0.3em; margin-left: 0em; color:#86efac">4 0</span><div style="display:flex;gap:0.3em; margin-left: 2.2em; color: #ffffff; font-family:monospace;font-weight:700;">8 4</div>
+                                </div>
+                                <div class="div-col-linea"></div>
+                                <!-- parcial 142 (14 + baja 2) -->
+                                <div class="div-col-parcial">
+                                    <span style="color:#86efac;"><span style="padding-left: 0.45em;font-weight: 700;">0 2</span><span style="color:#fbbf24;font-weight: 700;"><span style="padding-left: 0em;"> 0</span>
+                                </div>
+                                
+                                <div class="div-col-resta">
+                                    <span class="div-col-signo"><span style="display:flex;gap:0.3em; margin-left: 0.4em;color:#38bdf8">−
+                                    <span style="padding-left: 0.4em;color:#86efac">2 0</span>
+                                </div>
+                                <div class="div-col-linea2"></div>
+                                <!-- residuo -->
+                                <div class="div-col-residuo-final">
+                                    <span style="color:#f87171; font-weight:700;margin-left: 1.7em;">0 0</span>
+                                    <span style="color:rgba(255,255,255,0.4); font-size:0.8em; margin-left:0.8em;">← Residuo</span>
+                                </div>
+                            </div>
+                        </div>
+                   
+                    <br>
                     <span style="font-family:'Courier New',monospace; color:#86efac; font-size:0.95em;">Verificación: 420 = 84 × 5 → 420 = 420 ✓</span>
                 </div>
 
@@ -806,26 +985,32 @@ html
                     <!-- Fila 1 -->
                     <div class="ejercicios-div">
                         <div class="celda-div">
-                            <div class="div-display">
-                                <span>a.</span></p><div class="div-num">12000</div>
-                                <div style="display:flex; flex-direction:column; padding-left:0em;">
-                                    <div class="div-divisor">250</div>
+                            <div class="ej-label">a.</div>
+                            <div class="dc-wrap">
+                                <div class="dc-dividendo">12000</div>
+                                <div class="dc-right">
+                                    <div class="dc-divisor">250</div>
+                                    
                                 </div>
                             </div>
                         </div>
                         <div class="celda-div">
-                            <div class="div-display">
-                                <span>b.</span><div class="div-num">10769</div>
-                                <div style="display:flex; flex-direction:column; padding-left:0em;">
-                                    <div class="div-divisor">121</div>
+                            <div class="ej-label">b.</div>
+                            <div class="dc-wrap">
+                                <div class="dc-dividendo">10769</div>
+                                <div class="dc-right">
+                                    <div class="dc-divisor">121</div>
+                                   
                                 </div>
                             </div>
                         </div>
                         <div class="celda-div">
-                            <div class="div-display">
-                                <span>c.</span><div class="div-num">29760</div>
-                                <div style="display:flex; flex-direction:column; padding-left:0em;">
-                                    <div class="div-divisor">744</div>
+                            <div class="ej-label">c.</div>
+                            <div class="dc-wrap">
+                                <div class="dc-dividendo">29760</div>
+                                <div class="dc-right">
+                                    <div class="dc-divisor">744</div>
+                                    
                                 </div>
                             </div>
                         </div>
@@ -834,26 +1019,32 @@ html
                     <!-- Fila 2 -->
                     <div class="ejercicios-div">
                         <div class="celda-div">
-                            <div class="div-display">
-                                <span>d.</span><div class="div-num">20240</div>
-                                <div style="display:flex; flex-direction:column; padding-left:0em;">
-                                    <div class="div-divisor">920</div>
+                            <div class="ej-label">d.</div>
+                            <div class="dc-wrap">
+                                <div class="dc-dividendo">20240</div>
+                                <div class="dc-right">
+                                    <div class="dc-divisor">920</div>
+                                    
                                 </div>
                             </div>
                         </div>
                         <div class="celda-div">
-                            <div class="div-display">
-                                <span>e.</span><div class="div-num">58500</div>
-                                <div style="display:flex; flex-direction:column; padding-left:0em;">
-                                    <div class="div-divisor">585</div>
+                            <div class="ej-label">e.</div>
+                            <div class="dc-wrap">
+                                <div class="dc-dividendo">58500</div>
+                                <div class="dc-right">
+                                    <div class="dc-divisor">585</div>
+                                    
                                 </div>
                             </div>
                         </div>
                         <div class="celda-div">
-                            <div class="div-display">
-                                <span>f.</span><div class="div-num">7854</div>
-                                <div style="display:flex; flex-direction:column; padding-left:0em;">
-                                    <div class="div-divisor">714</div>
+                            <div class="ej-label">f.</div>
+                            <div class="dc-wrap">
+                                <div class="dc-dividendo">7854</div>
+                                <div class="dc-right">
+                                    <div class="dc-divisor">714</div>
+                                    
                                 </div>
                             </div>
                         </div>
@@ -862,26 +1053,32 @@ html
                     <!-- Fila 3 -->
                     <div class="ejercicios-div">
                         <div class="celda-div">
-                            <div class="div-display">
-                                <span>g.</span><div class="div-num">27840</div>
-                                <div style="display:flex; flex-direction:column; padding-left:0em;">
-                                    <div class="div-divisor">290</div>
+                            <div class="ej-label">g.</div>
+                            <div class="dc-wrap">
+                                <div class="dc-dividendo">27840</div>
+                                <div class="dc-right">
+                                    <div class="dc-divisor">290</div>
+                                    
                                 </div>
                             </div>
                         </div>
                         <div class="celda-div">
-                            <div class="div-display">
-                                <span>h.</span><div class="div-num">4531</div>
-                                <div style="display:flex; flex-direction:column; padding-left:0em;">
-                                    <div class="div-divisor">197</div>
+                            <div class="ej-label">h.</div>
+                            <div class="dc-wrap">
+                                <div class="dc-dividendo">4531</div>
+                                <div class="dc-right">
+                                    <div class="dc-divisor">197</div>
+                                    
                                 </div>
                             </div>
                         </div>
                         <div class="celda-div">
-                            <div class="div-display">
-                                <span>i.</span><div class="div-num">7904</div>
-                                <div style="display:flex; flex-direction:column; padding-left:0em;">
-                                    <div class="div-divisor">988</div>
+                            <div class="ej-label">i.</div>
+                            <div class="dc-wrap">
+                                <div class="dc-dividendo">7904</div>
+                                <div class="dc-right">
+                                    <div class="dc-divisor">988</div>
+                                    
                                 </div>
                             </div>
                         </div>
@@ -890,38 +1087,60 @@ html
                     <!-- Fila 4 -->
                     <div class="ejercicios-div">
                         <div class="celda-div">
-                            <div class="div-display">
-                                <span>j.</span><div class="div-num">15334</div>
-                                <div style="display:flex; flex-direction:column; padding-left:0em;">
-                                    <div class="div-divisor">187</div>
+                            <div class="ej-label">j.</div>
+                            <div class="dc-wrap">
+                                <div class="dc-dividendo">15334</div>
+                                <div class="dc-right">
+                                    <div class="dc-divisor">187</div>
+                                    
                                 </div>
                             </div>
                         </div>
                         <div class="celda-div">
-                            <div class="div-display">
-                                <span>k.</span><div class="div-num">32688</div>
-                                <div style="display:flex; flex-direction:column; padding-left:0em;">
-                                    <div class="div-divisor">454</div>
+                            <div class="ej-label">k.</div>
+                            <div class="dc-wrap">
+                                <div class="dc-dividendo">32688</div>
+                                <div class="dc-right">
+                                    <div class="dc-divisor">454</div>
+                                    
                                 </div>
                             </div>
                         </div>
                         <div class="celda-div">
-                            <div class="div-display">
-                               <span>l.</span> <div class="div-num">15933</div>
-                                <div style="display:flex; flex-direction:column; padding-left:0em;">
-                                    <div class="div-divisor">339</div>
+                            <div class="ej-label">l.</div>
+                            <div class="dc-wrap">
+                                <div class="dc-dividendo">15933</div>
+                                <div class="dc-right">
+                                    <div class="dc-divisor">339</div>
+                                    
                                 </div>
                             </div>
                         </div>
                     </div>
+                    <hr class="sep">
 
+<div class="ejercicio-grupo">
+                        <p><strong>Problemas de Aplicación Multiplicación y División:</strong></p>
+                        <ul class="paso-lista">
+                            <li></strong> Una empresa produce 1234 unidades de productos por día. ¿Cuántos productos se producen en 567 días?</li>
+                            <li></strong> Un libro tiene 456 páginas. Si una biblioteca tiene 89 libros iguales, ¿cuántas páginas hay en total?</li>
+                            <li></strong> Una granja produce 2340 litros de leche por semana. ¿Cuántos litros produce en 52 semanas (1 año)?</li>
+                            <li></strong> Un almacén tiene 15600 artículos que deben distribuirse en 65 cajas. ¿Cuántos artículos irán en cada caja?</li>
+                            <li></strong> Una fábrica produce 8500 juguetes en 85 días. ¿Cuántos juguetes produce diariamente?</li>
+                            <li></strong> Si una persona gasta 45 pesos diarios, ¿cuánto gasta en 365 días?</li>
+                            <li></strong> Un terreno cuesta 3500 pesos por metro cuadrado. Si el terreno tiene 250 metros cuadrados, ¿cuál es su precio total?</li>
+                            <li></strong> Se reparten 25000 pesos entre 125 personas. ¿Cuánto dinero recibe cada persona?</li>
+                        </ul>
+                    </div>
+                </div>
                 </div>
 
                 <hr class="sep">
-                
+
             </div>
         </section>
     </div>
+    
 
     <!-- Footer -->
     <footer id="footer">
