@@ -3,241 +3,755 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-    <title>Guía 5 – Múltiplos y Divisores | Matemáticas 6º</title>
+    <title>Guía 5 – Múltiplos, Divisores y Números Primos | Matemáticas 6º</title>
     <link rel="stylesheet" href="assets/css/main.css" />
     <style>
-        /* ── Contenedor principal de la guía ── */
         .guia-wrapper {
-            max-width: 1000px;
+            max-width: 900px;
             margin: 0 auto;
-            padding: 2em 2em 3em;
+            padding: 3em 2em 4em;
             color: #ffffff;
             font-family: "Source Sans Pro", Helvetica, sans-serif;
             font-weight: 400;
             -webkit-font-smoothing: antialiased;
         }
 
-        /* Encabezado institucional */
+        /* ── Encabezado institucional ── */
         .inst-header {
             text-align: center;
             border: 2px solid rgba(56,189,248,0.4);
-            border-radius: 20px;
-            padding: 1.8em;
-            margin-bottom: 2.5em;
+            border-radius: 12px;
+            padding: 2em;
+            margin-bottom: 3em;
             background: rgba(56,189,248,0.05);
-            backdrop-filter: blur(6px);
+            backdrop-filter: blur(10px);
         }
         .inst-header h2 {
-            font-size: 1.4em;
-            font-weight: 800;
-            letter-spacing: 0.05em;
+            font-size: 1.2em;
+            font-weight: 700;
+            letter-spacing: 0.1em;
             color: #38bdf8;
             margin-bottom: 0.5em;
         }
         .inst-header p {
             font-size: 0.85em;
-            color: rgba(255,255,255,0.7);
-            margin-bottom: 0.8em;
-            line-height: 1.5;
-        }
-        .inst-meta {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
-            justify-content: center;
-            margin-top: 1rem;
+            color: rgba(255,255,255,0.6);
+            margin-bottom: 1em;
+            line-height: 1.8;
         }
         .inst-meta span {
-            background: rgba(139, 92, 246, 0.15);
-            padding: 0.4em 1.2em;
-            border-radius: 40px;
-            font-size: 0.85rem;
+            background: rgba(139,92,246,0.1);
+            padding: 0.5em 1em;
+            border-radius: 6px;
             border-left: 3px solid #8b5cf6;
-            color: #e2e8f0;
+            color: rgba(255,255,255,0.8);
+            display: inline-block;
+            transition: all 0.3s ease;
         }
-        .inst-meta span strong {
-            color: #38bdf8;
+        .inst-meta span:hover {
+            transform: translateY(-3px);
+            background: rgba(139,92,246,0.2);
+            box-shadow: 0 5px 15px rgba(139,92,246,0.2);
         }
+        .inst-meta span strong { color: #38bdf8; font-weight: 700; }
 
-        /* Títulos y secciones */
+        /* ── Títulos ── */
         .guia-wrapper h1 {
-            font-size: 2rem;
+            font-size: 2em;
             font-weight: 700;
             color: #38bdf8;
-            border-left: 6px solid #38bdf8;
-            padding-left: 1rem;
-            margin: 1.8em 0 0.8em;
+            border-left: 5px solid #38bdf8;
+            padding-left: 0.6em;
+            margin: 2em 0 0.8em;
         }
         .guia-wrapper h2 {
-            font-size: 1.6rem;
+            font-size: 1.4em;
             font-weight: 700;
-            color: #f0f9ff;
-            margin: 1.8em 0 0.6em;
-            border-bottom: 2px solid rgba(56,189,248,0.4);
+            color: #ffffff;
+            margin: 2em 0 0.7em;
+            border-bottom: 1px solid rgba(56,189,248,0.3);
             padding-bottom: 0.3em;
         }
         .guia-wrapper h3 {
-            font-size: 1.2rem;
+            font-size: 1.1em;
             font-weight: 600;
-            color: #c084fc;
-            margin: 1.2em 0 0.5em;
+            color: #8b5cf6;
+            margin: 1.5em 0 0.5em;
         }
         .guia-wrapper p {
-            line-height: 1.65;
-            margin-bottom: 1rem;
-            color: #f1f5f9;
+            line-height: 1.75;
+            margin-bottom: 1em;
+            color: #ffffff;
         }
 
-        /* Cajas de ejemplo */
-        .ejemplo-box {
-            background: rgba(34,197,94,0.1);
-            border: 1px solid rgba(34,197,94,0.3);
-            border-radius: 20px;
-            padding: 1.2rem 1.8rem;
-            margin: 1.8rem 0;
-        }
+        /* ── Labels ── */
         .ejemplo-label {
             display: inline-block;
-            background: #22c55e;
+            background: #f97316;
             color: #0f172a;
-            font-size: 0.7rem;
-            font-weight: 800;
-            letter-spacing: 1px;
-            padding: 0.2rem 1rem;
-            border-radius: 30px;
-            margin-bottom: 1rem;
-        }
-        .criterios-tabla {
-            width: 100%;
-            background: rgba(0,0,0,0.35);
-            border-radius: 16px;
-            overflow: hidden;
-            margin: 1.2rem 0;
-            border-collapse: collapse;
-        }
-        .criterios-tabla th, .criterios-tabla td {
-            border: 1px solid rgba(255,255,255,0.2);
-            padding: 10px 12px;
-            text-align: left;
-            vertical-align: top;
-        }
-        .criterios-tabla th {
-            background: #0f172a;
-            color: #38bdf8;
+            font-size: 0.78em;
             font-weight: 700;
+            letter-spacing: 0.1em;
+            padding: 0.25em 1em;
+            border-radius: 4px;
+            margin-bottom: 0.8em;
+            text-transform: uppercase;
+        }
+        .ejercicios-label {
+            display: inline-block;
+            background: #ef4444;
+            color: #fff;
+            font-size: 0.78em;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            padding: 0.25em 1em;
+            border-radius: 4px;
+            margin-bottom: 0.8em;
+            text-transform: uppercase;
         }
 
-        .factor-tree {
+        /* ── Caja de ejemplo genérica ── */
+        .ejemplo-box {
+            background: rgba(34,197,94,0.06);
+            border: 1px solid rgba(34,197,94,0.25);
+            border-radius: 12px;
+            padding: 1.4em 1.8em;
+            margin: 1.2em 0 1.8em;
+        }
+
+        /* ── Formula / resultado ── */
+        .formula {
+            display: block;
+            background: rgba(0,0,0,0.3);
+            border-radius: 6px;
+            padding: 0.6em 1.2em;
+            margin: 0.8em 0;
             font-family: 'Courier New', monospace;
-            background: rgba(0,0,0,0.45);
-            border-radius: 18px;
-            padding: 1rem 2rem;
-            display: inline-block;
-            width: auto;
-            margin: 0.5rem 0;
-            color: #86efac;
+            color: #22c55e;
+            font-size: 1em;
+        }
+
+        /* ═══════════════════════════════════════
+           DIAGRAMA DE MÚLTIPLOS (flechas + cajas)
+           ═══════════════════════════════════════ */
+        .multiplos-diagram {
+            border-radius: 14px;
+            padding: 1.6em 1.8em 1.4em;
+            margin: 1em 0 1.6em;
+            overflow-x: auto;
+        }
+        .multiplos-diagram.azul {
+            background: rgba(56,189,248,0.08);
+            border: 1px solid rgba(56,189,248,0.3);
+        }
+        .multiplos-diagram.naranja {
+            background: rgba(249,115,22,0.08);
+            border: 1px solid rgba(249,115,22,0.3);
+        }
+        .multiplos-diagram p {
+            color: rgba(255,255,255,0.75);
+            font-size: 0.95em;
+            margin-bottom: 1em;
+        }
+
+        /* fila de multiplicaciones */
+        .mult-ops {
+            display: flex;
+            gap: 0.5em;
+            flex-wrap: nowrap;
+            margin-bottom: 0.3em;
+            align-items: flex-end;
+        }
+        .mult-op-col {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0;
+        }
+        .mult-box {
+            border: 2px solid;
+            border-radius: 6px;
+            padding: 0.25em 0.55em;
+            font-family: 'Courier New', monospace;
+            font-size: 0.88em;
+            font-weight: 700;
+            white-space: nowrap;
+        }
+        .azul .mult-box  { border-color: #38bdf8; color: #38bdf8; background: rgba(56,189,248,0.1); }
+        .naranja .mult-box { border-color: #f97316; color: #fb923c; background: rgba(249,115,22,0.12); }
+
+        /* flecha hacia abajo */
+        .mult-arrow {
+            width: 2px;
+            height: 18px;
+            margin: 0 auto;
+            position: relative;
+        }
+        .azul .mult-arrow    { background: #38bdf8; }
+        .naranja .mult-arrow { background: #f97316; }
+        .mult-arrow::after {
+            content: "";
+            position: absolute;
+            bottom: -5px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-left: 5px solid transparent;
+            border-right: 5px solid transparent;
+        }
+        .azul .mult-arrow::after    { border-top: 7px solid #38bdf8; }
+        .naranja .mult-arrow::after { border-top: 7px solid #f97316; }
+
+        /* fila de resultados */
+        .mult-results {
+            display: flex;
+            gap: 0.5em;
+            flex-wrap: nowrap;
+            align-items: center;
+            margin-top: 0.6em;
+        }
+        .mult-label {
+            font-family: 'Courier New', monospace;
+            font-weight: 700;
+            font-size: 1em;
+            margin-right: 0.3em;
+        }
+        .azul .mult-label    { color: #38bdf8; }
+        .naranja .mult-label { color: #fb923c; }
+
+        .mult-val {
+            font-family: 'Courier New', monospace;
+            font-size: 0.95em;
+            color: #ffffff;
+        }
+        .mult-conjunto {
+            margin-top: 0.9em;
+            font-family: 'Courier New', monospace;
+            font-size: 1em;
+            color: #ffffff;
+        }
+        .azul .mult-conjunto strong    { color: #38bdf8; }
+        .naranja .mult-conjunto strong { color: #fb923c; }
+
+        /* ═══════════════════════════════════
+           TABLA CRITERIOS DE DIVISIBILIDAD
+           ═══════════════════════════════════ */
+        .tabla-criterios {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 1em 0 1.6em;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        .tabla-criterios th {
+            background: rgba(249,115,22,0.65);
+            color: #fff;
+            font-weight: 700;
+            padding: 0.7em 1.1em;
+            text-align: left;
+        }
+        .tabla-criterios td {
+            border: 1px solid rgba(255,255,255,0.1);
+            padding: 0.55em 1.1em;
+            color: #ffffff;
+            font-size: 0.95em;
+        }
+        .tabla-criterios tr:nth-child(even) td { background: rgba(255,255,255,0.04); }
+        .tabla-criterios td:first-child { color: #38bdf8; font-weight: 700; }
+
+        /* ═══════════════════════════════════
+           DIAGRAMA DIVISORES (árbol de pares)
+           ═══════════════════════════════════ */
+        .divisores-visual {
+            display: flex;
+            align-items: flex-start;
+            gap: 2.5em;
+            flex-wrap: wrap;
+            background: rgba(34,197,94,0.07);
+            border: 1px solid rgba(34,197,94,0.25);
+            border-radius: 14px;
+            padding: 1.5em 2em;
+            margin: 1em 0 1.4em;
+        }
+        .div-numero {
+            font-size: 3em;
+            font-weight: 700;
+            color: #22c55e;
+            font-family: 'Courier New', monospace;
+            line-height: 1;
+            padding-top: 0.2em;
+        }
+        .div-tree {
+            position: relative;
+            padding-left: 1.5em;
+            border-left: 3px solid rgba(34,197,94,0.5);
+        }
+        .div-pair {
+            display: flex;
+            align-items: center;
+            gap: 0.6em;
+            font-family: 'Courier New', monospace;
+            font-size: 1em;
+            line-height: 2;
+            color: rgba(255,255,255,0.85);
+        }
+        .div-pair .dp-num { color: #38bdf8; font-weight: 700; }
+        .div-pair .dp-x   { color: #8b5cf6; }
+        .div-result-box {
+            background: rgba(34,197,94,0.1);
+            border: 1px solid rgba(34,197,94,0.3);
+            border-radius: 8px;
+            padding: 0.6em 1em;
+            font-family: 'Courier New', monospace;
+            color: #22c55e;
+            font-size: 1em;
+            align-self: center;
+        }
+        .div-result-label {
+            font-size: 0.8em;
+            color: rgba(255,255,255,0.5);
+            margin-bottom: 0.3em;
+        }
+
+        /* ═══════════════════════════════════
+           DIAGRAMA NÚMEROS PRIMOS / COMPUESTOS
+           ═══════════════════════════════════ */
+        .primos-row {
+            display: flex;
+            gap: 2.5em;
+            flex-wrap: wrap;
+            align-items: flex-start;
+            margin: 1em 0 0.5em;
+        }
+        .primo-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0;
+        }
+        .primo-circulo {
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
+            border: 2px solid #38bdf8;
+            background: rgba(56,189,248,0.08);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Courier New', monospace;
+            font-size: 1.3em;
+            font-weight: 700;
+            color: #38bdf8;
+        }
+        /* ramas del árbol */
+        .primo-ramas {
+            display: flex;
+            gap: 0.5em;
+            position: relative;
+            margin-top: 0;
+        }
+        .primo-rama {
+            width: 2px;
+            height: 24px;
+            background: rgba(56,189,248,0.5);
+            position: relative;
+        }
+        /* las dos ramas se inclinan */
+        .primo-rama:first-child  { transform: rotate(-20deg); transform-origin: top center; }
+        .primo-rama:last-child   { transform: rotate(20deg);  transform-origin: top center; }
+
+        .primo-divisores {
+            display: flex;
+            gap: 1.8em;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+            color: rgba(255,255,255,0.8);
+        }
+        .divisores-label {
+            font-size: 0.78em;
+            color: rgba(255,255,255,0.4);
+            margin-top: 0.3em;
+            text-align: center;
+            font-style: italic;
+        }
+
+        /* compuestos — mismo patrón, más ramas */
+        .compuesto-circulo {
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
+            border: 2px solid #f97316;
+            background: rgba(249,115,22,0.08);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Courier New', monospace;
+            font-size: 1.3em;
+            font-weight: 700;
+            color: #fb923c;
+        }
+        .compuesto-ramas { display: flex; gap: 0.5em; }
+        .compuesto-rama  {
+            width: 2px;
+            height: 24px;
+            background: rgba(249,115,22,0.5);
+        }
+        .comp-ramas-3 .compuesto-rama:nth-child(1) { transform: rotate(-30deg); transform-origin: top center; }
+        .comp-ramas-3 .compuesto-rama:nth-child(2) { transform: rotate(0deg);   transform-origin: top center; }
+        .comp-ramas-3 .compuesto-rama:nth-child(3) { transform: rotate(30deg);  transform-origin: top center; }
+        .comp-ramas-4 .compuesto-rama:nth-child(1) { transform: rotate(-40deg); transform-origin: top center; }
+        .comp-ramas-4 .compuesto-rama:nth-child(2) { transform: rotate(-13deg); transform-origin: top center; }
+        .comp-ramas-4 .compuesto-rama:nth-child(3) { transform: rotate(13deg);  transform-origin: top center; }
+        .comp-ramas-4 .compuesto-rama:nth-child(4) { transform: rotate(40deg);  transform-origin: top center; }
+        .compuesto-divisores {
+            display: flex;
+            gap: 0.9em;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+            color: rgba(255,255,255,0.8);
+        }
+
+        /* ═══════════════════════════════════
+           TABLA DESCOMPOSICIÓN EN FACTORES
+           ═══════════════════════════════════ */
+        .descomp-wrap {
+            display: flex;
+            gap: 3em;
+            flex-wrap: wrap;
+            align-items: flex-start;
+            background: rgba(139,92,246,0.06);
+            border: 1px solid rgba(139,92,246,0.25);
+            border-radius: 12px;
+            padding: 1.5em 2em;
+            margin: 1em 0 1.4em;
+        }
+        .descomp-tabla {
+            font-family: 'Courier New', monospace;
+            font-size: 1.05em;
+            border-collapse: collapse;
+        }
+        .descomp-tabla td {
+            padding: 0.15em 0.6em;
+            text-align: right;
+        }
+        .descomp-tabla .d-num  { color: #38bdf8; font-weight: 700; }
+        .descomp-tabla .d-sep  { color: rgba(139,92,246,0.8); padding: 0 0.2em; }
+        .descomp-tabla .d-pri  { color: #22c55e; font-weight: 700; text-align: left; }
+        /* línea vertical izquierda + línea horizontal superior */
+        .descomp-tabla tr:first-child .d-sep { border-top: 2px solid rgba(139,92,246,0.6); }
+        .descomp-tabla .d-sep  { border-left: 2px solid rgba(139,92,246,0.6); }
+
+        .descomp-pasos {
+            flex: 1;
+            min-width: 200px;
+        }
+        .descomp-pasos p {
+            font-size: 0.88em;
+            color: rgba(255,255,255,0.65);
+            margin-bottom: 0.5em;
+            line-height: 1.6;
+        }
+        .descomp-pasos .paso-num { color: #f97316; font-weight: 700; }
+        .descomp-resultado {
+            margin-top: 1em;
+            font-family: 'Courier New', monospace;
+            color: #22c55e;
+            font-size: 1.05em;
+        }
+
+        /* ═══════════════════════════════════
+           NOTA ESPECIAL
+           ═══════════════════════════════════ */
+        .nota-box {
+            background: rgba(56,189,248,0.07);
+            border: 1px solid rgba(56,189,248,0.3);
+            border-radius: 10px;
+            padding: 1em 1.5em;
+            margin: 1.5em 0;
+            font-size: 0.95em;
+            color: #bae6fd;
             line-height: 1.8;
         }
-        .divisor-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.8rem;
-            list-style: none;
-            padding-left: 0;
-        }
-        .divisor-list li {
-            background: #1e293b;
-            border-radius: 30px;
-            padding: 0.2rem 0.9rem;
-            font-size: 0.9rem;
-            font-weight: 500;
-            border: 1px solid #38bdf880;
-        }
+        .nota-box strong { color: #38bdf8; }
+
+        /* ═══════════════════════════════════
+           EJERCICIOS
+           ═══════════════════════════════════ */
         .ejercicios-section {
             background: rgba(239,68,68,0.05);
-            border: 2px solid rgba(239,68,68,0.4);
-            border-radius: 24px;
-            padding: 1.5rem 2rem;
-            margin: 2rem 0;
+            border: 2px solid rgba(239,68,68,0.3);
+            border-radius: 10px;
+            padding: 1.5em 2em;
+            margin: 2.5em 0;
         }
         .ejercicios-section h2 {
             color: #f87171;
-            border-bottom-color: #f8717160;
+            border-bottom-color: rgba(239,68,68,0.3);
             text-align: center;
         }
-        .ejercicio-grid {
+        .ejercicio-grupo { margin: 1.2em 0; }
+        .ejercicio-grupo > p {
+            font-weight: 600;
+            color: #fca5a5;
+            margin-bottom: 0.6em;
+        }
+        .ejercicio-lista {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-            gap: 0.6rem;
+            grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+            gap: 0.6em;
             list-style: none;
             padding: 0;
+            margin: 0;
         }
-        .ejercicio-grid li {
-            background: rgba(255,255,255,0.05);
-            border-radius: 12px;
-            padding: 0.5rem 1rem;
-            font-size: 0.9rem;
-            font-weight: 500;
-            border: 1px solid #334155;
+        .ejercicio-lista li {
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 8px;
+            padding: 0.5em 0.9em;
+            font-size: 0.92em;
+            color: #ffffff;
+            font-family: 'Courier New', monospace;
         }
-        .ejercicio-grid li span {
-            color: #f97316;
-            font-weight: 800;
-            margin-right: 0.6rem;
+        .ejercicio-lista li span {
+            color: #f87171;
+            font-weight: 700;
+            margin-right: 0.4em;
         }
-        .badge-prime {
-            background: #22c55e20;
-            border-radius: 40px;
+
+        .sep {
+            border: none;
+            border-top: 1px solid rgba(56,189,248,0.2);
+            margin: 2.5em 0;
+        }
+
+        .emoticon-blanco {
+            color: white !important;
+            filter: brightness(0) invert(1);
             display: inline-block;
-            padding: 0.1rem 0.8rem;
-            font-size: 0.75rem;
-            font-weight: bold;
-            color: #86efac;
         }
-        .nota-primos {
-            background: #0f172a;
-            border-left: 5px solid #facc15;
-            padding: 0.8rem 1.3rem;
-            border-radius: 20px;
-            margin: 1rem 0;
-            font-size: 0.9rem;
+
+        @media (max-width: 640px) {
+            .mult-ops    { gap: 0.3em; }
+            .primos-row  { gap: 1.5em; }
+            .descomp-wrap { flex-direction: column; }
         }
-        .factor-vertical {
+        /* ========== ESTILOS NUEVOS PARA DESCOMPOSICIÓN (CÓDIGO 2) INTEGRADOS ========== */
+        .factorizacion-visual {
+            background: rgba(139,92,246,0.06);
+            border: 1px solid rgba(139,92,246,0.35);
+            border-radius: 24px;
+            padding: 1.8rem 1.5rem;
+            margin: 1.8rem 0 2rem;
+            backdrop-filter: blur(3px);
+        }
+
+        .grid-factorizacion {
+            display: grid;
+            grid-template-columns: 180px 1fr 150px;
+            gap: 30px;
+            max-width: 100%;
+            margin: 0 auto;
+        }
+
+        /* Columna izquierda: divisiones sucesivas */
+        .divisiones-col {
+            position: relative;
             display: flex;
             flex-direction: column;
-            align-items: flex-start;
-            font-family: monospace;
-            background: #0a0f1e;
-            padding: 1rem 2rem;
-            border-radius: 20px;
+            gap: 32px;
+        }
+        .div-card {
+            position: relative;
+            font-size: 1.4rem;
             width: fit-content;
         }
-        .factor-line {
+        .div-top-line {
             display: flex;
-            gap: 1rem;
-            align-items: center;
-            border-bottom: 1px dotted #2dd4bf40;
-            padding: 0.2rem 0;
+            align-items: flex-end;
         }
-        .num-left {
-            min-width: 40px;
-            font-weight: 700;
-            color: #ffffff;
+        .dividendo {
+            padding: 5px 10px;
+            font-weight: 600;
+            font-family: 'Courier New', monospace;
         }
-        .prime-div {
-            color: #5eead4;
+        .divisor-caja {
+            border-left: 2px solid rgba(255,255,255,0.7);
+            border-bottom: 2px solid rgba(255,255,255,0.7);
+            padding: 0 15px 2px 10px;
+            font-family: 'Courier New', monospace;
+        }
+        .resta-linea {
+            border-bottom: 2px solid rgba(255,255,255,0.7);
+            width: 55px;
+            margin: 0em -0.3em;
+            font-family: 'Courier New', monospace;
+        }
+        .residuo {
+            text-align: left;
+            width: 55px;
+            font-family: 'Courier New', monospace;
+        }
+        .cociente-etiqueta {
+            position: absolute;
+            right: -10px;
+            top: 40px;
+            font-weight: bold;
+            padding: 5px;
+            border-radius: 50%;
+            border: 4px solid transparent;
+            min-width: 38px;
+            text-align: center;
+            font-family: monospace;
+            padding: 2px 8px;
+            display: inline-block;
+            background: rgba(0,0,0,0.3);
+        }
+         .cociente-etiqueta2 {
+            position: absolute;
+            right: -10px;
+            top: 50px;
+            font-weight: bold;
+            padding: 5px;
+            border-radius: 50%;
+            border: 4px solid transparent;
+            min-width: 38px;
+            text-align: center;
+            font-family: monospace;
+            padding: 2px 8px;
+            display: inline-block;
+            background: rgba(0,0,0,0.3);
+        }
+        .cociente-etiqueta3 {
+            position: absolute;
+            right: -10px;
+            top: 50px;
+            font-weight: bold;
+            padding: 5px;
+            border-radius: 50%;
+            border: 4px solid transparent;
+            min-width: 38px;
+            text-align: center;
+            font-family: monospace;
+            padding: 2px 8px;
+            display:inline-block;
+            background: rgba(0,0,0,0.3);
+        }
+        .cociente-etiqueta4 {
+            position: absolute;
+            right: -5px;
+            top: 80px;
+            font-weight: bold;
+            padding: 0px;
+            border-radius: 50%;
+            border: 4px solid transparent;
+            min-width: 38px;
+            text-align: center;
+            font-family: monospace;
+            padding: 2px 8px;
+            display:inline-block;
+            background: rgba(0,0,0,0.3);
+        }
+        .circulo-marcador {
+            border-radius: 50%;
+            border: 4px solid;
+            padding: 2px 8px;
+            display: inline-block;
+            background: rgba(0,0,0,0.2);
+        }
+        .color-verde { border-color: #2e7d32; color: #81c784; }
+        .color-naranja { border-color: #e65100; color: #ffb74d; }
+        .color-morado { border-color: #6a1b9a; color: #ce93d8; }
+        .color-morado-oscuro { border-color: #4527a0; color: #b39ddb; }
+        .color-blanco { border-color: #ffffff; color: #ffffff; }
+
+        /* Flechas SVG personalizadas */
+        .flecha-svg {
+            position: absolute;
+            width: 100px;
+            height: 70px;
+            z-index: 2;
+            pointer-events: none;
+            transform:rotate(-20deg);
+        }
+            .flecha-svg2 {
+            position: absolute;
+            width: 100px;
+            height: 70px;
+            z-index: 2;
+            pointer-events: none;
+            transform:rotate(-8deg);
+        }
+            .flecha-svg3 {
+            position: absolute;
+            width: 100px;
+            height: 80px;
+            z-index: 2;
+            pointer-events: none;
+            transform:rotate(-2deg);
+        }
+        /* Columna central: explicaciones */
+        .explicaciones-col {
+            display: flex;
+            flex-direction: column;
+            gap: 56px;
+            padding-top: 10px;
+        }
+        .exp-texto {
+            color: #facc15;
+            font-size: 0.95rem;
+            line-height: 1.4;
+            font-weight: 500;
+            background: rgba(0,0,0,0.3);
+            padding: 0.6rem 0.8rem;
+            border-radius: 12px;
+            border-left: 3px solid #f97316;
+        }
+
+        /* Columna derecha: descomposición final */
+        .descomposicion-col {
+            font-size: 1.35rem;
+            font-family: 'Courier New', monospace;
+        }
+        .cuadricula-descomposicion {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            line-height: 1.7;
+            gap: 0 8px;
+        }
+        .num-izquierda {
+            text-align: right;
+            color: #a5d6ff;
             font-weight: 600;
         }
-        hr.sep {
-            border-top: 1px solid #38bdf830;
-            margin: 2rem 0;
+        .v-line-divisora {
+            width: 2px;
+            background: #8b5cf6;
+            margin: 0 4px;
+            height: 100%;
         }
-        @media (max-width: 640px) {
-            .guia-wrapper {
-                padding: 1rem;
+        .num-derecha {
+            text-align: left;
+            color: #86efac;
+            font-weight: 700;
+        }
+
+        @media (max-width: 780px) {
+            .grid-factorizacion {
+                grid-template-columns: 1fr;
+                gap: 24px;
             }
-            .ejemplo-box {
-                padding: 1rem;
+            .cociente-etiqueta {
+                right: -20px;
+                top: 22px;
+                font-size: 0.9rem;
+               
+            }
+            .explicaciones-col {
+                gap: 28px;
+            }
+            .divisiones-col {
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: center;
             }
         }
     </style>
@@ -246,10 +760,13 @@
 <body class="is-preload">
 <div id="wrapper">
 
-    <!-- Header con navegación -->
+    <!-- Header -->
     <header id="header" class="alt style2">
-        <a href="Matemática 6º.html" class="logo" style="font-size:1.3em;"><strong>← Atrás</strong></a>
-        <nav><a href="#menu">Menú</a></nav>
+        <a href="index.html" class="logo"><strong>By Eder Sequeda</strong></a>
+        <nav>
+            <a href="Matemática 6º.html" class="logo" style="font-size:1.3em;"><strong>← Atrás</strong></a>
+            <a href="#menu">Menú</a>
+        </nav>
     </header>
 
     <!-- Menú -->
@@ -257,183 +774,446 @@
         <ul class="links">
             <li><a href="index.html">Inicio</a></li>
             <li><a href="Matemáticas.html">Matemáticas</a></li>
+            <li><a href="Estadística.html">Estadística</a></li>
+            <li><a href="Geometría.html">Geometría</a></li>
+            <li><a href="Física.html">Física</a></li>
+            <li><a href="Ética.html">Ética</a></li>
+            <li><a href="Religión.html">Religión</a></li>
+            <li><a href="Retos.html">Retos y Juegos</a></li>
+            <li><a href="Acerca.html">Acerca de</a></li>
         </ul>
     </nav>
 
-    <!-- Banner principal -->
+    <!-- Banner -->
     <section id="banner" class="style2">
         <div class="inner">
             <header class="major" style="padding-left:7em;">
                 <h1>Múltiplos y Divisores</h1>
             </header>
             <div class="content" style="padding-left:14em;">
-                <p>🔢 Números primos · Criterios · Descomposición factorial · Guía 5 · 6º</p>
+                <p>🔢 <span style="font-size:2.0rem; font-weight:bold;">Números Primos y Compuestos</span></p>
             </div>
         </div>
     </section>
 
-    <!-- Contenido principal: Transcripción Guía 5 -->
+    <!-- Contenido principal -->
     <div id="main">
         <section id="one">
             <div class="guia-wrapper">
-                <!-- Encabezado institucional (según PDF) -->
+
+                <!-- ── Encabezado institucional ── -->
                 <div class="inst-header">
-                    <h2>REPÚBLICA DE COLOMBIA<br>DEPARTAMENTO DE SUCRE · MUNICIPIO DE MAJAGUAL</h2>
-                    <p><strong>Institución Educativa Palmarito</strong><br>
-                    DANE: 270429000014  NIT. 823001728-3<br>
-                    REG. ICFES No. 135418 / REG. ICFES No. 186304<br>
-                    Aprobada por Secretaría de Educación Departamental según Resoluciones No. 1953 y 4728 de julio 31 de 2007 y octubre 16 de 2013<br>
-                    Jornada Única y Educación de Adultos<br>
-                    iepalmar@iepalmaritomajagual-sucre.edu.co  |  ie.palmarito@sucre.edu.co</p>
-                    <div class="inst-meta">
-                        <span><strong>Asignatura:</strong> Matemáticas</span>
-                        <span><strong>Guía:</strong> 5 – Múltiplos, Divisores y Números primos</span>
-                        <span><strong>Grado:</strong> 6°</span>
-                        <span><strong>Docente:</strong> Eder David Sequeda Martínez</span>
+                    <h2>EDER DAVID SEQUEDA MARTINEZ</h2>
+                    <p>Ingeniero Civil<br>Docente: Matemáticas – Geometría – Estadística – Física</p>
+                    <div style="display:flex;flex-direction:column;gap:1rem;">
+                        <div class="inst-meta" style="display:flex;justify-content:center;gap:2rem;flex-wrap:wrap;">
+                            <span><strong>Asignatura:</strong> Matemática</span>
+                            <span><strong>Tema:</strong> Múltiplos y Divisores · Números primos</span>
+                        </div>
+                        <div class="inst-meta" style="display:flex;justify-content:center;gap:2rem;flex-wrap:wrap;">
+                            <span><strong>Grado:</strong> 6°</span>
+                            <span><strong>Docente:</strong> Eder David Sequeda Martínez</span>
+                        </div>
                     </div>
                 </div>
 
-                <!-- DIVISORES -->
-                <h1>📌 Divisores de un número natural</h1>
-                <p>Los <strong>divisores</strong> de un número natural son aquellos números naturales que lo pueden dividir de manera exacta, es decir, sin dejar residuo. Si <em>a ÷ b = c</em> exacto, entonces <strong>b</strong> es divisor de <strong>a</strong>.</p>
-                <p>Además, un número es <strong>múltiplo</strong> de otro si se obtiene multiplicándolo por un natural. Por ejemplo, 12 es múltiplo de 3 y 3 es divisor de 12.</p>
+                <!-- ══════════════════════════════════════════ -->
+                <h1>Múltiplos y Divisores de un número</h1>
 
-                <h2>✅ Criterios de divisibilidad</h2>
-                <p>Permiten saber si un número es divisible por otro sin necesidad de efectuar la división.</p>
-                <table class="criterios-tabla">
-                    <thead><tr><th>Divisibilidad entre</th><th>Criterio</th></tr></thead>
+                <!-- ─── MÚLTIPLOS ─── -->
+                <h2>✖️ Múltiplos</h2>
+                <p>Los múltiplos de un número natural son los números naturales que resultan de multiplicar ese número por otros números naturales.</p>
+
+                <span class="ejemplo-label">Ejemplo</span>
+
+                <p>Los primeros 8 múltiplos de 2 (M(2)) son:</p>
+
+                <!-- Diagrama múltiplos de 2 -->
+                <div class="multiplos-diagram azul">
+                    <div class="mult-ops">
+                        <span class="mult-label";></span><span style="padding-left: 3.3em;"></span>
+                        <div class="mult-op-col"><div class="mult-box">2×1</div><div class="mult-arrow"></div></div>
+                        <div class="mult-op-col"><div class="mult-box">2×2</div><div class="mult-arrow"></div></div>
+                        <div class="mult-op-col"><div class="mult-box">2×3</div><div class="mult-arrow"></div></div>
+                        <div class="mult-op-col"><div class="mult-box">2×4</div><div class="mult-arrow"></div></div>
+                        <div class="mult-op-col"><div class="mult-box">2×5</div><div class="mult-arrow"></div></div>
+                        <div class="mult-op-col"><div class="mult-box">2×6</div><div class="mult-arrow"></div></div>
+                        <div class="mult-op-col"><div class="mult-box">2×7</div><div class="mult-arrow"></div></div>
+                        <div class="mult-op-col"><div class="mult-box">2×8</div><div class="mult-arrow"></div></div>
+                    </div>
+                    <div class="mult-results">
+                        <span class="mult-label">M(2) =</span>
+                        <span class="mult-val"><span style="padding-left: 1em;font-size:1.2em;font-family: bold;">2</span>
+                        <span class="mult-val"><span style="padding-left: 1.9em;font-size:1.2em;font-family: bold;">4</span>
+                        <span class="mult-val"><span style="padding-left: 2em;font-size:1.3em;font-family: bold;">6</span>
+                        <span class="mult-val"><span style="padding-left: 2em;font-size:1.3em;font-family: bold;">8</span>
+                        <span class="mult-val"><span style="padding-left: 1.8em;font-size:1.4em;font-family: bold;">10</span>
+                        <span class="mult-val"><span style="padding-left: 1.4em;font-size:1.6em;font-family: bold;">12</span>
+                        <span class="mult-val"><span style="padding-left: 1.5em;font-size:1.6em;font-family: bold;">14</span>
+                        <span class="mult-val"><span style="padding-left: 1.6em;font-size:1.6em;font-family: bold;">16</span>
+                    </div>
+                    <div class="mult-conjunto"><strong>M(2)</strong> = {2, 4, 6, 8, 10, 12, 14, 16}</div>
+                </div>
+
+                <p>Los primeros 9 múltiplos de 3 (M(3)) son:</p>
+
+                <!-- Diagrama múltiplos de 3 -->
+                <div class="multiplos-diagram naranja">
+                    <div class="mult-ops">
+                        <span class="mult-label" style="color:#fb923c;padding-left: 3.3em;"></span>
+                        <div class="mult-op-col"><div class="mult-box">3×1</div><div class="mult-arrow"></div></div>
+                        <div class="mult-op-col"><div class="mult-box">3×2</div><div class="mult-arrow"></div></div>
+                        <div class="mult-op-col"><div class="mult-box">3×3</div><div class="mult-arrow"></div></div>
+                        <div class="mult-op-col"><div class="mult-box">3×4</div><div class="mult-arrow"></div></div>
+                        <div class="mult-op-col"><div class="mult-box">3×5</div><div class="mult-arrow"></div></div>
+                        <div class="mult-op-col"><div class="mult-box">3×6</div><div class="mult-arrow"></div></div>
+                        <div class="mult-op-col"><div class="mult-box">3×7</div><div class="mult-arrow"></div></div>
+                        <div class="mult-op-col"><div class="mult-box">3×8</div><div class="mult-arrow"></div></div>
+                        <div class="mult-op-col"><div class="mult-box">3×9</div><div class="mult-arrow"></div></div>
+                    </div>
+                    <div class="mult-results">
+                        <span class="mult-label" style="color:#fb923c;">M(3) =</span>
+                        <span class="mult-val"><span style="padding-left: 0.6em;font-size:1.2em;font-family: bold;">3</span>
+                        <span class="mult-val"><span style="padding-left: 1.9em;font-size:1.2em;font-family: bold;">6</span>
+                        <span class="mult-val"><span style="padding-left: 2em;font-size:1.3em;font-family: bold;">9</span>
+                        <span class="mult-val"><span style="padding-left: 1.7em;font-size:1.3em;font-family: bold;">12</span>
+                        <span class="mult-val"><span style="padding-left: 1.6em;font-size:1.4em;font-family: bold;">15</span>
+                        <span class="mult-val"><span style="padding-left: 1.4em;font-size:1.6em;font-family: bold;">18</span>
+                        <span class="mult-val"><span style="padding-left: 1.5em;font-size:1.6em;font-family: bold;">21</span>
+                        <span class="mult-val"><span style="padding-left: 1.6em;font-size:1.6em;font-family: bold;">24</span>
+                        <span class="mult-val"><span style="padding-left: 1.7em;font-size:1.6em;font-family: bold;">27</span>
+                    </div>
+                    <div class="mult-conjunto"><strong style="color:#fb923c;">M(3)</strong> = {3, 6, 9, 12, 15, 18, 21, 24, 27}</div>
+                </div>
+
+                <!-- Ejercicios múltiplos -->
+                <div class="ejercicios-section">
+                    <span class="ejercicios-label">Ejercicios propuestos</span>
+                    <h2>📌 Múltiplos – Ejercicios</h2>
+                    <div class="ejercicio-grupo">
+                        <p>Aplicando lo aprendido calcula los 6 primeros múltiplos de los siguientes números.</p>
+                        <ul class="ejercicio-lista">
+                            <li><span>1.</span> M(4)</li>
+                            <li><span>2.</span> M(7)</li>
+                            <li><span>3.</span> M(10)</li>
+                            <li><span>4.</span> M(5)</li>
+                            <li><span>5.</span> M(12)</li>
+                            <li><span>6.</span> M(8)</li>
+                            <li><span>7.</span> M(15)</li>
+                            <li><span>8.</span> M(20)</li>
+                            <li><span>9.</span> M(100)</li>
+                            <li><span>10.</span> M(9)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <hr class="sep" />
+
+                <!-- ─── DIVISORES ─── -->
+                <h2>➗ Divisores</h2>
+                <p>Los divisores de un número natural son los números naturales que lo pueden dividir de manera exacta, es decir, sin dejar residuo.</p>
+
+                <h3>Criterios de divisibilidad</h3>
+                <p>Los criterios de divisibilidad permiten determinar cuándo un número es divisible por otro sin necesidad de realizar la división.</p>
+
+                <table class="tabla-criterios">
+                    <thead>
+                        <tr><th>Divisibilidad entre</th><th>Criterio</th></tr>
+                    </thead>
                     <tbody>
-                        <tr><td>2</td><td>La última cifra es par (0,2,4,6,8).</td></tr>
-                        <tr><td>3</td><td>La suma de sus cifras es múltiplo de 3.</td></tr>
-                        <tr><td>4</td><td>Sus dos últimas cifras son ceros o forman un múltiplo de 4.</td></tr>
-                        <tr><td>5</td><td>La última cifra es 0 o 5.</td></tr>
-                        <tr><td>6</td><td>Es divisible entre 2 y entre 3 a la vez.</td></tr>
-                        <tr><td>9</td><td>La suma de sus cifras es múltiplo de 9.</td></tr>
-                        <tr><td>10</td><td>Termina en 0.</td></tr>
+                        <tr><td>Dos</td><td>Si la última cifra es par.</td></tr>
+                        <tr><td>Tres</td><td>Si la suma de sus cifras es múltiplo de tres.</td></tr>
+                        <tr><td>Cuatro</td><td>Si sus dos últimas cifras son ceros o forman un múltiplo de cuatro.</td></tr>
+                        <tr><td>Cinco</td><td>Si la última cifra es cero o cinco.</td></tr>
+                        <tr><td>Seis</td><td>Si es divisible entre dos y entre tres.</td></tr>
+                        <tr><td>Nueve</td><td>Si la suma de sus cifras es múltiplo de nueve.</td></tr>
+                        <tr><td>Diez</td><td>Si la última cifra termina en 0.</td></tr>
                     </tbody>
                 </table>
 
-                <!-- Ejemplo 480 -->
-                <div class="ejemplo-box">
-                    <div class="ejemplo-label">EJEMPLO</div>
-                    <p><strong>Determinar si 480 es divisible entre 2, 3, 4, 5 y 6:</strong></p>
-                    <ul style="color:#e2e8f0; margin-left:1rem;">
-                        <li>✔️ 480 es divisible entre 2 porque es cifra par.</li>
-                        <li>✔️ 480 es divisible entre 3 porque 4+8+0=12 y 12 es múltiplo de 3.</li>
-                        <li>✔️ 480 es divisible entre 4 porque sus dos últimas cifras (80) es múltiplo de 4.</li>
-                        <li>✔️ 480 es divisible entre 5 porque termina en 0.</li>
-                        <li>✔️ 480 es divisible entre 6 porque es divisible entre 2 y entre 3.</li>
-                    </ul>
-                </div>
+                <span class="ejemplo-label">Ejemplo</span>
 
-                <h3>🔍 Divisores de 24 y 30 (ejemplos paso a paso)</h3>
-                <p><strong>Divisores de 24:</strong> Buscamos pares de números cuyo producto sea 24: 1×24, 2×12, 3×8, 4×6. Por tanto:</p>
-                <ul class="divisor-list"><li>D(24) = {1, 2, 3, 4, 6, 8, 12, 24}</li></ul>
-                <p><strong>Divisores de 30:</strong> Pares: 1×30, 2×15, 3×10, 5×6 → </p>
-                <ul class="divisor-list"><li>D(30) = {1, 2, 3, 5, 6, 10, 15, 30}</li></ul>
-
-                <h2>📝 Ejercicios propuestos: Calcula los divisores</h2>
-                <div class="ejercicios-section">
-                    <ul class="ejercicio-grid">
-                        <li><span>1.</span> D(4)</li><li><span>2.</span> D(10)</li><li><span>3.</span> D(18)</li>
-                        <li><span>4.</span> D(15)</li><li><span>5.</span> D(25)</li><li><span>6.</span> D(48)</li>
-                        <li><span>7.</span> D(75)</li><li><span>8.</span> D(20)</li><li><span>9.</span> D(100)</li>
-                        <li><span>10.</span> D(9)</li>
-                    </ul>
-                </div>
-
-                <!-- NÚMEROS PRIMOS Y COMPUESTOS -->
-                <h1>🔢 Números primos y compuestos</h1>
-                <h2>✨ Números primos</h2>
-                <p>Son aquellos que <strong>solo son divisibles entre ellos mismos y el 1</strong>. Es decir, tienen exactamente dos divisores. Por ejemplo, el 5 solo se puede escribir como 1×5, no hay otra multiplicación de naturales. Sus divisores: {1,5} → es primo.</p>
-                <div class="nota-primos">
-                    📌 <strong>Números primos del 1 al 100:</strong> 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97.
-                </div>
-
-                <h2>🧩 Números compuestos</h2>
-                <p>Son aquellos que tienen más de dos divisores. Por ejemplo, el 8: se puede escribir como 1×8 y 2×4; divisores: 1,2,4,8 → es compuesto.</p>
-
-                <!-- DESCOMPOSICIÓN EN FACTORES PRIMOS -->
-                <h1>⚙️ Descomposición en factores primos</h1>
-                <p>Todo número compuesto se puede descomponer de forma única (salvo el orden) en producto de factores primos. Pasos:</p>
-                <ul>
-                    <li>Trazamos una línea vertical. Escribimos el número a la izquierda.</li>
-                    <li>Dividimos por el menor número primo posible (2,3,5...).</li>
-                    <li>El divisor primo se coloca a la derecha y el cociente abajo a la izquierda.</li>
-                    <li>Repetimos hasta obtener 1 en la izquierda.</li>
+                <p><strong>1.</strong> Determinar si 480 es divisible entre 2, 3, 4, 5 y 6:</p>
+                <ul style="color:#ffffff; line-height:2.1; padding-left:2em;">
+                    <li>480 es divisible entre <strong style="color:#38bdf8;">2</strong> porque es cifra par.</li>
+                    <li>480 es divisible entre <strong style="color:#38bdf8;">3</strong> porque 4 + 8 + 0 = 12 y 12 es múltiplo de 3.</li>
+                    <li>480 es divisible entre <strong style="color:#38bdf8;">4</strong> porque sus dos últimas cifras forman el número 80 y 80 es múltiplo de 4.</li>
+                    <li>480 es divisible entre <strong style="color:#38bdf8;">5</strong> porque termina en 0.</li>
+                    <li>480 es divisible entre <strong style="color:#38bdf8;">6</strong> porque es divisible entre 2 y entre 3.</li>
                 </ul>
 
+                <p><strong>2.</strong> Determinar todos los divisores de 24:</p>
+                <p>Para determinar los divisores de 24, lo primero que vamos a hacer es hallar qué pareja de números nos arrojan el resultado de 24:</p>
+
+                <!-- Diagrama divisores de 24 -->
+                <div class="divisores-visual">
+                    <div class="div-numero">24</div>
+                    <div class="div-tree">
+                        <div class="div-pair"><span class="dp-num">1</span><span class="dp-x">×</span><span class="dp-num">24</span></div>
+                        <div class="div-pair"><span class="dp-num">2</span><span class="dp-x">×</span><span class="dp-num">12</span></div>
+                        <div class="div-pair"><span class="dp-num">3</span><span class="dp-x">×</span><span class="dp-num">8</span></div>
+                        <div class="div-pair"><span class="dp-num">4</span><span class="dp-x">×</span><span class="dp-num">6</span></div>
+                        <div style="font-size:0.75em;color:rgba(255,255,255,0.4);margin-top:0.3em;font-style:italic;">Divisores</div>
+                    </div>
+                    <div class="div-result-box">
+                        <div class="div-result-label">Por lo tanto:</div>
+                        D(24) = {1, 2, 3, 4, 6, 8, 12, 24}
+                    </div>
+                </div>
+
+                <p><strong>3.</strong> Determinar los divisores de 30:</p>
+                <p>Para determinar los divisores de 30, lo primero que vamos a hacer es hallar qué pareja de números nos arrojan el resultado de 30:</p>
+
+                <!-- Diagrama divisores de 30 -->
+                <div class="divisores-visual">
+                    <div class="div-numero">30</div>
+                    <div class="div-tree">
+                        <div class="div-pair"><span class="dp-num">1</span><span class="dp-x">×</span><span class="dp-num">30</span></div>
+                        <div class="div-pair"><span class="dp-num">2</span><span class="dp-x">×</span><span class="dp-num">15</span></div>
+                        <div class="div-pair"><span class="dp-num">3</span><span class="dp-x">×</span><span class="dp-num">10</span></div>
+                        <div class="div-pair"><span class="dp-num">5</span><span class="dp-x">×</span><span class="dp-num">6</span></div>
+                        <div style="font-size:0.75em;color:rgba(255,255,255,0.4);margin-top:0.3em;font-style:italic;">Divisores</div>
+                    </div>
+                    <div class="div-result-box">
+                        <div class="div-result-label">Por lo tanto:</div>
+                        D(30) = {1, 2, 3, 5, 6, 10, 15, 30}
+                    </div>
+                </div>
+
+                <!-- Ejercicios Divisores -->
+                <div class="ejercicios-section">
+                    <span class="ejercicios-label">Ejercicios propuestos</span>
+                    <h2>📌 Divisores – Ejercicios</h2>
+                    <div class="ejercicio-grupo">
+                        <p>Aplicando lo aprendido calcula los divisores de los siguientes números.</p>
+                        <ul class="ejercicio-lista">
+                            <li><span>1.</span> D(4)</li>
+                            <li><span>2.</span> D(10)</li>
+                            <li><span>3.</span> D(18)</li>
+                            <li><span>4.</span> D(15)</li>
+                            <li><span>5.</span> D(25)</li>
+                            <li><span>6.</span> D(48)</li>
+                            <li><span>7.</span> D(75)</li>
+                            <li><span>8.</span> D(20)</li>
+                            <li><span>9.</span> D(100)</li>
+                            <li><span>10.</span> D(9)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <hr class="sep" />
+
+                <!-- ─── PRIMOS Y COMPUESTOS ─── -->
+                <h1>Números primos y compuestos</h1>
+
+                <h2>🔷 Números primos</h2>
+                <p>Son aquellos que sólo son divisibles entre ellos mismos y el 1. Para saber si un número es primo hallamos sus divisores y si únicamente tiene dos divisores, el 1 y él mismo, entonces dicho número es primo.</p>
+
+                <!-- Diagrama números primos -->
                 <div class="ejemplo-box">
-                    <div class="ejemplo-label">EJEMPLO: Descomposición de 60</div>
-                    <div class="factor-tree" style="background:#0f172a;">
-                        <div style="display:flex; gap:2rem; justify-content:space-between; max-width:220px;">
-                            <div>
-                                60<br>30<br>15<br>5<br>1
+                    <div class="primos-row">
+                        <!-- 2 -->
+                        <div class="primo-item">
+                            <div class="primo-circulo">2</div>
+                            <div style="display:flex;gap:12px;margin-top:2px;">
+                                <div class="primo-rama" style="transform:rotate(20deg);transform-origin:top center;width:2px;height:22px;background:rgba(56,189,248,0.5);"></div>
+                                <div class="primo-rama" style="transform:rotate(-20deg);transform-origin:top center;width:2px;height:22px;background:rgba(56,189,248,0.5);"></div>
                             </div>
-                            <div style="color:#5eead4;">
-                                | 2<br>| 2<br>| 3<br>| 5<br>
+                            <div class="primo-divisores"><span>1</span><span>2</span></div>
+                        </div>
+                        <!-- 3 -->
+                        <div class="primo-item">
+                            <div class="primo-circulo">3</div>
+                            <div style="display:flex;gap:12px;margin-top:2px;">
+                                <div style="transform:rotate(20deg);transform-origin:top center;width:2px;height:22px;background:rgba(56,189,248,0.5);"></div>
+                                <div style="transform:rotate(-20deg);transform-origin:top center;width:2px;height:22px;background:rgba(56,189,248,0.5);"></div>
+                            </div>
+                            <div class="primo-divisores"><span>1</span><span>3</span></div>
+                        </div>
+                        <!-- 5 -->
+                        <div class="primo-item">
+                            <div class="primo-circulo">5</div>
+                            <div style="display:flex;gap:12px;margin-top:2px;">
+                                <div style="transform:rotate(20deg);transform-origin:top center;width:2px;height:22px;background:rgba(56,189,248,0.5);"></div>
+                                <div style="transform:rotate(-20deg);transform-origin:top center;width:2px;height:22px;background:rgba(56,189,248,0.5);"></div>
+                            </div>
+                            <div class="primo-divisores"><span>1</span><span>5</span></div>
+                        </div>
+                        <!-- 7 -->
+                        <div class="primo-item">
+                            <div class="primo-circulo">7</div>
+                            <div style="display:flex;gap:12px;margin-top:2px;">
+                                <div style="transform:rotate(20deg);transform-origin:top center;width:2px;height:22px;background:rgba(56,189,248,0.5);"></div>
+                                <div style="transform:rotate(-20deg);transform-origin:top center;width:2px;height:22px;background:rgba(56,189,248,0.5);"></div>
+                            </div>
+                            <div class="primo-divisores"><span>1</span><span>7</span></div>
+                        </div>
+                        <div style="align-self:flex-end;padding-bottom:0.1em;font-size:0.82em;color:rgba(255,255,255,0.4);font-style:italic;">← divisores</div>
+                    </div>
+                </div>
+
+                <p>Se observa que, por ejemplo, el 5 se puede escribir como la multiplicación de 1 × 5, pero no se puede escribir como ninguna otra multiplicación de números naturales. Solo tiene como divisores el 1 y el 5, por lo tanto, es un número primo.</p>
+
+                <div class="nota-box">
+                    <strong>Nota:</strong> Del 1 al 100 los números primos son: 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89 y 97.
+                </div>
+
+                <h2>🔶 Números compuestos</h2>
+                <p>Son aquellos números que además de ser divisibles por ellos mismos y la unidad también son divisibles por otros números, es decir, tienen más de dos divisores.</p>
+
+                <!-- Diagrama números compuestos -->
+                <div class="ejemplo-box">
+                    <div class="primos-row">
+                        <!-- 4: divisores 1,2,4 -->
+                        <div class="primo-item">
+                            <div class="compuesto-circulo">4</div>
+                            <div class="compuesto-ramas comp-ramas-3" style="display:flex;gap:8px;margin-top:2px;">
+                                <div class="compuesto-rama" style="width:2px;height:26px;background:rgba(249,115,22,0.6);transform:rotate(30deg);transform-origin:top center;"></div>
+                                <div class="compuesto-rama" style="width:2px;height:22px;background:rgba(249,115,22,0.6);transform:rotate(0deg);transform-origin:top center;"></div>
+                                <div class="compuesto-rama" style="width:2px;height:26px;background:rgba(249,115,22,0.6);transform:rotate(-30deg);transform-origin:top center;"></div>
+                            </div>
+                            <div class="compuesto-divisores"><span>1</span><span>2</span><span>4</span></div>
+                        </div>
+                        <!-- 6: divisores 1,2,3,6 -->
+                        <div class="primo-item">
+                            <div class="compuesto-circulo">6</div>
+                            <div style="display:flex;gap:6px;margin-top:2px;">
+                                <div style="width:2px;height:28px;background:rgba(249,115,22,0.6);transform:rotate(40deg);transform-origin:top center;"></div>
+                                <div style="width:2px;height:22px;background:rgba(249,115,22,0.6);transform:rotate(13deg);transform-origin:top center;"></div>
+                                <div style="width:2px;height:22px;background:rgba(249,115,22,0.6);transform:rotate(-13deg);transform-origin:top center;"></div>
+                                <div style="width:2px;height:28px;background:rgba(249,115,22,0.6);transform:rotate(-40deg);transform-origin:top center;"></div>
+                            </div>
+                            <div class="compuesto-divisores"><span>1</span><span>2</span><span>3</span><span>6</span></div>
+                        </div>
+                        <!-- 8: divisores 1,2,4,8 -->
+                        <div class="primo-item">
+                            <div class="compuesto-circulo">8</div>
+                            <div style="display:flex;gap:6px;margin-top:2px;">
+                                <div style="width:2px;height:28px;background:rgba(249,115,22,0.6);transform:rotate(40deg);transform-origin:top center;"></div>
+                                <div style="width:2px;height:22px;background:rgba(249,115,22,0.6);transform:rotate(13deg);transform-origin:top center;"></div>
+                                <div style="width:2px;height:22px;background:rgba(249,115,22,0.6);transform:rotate(-13deg);transform-origin:top center;"></div>
+                                <div style="width:2px;height:28px;background:rgba(249,115,22,0.6);transform:rotate(-40deg);transform-origin:top center;"></div>
+                            </div>
+                            <div class="compuesto-divisores"><span>1</span><span>2</span><span>4</span><span>8</span></div>
+                        </div>
+                        <div style="align-self:flex-end;padding-bottom:0.1em;font-size:0.82em;color:rgba(255,255,255,0.4);font-style:italic;">← divisores</div>
+                    </div>
+                </div>
+
+                <p>Se observa que, por ejemplo, el 8 se puede escribir como la multiplicación de 1 × 8, y también se puede escribir como la multiplicación de 2 × 4. Como 8 tiene más de 2 divisores, en total serían cuatro (1, 2, 4, 8), 8 es un número compuesto.</p>
+
+                <hr class="sep" />
+
+                <!-- ─── DESCOMPOSICIÓN EN FACTORES PRIMOS ─── -->
+                <h2>🧮 Descomposición de un número en factores primos</h2>
+                <p>Todo número compuesto se puede descomponer de forma única (salvo el orden de los factores) en producto de factores primos.</p>
+                <p>Para descomponer un número en factores primos se siguen estos pasos:</p>
+                <ul style="color:#ffffff;line-height:2.1;padding-left:2em;">
+                    <li>Se traza una línea vertical y se escribe el número a descomponer en la parte superior izquierda.</li>
+                    <li>Se divide el número por el menor número primo que sea posible (2, 3, 5…).</li>
+                    <li>Se escribe el divisor (el número primo) en la parte superior derecha y el cociente debajo del primer número.</li>
+                    <li>Se repite el proceso hasta que en la parte izquierda aparezca un 1; con esto, la descomposición habrá terminado.</li>
+                </ul>
+
+                <span class="ejemplo-label">Ejemplo</span>
+                <p>Observa el procedimiento para descomponer el número 60 en factores primos.</p>
+
+                <div class="factorizacion-visual">
+                    <div class="grid-factorizacion">
+                        <!-- COLUMNA IZQUIERDA: divisiones -->
+                        <div class="divisiones-col">
+                            <!-- División 60 ÷ 2 -->
+                            <div class="div-card">
+                                <div class="div-top-line"><div class="dividendo">60</div><div class="divisor-caja">2</div></div>
+                                <div class="resta-linea"><span style="padding: -0.1em;">-60</div><div class="residuo"><span style="padding: 0.3em;">00</div>
+                                <div class="cociente-etiqueta color-verde";>30</div>
+                                <svg class="flecha-svg" style="top:100px; left:10px" viewBox="0 0 50 50"><path d="M40,0 L10,40" stroke="#2e7d32" stroke-width="3" fill="none"/><polygon points="5,35 10,45 20,40" fill="#2e7d32"/></svg>
+                            </div>
+                            <!-- División 30 ÷ 2 -->
+                            <div class="div-card">
+                                <div class="div-top-line"><div class="dividendo"><span class="circulo-marcador color-verde" style="position: relative; top: 8px; left: 2px;">30</span></div><div class="divisor-caja">2</div></div>
+                                <div class="resta-linea"><span style="padding: 0.7em;">-30</div><div class="residuo"><span style="padding: 1em;">00</div>
+                                <div class="cociente-etiqueta2 color-naranja">15</div>
+                                <svg class="flecha-svg2" style="top:105px; left:20px" viewBox="0 0 50 50"><path d="M40,0 L10,40" stroke="#e65100" stroke-width="3" fill="none"/><polygon points="5,35 10,45 20,40" fill="#e65100"/></svg>
+                            </div>
+                            <!-- División 15 ÷ 3 -->
+                            <div class="div-card">
+                                <div class="div-top-line"><div class="dividendo"><span class="circulo-marcador color-naranja" style="position: relative; top: 8px; left: 2px;">15</span></div><div class="divisor-caja">3</div></div>
+                                <div class="resta-linea"><span style="padding: 0.7em;">-15</div><div class="residuo"><span style="padding: 1em;">00</div>
+                                <div class="cociente-etiqueta3 color-morado">5</div>
+                                <svg class="flecha-svg3" style="top:105px; left:20px" viewBox="0 0 50 50"><path d="M40,0 L10,40" stroke="#6a1b9a" stroke-width="3" fill="none"/><polygon points="5,35 10,45 20,40" fill="#6a1b9a"/></svg>
+                            </div>
+                            <!-- División 5 ÷ 5 -->
+                            <div class="div-card">
+                                <div class="div-top-line"><div class="dividendo"><span class="circulo-marcador color-morado" style="position: relative; top: 8px; left: 2px;">5</span></div><div class="divisor-caja">5</div></div>
+                                <div class="resta-linea"><span style="padding: 0.7em;">-5</div><div class="residuo"><span style="padding: 1em;">0</div>
+                                <div class="cociente-etiqueta4 color-blanco" style="top:50px;">1</div>
                             </div>
                         </div>
+
+                        <!-- COLUMNA CENTRAL: explicaciones -->
+                        <div class="explicaciones-col">
+                            <div class="exp-texto">Se divide 60 entre el primer número primo (2), si la división no es exacta se divide por el siguiente que es el 3 y así sucesivamente hasta encontrar un numero divisible.</div>
+                            <div class="exp-texto">Se divide el 30 por el primer número primo (2), si la división no es exacta se divide por el siguiente que es el 3 y así sucesivamente hasta encontrar un numero divisible.</div>
+                            <div class="exp-texto">Se divide el 15 por el primer número primo (2), como la división no da un resultado exacto se divide por el siguiente número primo que es el 3 y así sucesivamente hasta encontrar un numero divisible.</div>
+                            <div class="exp-texto">Se divide el 5 por el primer número primo (2), como la división no da un resultado exacto se divide por el siguiente número primo que es el 3 y si no da exacta se toma el siguiente y así sucesivamente hasta encontrar un numero divisible.</div>
+                        </div>
+                        
+
+                        <!-- COLUMNA DERECHA: descomposición final con línea vertical -->
+                        <div class="descomposicion-col">
+                            <div class="cuadricula-descomposicion">
+                                <div class="num-izquierda">60</div><div class="v-line-divisora"></div><div class="num-derecha">2</div>
+                                <div class="num-izquierda">30</div><div class="v-line-divisora"></div></p><br><br></p>
+                                </div>
+                            <div class="cuadricula-descomposicion">
+                                <div class="num-izquierda">60</div><div class="v-line-divisora"></div><div class="num-derecha">2</div>
+                                <div class="num-izquierda">30</div><div class="v-line-divisora"></div><div class="num-derecha">2</div>
+                                <div class="num-izquierda">15</div><div class="v-line-divisora"></div></p><br><br></p>
+                                </div>
+                            <div class="cuadricula-descomposicion">
+                                <div class="num-izquierda">60</div><div class="v-line-divisora"></div><div class="num-derecha">2</div>
+                                <div class="num-izquierda">30</div><div class="v-line-divisora"></div><div class="num-derecha">2</div>
+                                <div class="num-izquierda">15</div><div class="v-line-divisora"></div><div class="num-derecha">3</div>
+                                <div class="num-izquierda">5</div><div class="v-line-divisora"></div></p><br></p>
+                                </div>
+                            <div class="cuadricula-descomposicion">
+                                <div class="num-izquierda">60</div><div class="v-line-divisora"></div><div class="num-derecha">2</div>
+                                <div class="num-izquierda">30</div><div class="v-line-divisora"></div><div class="num-derecha">2</div>
+                                <div class="num-izquierda">15</div><div class="v-line-divisora"></div><div class="num-derecha">3</div>
+                                <div class="num-izquierda">5</div><div class="v-line-divisora"></div><div class="num-derecha">5</div>
+                                <div class="num-izquierda">1</div><div class="v-line-divisora"></div><div class="num-derecha"></div><br>
+                            </div>
+                            </div>
+                            <div class="descomposicion-col"></div>
+                            <div style="margin-top: -3.2rem; background: rgba(34,197,94,0.12); border-radius: 12px; padding: 2rem -1rem; text-align: center; font-family: monospace;">
+                                <span>✅ 60 = <span style="color:#86efac">2 × 2 × 3 × 5 =<span style="color:#facc15"> 2² × 3 × 5</span>
+                            </div>
+                        </div>
+                            </div>
+
+                <!-- Ejercicios descomposición -->
+                <div class="ejercicios-section">
+                    <span class="ejercicios-label">Ejercicios propuestos</span>
+                    <h2>📌 Factores Primos – Ejercicios</h2>
+                    <div class="ejercicio-grupo">
+                        <p>Aplicando lo aprendido realiza la descomposición en factores primos de los siguientes números.</p>
+                        <ul class="ejercicio-lista">
+                            <li><span>1.</span> 14</li>
+                            <li><span>2.</span> 10</li>
+                            <li><span>3.</span> 18</li>
+                            <li><span>4.</span> 35</li>
+                            <li><span>5.</span> 25</li>
+                            <li><span>6.</span> 48</li>
+                            <li><span>7.</span> 75</li>
+                            <li><span>8.</span> 20</li>
+                            <li><span>9.</span> 100</li>
+                            <li><span>10.</span> 19</li>
+                        </ul>
                     </div>
-                    <p>Por tanto, <strong>60 = 2 × 2 × 3 × 5 = 2² × 3 × 5</strong></p>
                 </div>
 
-                <h2>📌 Ejercicios: Descomposición en factores primos</h2>
-                <div class="ejercicios-section">
-                    <ul class="ejercicio-grid">
-                        <li><span>1.</span> 14</li><li><span>2.</span> 10</li><li><span>3.</span> 18</li>
-                        <li><span>4.</span> 35</li><li><span>5.</span> 25</li><li><span>6.</span> 48</li>
-                        <li><span>7.</span> 75</li><li><span>8.</span> 20</li><li><span>9.</span> 100</li>
-                        <li><span>10.</span> 19</li>
-                    </ul>
-                    <p style="margin-top:1rem; font-size:0.85rem;">💡 Recuerda: 19 es primo, su descomposición es él mismo.</p>
-                </div>
-
-                <!-- Descomposición visual extra y explicación adicional -->
-                <div class="nota-primos" style="background:#0f212e;">
-                    <p><strong>📐 Factorización paso a paso (ejemplo adicional):</strong> Para descomponer 48: 48 ÷ 2 = 24; 24 ÷ 2 = 12; 12 ÷ 2 = 6; 6 ÷ 2 = 3; 3 ÷ 3 = 1. → 48 = 2⁴ × 3.</p>
-                </div>
-
-                <!-- Tabla de contenido teórico extra (criterios aplicados) -->
-                <hr class="sep">
-                <h2>🎯 ¿Cómo saber si un número es primo?</h2>
-                <p>Calculamos sus divisores: si solo tiene dos divisores (1 y él mismo) es primo. Por ejemplo, el 7 solo se puede dividir exactamente entre 1 y 7. El 1 no es primo ni compuesto.</p>
-
-                <!-- Muestra de números primos relevantes -->
-                <div style="display:flex; flex-wrap:wrap; gap:0.5rem; justify-content:center; margin:1rem 0;">
-                    <span class="badge-prime">2</span> <span class="badge-prime">3</span> <span class="badge-prime">5</span> <span class="badge-prime">7</span> <span class="badge-prime">11</span> <span class="badge-prime">13</span> <span class="badge-prime">17</span> <span class="badge-prime">19</span> <span class="badge-prime">23</span> <span class="badge-prime">29</span> <span class="badge-prime">31</span>
-                </div>
-
-                <!-- Refuerzo de criterios de divisibilidad con ejemplos pequeños -->
-                <h2>➕ Refuerzo: Criterios de divisibilidad aplicados</h2>
-                <div class="ejemplo-box">
-                    <p>🔹 <strong>¿1.254 es divisible entre 3?</strong> Suma cifras: 1+2+5+4=12, 12 es múltiplo de 3 → Sí.</p>
-                    <p>🔹 <strong>¿3.420 es divisible entre 4?</strong> Últimas dos cifras: 20, 20÷4=5 → Sí divisible.</p>
-                    <p>🔹 <strong>¿5.230 es divisible entre 5?</strong> Termina en 0 → Sí.</p>
-                </div>
-                
-                <!-- Nota sobre la unicidad de la descomposición -->
-                <hr class="sep">
-                <div style="text-align: center; margin: 2em 0 1em;">
-                    <span style="background:#2dd4bf20; padding:0.2rem 1rem; border-radius:50px;">📘 Teorema fundamental de la aritmética: todo número entero mayor que 1 se descompone de forma única en factores primos.</span>
-                </div>
-
-                <!-- Actividad final de repaso rápido (preguntas mentales) -->
-                <div class="ejercicios-section">
-                    <h2 style="font-size:1.2rem;">🧠 Piensa y aplica</h2>
-                    <ul style="list-style: circle; padding-left:1.5rem;">
-                        <li>¿El número 91 es primo? (Pista: 91 = 7×13 → no es primo)</li>
-                        <li>¿Cuáles son los divisores de 36?</li>
-                        <li>Descompón 72 en factores primos.</li>
-                    </ul>
-                    <p style="margin-top:1rem;">✏️ Resuelve los ejercicios de divisor y factorización en tu cuaderno y verifica con la teoría.</p>
-                </div>
-                
-                <!-- Pie de guía: información académica (igual al PDF) -->
-                <div style="border-top: 2px solid #1e293b; margin-top: 2rem; padding-top: 1rem; text-align: center; font-size: 0.75rem; color:#94a3b8;">
-                    Guía 5 – Múltiplos, divisores y números primos | Matemáticas 6° | Institución Educativa Palmarito – Majagual, Sucre<br>
-                    Material de apoyo basado en contenidos oficiales. "La mejor forma de aprender es practicar".
-                </div>
+                <hr class="sep" />
             </div>
         </section>
     </div>
@@ -448,12 +1228,11 @@
                 <li><a href="https://github.com/auladelprofeeder" class="icon brands alt fa-github" target="_blank"><span class="label">GitHub</span></a></li>
                 <li><a href="https://www.tiktok.com/@eldavidedd" class="icon brands alt fa-tiktok" target="_blank"><span class="label">TikTok</span></a></li>
             </ul>
-            <div class="copyright">&copy; 2026 MathEscape | Guía completa de múltiplos, divisores y números primos - Diseño: <a href="https://html5up.net">HTML5 UP</a></div>
+            <div class="copyright">&copy; 2026 MathEscape | Guía 5: Múltiplos, Divisores y Números Primos – Diseño: <a href="https://html5up.net">HTML5 UP</a></div>
         </div>
     </footer>
 </div>
 
-<!-- Scripts de la plantilla base -->
 <script src="assets/js/jquery.min.js"></script>
 <script src="assets/js/jquery.scrolly.min.js"></script>
 <script src="assets/js/jquery.scrollex.min.js"></script>
