@@ -8,9 +8,9 @@
     <style>
         /* ── Contenedor principal de la guía ── */
         .guia-wrapper {
-            max-width: 1000px;
+            max-width: 900px;
             margin: 0 auto;
-            padding: 2em 2em 3em;
+            padding: 3em 2em 4em;
             color: #ffffff;
             font-family: "Source Sans Pro", Helvetica, sans-serif;
             font-weight: 400;
@@ -28,36 +28,33 @@
             backdrop-filter: blur(6px);
         }
         .inst-header h2 {
-            font-size: 1.4em;
-            font-weight: 800;
-            letter-spacing: 0.05em;
+            font-size: 1.2em;
+            font-weight: 700;
+            letter-spacing: 0.1em;
             color: #38bdf8;
             margin-bottom: 0.5em;
         }
         .inst-header p {
             font-size: 0.85em;
-            color: rgba(255,255,255,0.7);
-            margin-bottom: 0.8em;
-            line-height: 1.5;
-        }
-        .inst-meta {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
-            justify-content: center;
-            margin-top: 1rem;
+            color: rgba(255,255,255,0.6);
+            margin-bottom: 1em;
+            line-height: 1.8;
         }
         .inst-meta span {
-            background: rgba(139, 92, 246, 0.15);
-            padding: 0.4em 1.2em;
-            border-radius: 40px;
-            font-size: 0.85rem;
+            background: rgba(139,92,246,0.1);
+            padding: 0.5em 1em;
+            border-radius: 6px;
             border-left: 3px solid #8b5cf6;
-            color: #e2e8f0;
+            color: rgba(255,255,255,0.8);
+            display: inline-block;
+            transition: all 0.3s ease;
         }
-        .inst-meta span strong {
-            color: #38bdf8;
+        .inst-meta span:hover {
+            transform: translateY(-3px);
+            background: rgba(139,92,246,0.2);
+            box-shadow: 0 5px 15px rgba(139,92,246,0.2);
         }
+        .inst-meta span strong { color: #38bdf8; font-weight: 700; }
 
         /* Títulos y secciones */
         .guia-wrapper h1 {
@@ -92,6 +89,20 @@
         .ejemplo-box {
             background: rgba(34,197,94,0.1);
             border: 1px solid rgba(34,197,94,0.3);
+            border-radius: 20px;
+            padding: 1.2rem 1.8rem;
+            margin: 1.8rem 0;
+        }
+        .ejemplo-box2 {
+            background: rgba(55, 141, 156, 0.074);
+            border: 1px solid rgba(38, 169, 165, 0.96);
+            border-radius: 20px;
+            padding: 1.2rem 1.8rem;
+            margin: 1.8rem 0;
+        }
+        .ejemplo-box3 {
+            background: rgba(146, 58, 58, 0.1);
+            border: 1px solid rgba(197, 34, 37, 0.3);
             border-radius: 20px;
             padding: 1.2rem 1.8rem;
             margin: 1.8rem 0;
@@ -181,6 +192,89 @@
             padding: 0.2rem 0.4rem;
             border-radius: 8px;
         }
+        /* Columna derecha: descomposición final */
+        .descomposicion-col {
+            font-size: 1.35rem;
+            font-family: 'Courier New', monospace;
+        }
+        .cuadricula-descomposicion {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            line-height: 1.7;
+            gap: 0 8px;
+        }
+        .num-izquierda {
+            text-align: right;
+            color: #a5d6ff;
+            font-weight: 600;
+        }
+        .v-line-divisora {
+            width: 2px;
+            background: #8b5cf6;
+            margin: 0 4px;
+            height: 100%;
+        }
+        .num-derecha {
+            text-align: left;
+            color: #86efac;
+            font-weight: 700;
+        }
+
+        /* ========= CONTENEDOR PARA DESCOMPOSICIONES LADO A LADO (FLEX) ========= */
+        .descomposicion-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: center;
+            margin: 2rem 0 1rem;
+        }
+        .descomposicion-card {
+            flex: 1;
+            min-width: 220px;
+            background: rgba(15, 23, 42, 0.6);
+            border-radius: 24px;
+            padding: 1rem 1.2rem 1.2rem 1.2rem;
+            backdrop-filter: blur(4px);
+            border: 1px solid rgba(56, 189, 248, 0.25);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .descomposicion-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 20px -12px rgba(56,189,248,0.3);
+            border-color: rgba(56,189,248,0.6);
+        }
+        .card-title {
+            text-align: center;
+            font-weight: 700;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            color: #facc15;
+            border-bottom: 1px dashed #38bdf8;
+            display: inline-block;
+            width: 100%;
+            letter-spacing: 1px;
+        }
+        .card-title span {
+            background: #1e293b;
+            padding: 0.2rem 0.8rem;
+            border-radius: 40px;
+            font-size: 0.9rem;
+        }
+        .pie-factores {
+            text-align: center;
+            font-size: 0.8rem;
+            margin-top: 0.8rem;
+            color: #94a3b8;
+            font-family: monospace;
+        }
+        @media (max-width: 680px) {
+            .descomposicion-card {
+                min-width: 100%;
+            }
+            .cuadricula-descomposicion {
+                font-size: 0.9rem;
+            }
+        }
     </style>
     <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 </head>
@@ -189,8 +283,11 @@
 
     <!-- Header -->
     <header id="header" class="alt style2">
-        <a href="Matemática 6º.html" class="logo" style="font-size:1.3em;"><strong>← Atrás</strong></a>
-        <nav><a href="#menu">Menú</a></nav>
+        <a href="index.html" class="logo"><strong>By Eder Sequeda</strong></a>
+        <nav>
+            <a href="Matemática 6º.html" class="logo" style="font-size:1.3em;"><strong>← Atrás</strong></a>
+            <a href="#menu">Menú</a>
+        </nav>
     </header>
 
     <!-- Menú -->
@@ -198,6 +295,13 @@
         <ul class="links">
             <li><a href="index.html">Inicio</a></li>
             <li><a href="Matemáticas.html">Matemáticas</a></li>
+            <li><a href="Estadística.html">Estadística</a></li>
+            <li><a href="Geometría.html">Geometría</a></li>
+            <li><a href="Física.html">Física</a></li>
+            <li><a href="Ética.html">Ética</a></li>
+            <li><a href="Religión.html">Religión</a></li>
+            <li><a href="Retos.html">Retos y Juegos</a></li>
+            <li><a href="Acerca.html">Acerca de</a></li>
         </ul>
     </nav>
 
@@ -205,10 +309,10 @@
     <section id="banner" class="style2">
         <div class="inner">
             <header class="major" style="padding-left:7em;">
-                <h1>Máximo Común Divisor<br>y Mínimo Común Múltiplo</h1>
+                <h1>MCD y MCM</h1>
             </header>
-            <div class="content" style="padding-left:14em;">
-                <p>🔢 MCD · MCM · Métodos y problemas · Guía 6 · Matemáticas 6º</p>
+            <div class="content" style="padding-left:7em;">
+                <p>🔢 Máximo Común Divisor y Mínimo Común Múltiplo 🔢</p>
             </div>
         </div>
     </section>
@@ -217,85 +321,242 @@
     <div id="main">
         <section id="one">
             <div class="guia-wrapper">
-                <!-- Encabezado institucional (contexto de la guía) -->
+                <!-- Encabezado institucional -->
                 <div class="inst-header">
-                    <h2>REPÚBLICA DE COLOMBIA<br>DEPARTAMENTO DE SUCRE · MUNICIPIO DE MAJAGUAL</h2>
-                    <p><strong>Institución Educativa Palmarito</strong><br>
-                    DANE: 270429000014  NIT. 823001728-3<br>
-                    REG. ICFES No. 135418 / REG. ICFES No. 186304<br>
-                    Jornada Única y Educación de Adultos<br>
-                    iepalmar@iepalmaritomajagual-sucre.edu.co  |  ie.palmarito@sucre.edu.co</p>
-                    <div class="inst-meta">
-                        <span><strong>Asignatura:</strong> Matemática</span>
-                        <span><strong>Guía:</strong> 6 – MCD y MCM</span>
-                        <span><strong>Grado:</strong> 6°</span>
-                        <span><strong>Docente:</strong> Eder David Sequeda Martínez</span>
+                    <h2>EDER DAVID SEQUEDA MARTINEZ</h2>
+                    <p>Ingeniero Civil<br>Docente: Matemáticas – Geometría – Estadística – Física</p>
+                    <div style="display:flex;flex-direction:column;gap:1rem;">
+                        <div class="inst-meta" style="display:flex;justify-content:center;gap:2rem;flex-wrap:wrap;">
+                            <span><strong>Grado:</strong> 6°</span>
+                            <span><strong>Tema:</strong> Máximo Común Divisor y Mínimo Común Múltiplo</span>
+                        </div>
+                        <div class="inst-meta" style="display:flex;justify-content:center;gap:2rem;flex-wrap:wrap;">
+                            <span><strong>Asignatura:</strong> Matemática</span>
+                            <span><strong>Docente:</strong> Eder David Sequeda Martínez</span>
+                        </div>
                     </div>
                 </div>
 
                 <!-- PARTE 1: MÁXIMO COMÚN DIVISOR -->
                 <h1>📌 Máximo Común Divisor (MCD)</h1>
                 <p>El <strong>Máximo Común Divisor</strong> de dos o más números es el mayor número que los divide a todos exactamente. Se usa para repartir, cortar en trozos iguales o agrupar en la mayor parte posible.</p>
-
-                <h2>🔧 Método 1: Descomposición en factores primos (MCD)</h2>
-                <p><strong>Pasos:</strong> Descomponemos cada número, elegimos los <strong>factores comunes con el menor exponente</strong> y los multiplicamos.</p>
+                <div class="ejemplo-box2">
+                <strong>¿Cuando lo usamos?</strong>
+                <p style="color:#03f5f9; padding-left: 2em;">→ <span style="color:white">Cuando queremos repartir cosas en grupos iguales usando la mayor cantidad
+                <span style="color:white; padding-left: 1.38em;">posible.</span></span></p>
+                <p style="color:#03f5f9; padding-left: 2em;">→ <span style="color:white">Cuando debemos cortar trozos de la mayor longitud posible sin que sobre
+                <span style="color:white; padding-left: 1.38em;">material.</span></span></p>    
+                <p style="color:#03f5f9; padding-left: 2em;">→ <span style="color:white">Cuando queremos saber cuántos grupos iguales se pueden formar con varios
+                <span style="color:white; padding-left: 1.38em;">conjuntos de objetos.</span></span></p></div>
+                <h2>Método 1: Usando conjuntos de divisores</h2>
+                <div class="ejemplo-box3">
+                <p><strong>🔧 Pasos para hallar el MCD con divisores:</strong></p>
+                <p style="color:#f97370; padding-left: 2em;">→ <span style="color:white">Paso 1: Hallar todos los divisores de cada número. (Si no sabes cómo hacerlo, 
+                <span style="color:white; padding-left: 1.38em;">revisa por favor la guía de Múltiplos y Divisores.)</span></span></p>
+                <p style="color:#f97370; padding-left: 2em;">→ <span style="color:white">Paso 2: Identificar los divisores que son COMUNES a todos los números.</span></p>
+                <p style="color:#f97370; padding-left: 2em;">→ <span style="color:white">Paso 3: El mayor de esos divisores comunes es el MCD.</span></p>
+                </div>
                 <div class="ejemplo-box">
-                    <div class="ejemplo-label">EJEMPLO: MCD de 60 y 84</div>
-                    <p><strong>Descomposición:</strong></p>
-                    <div class="factor-prime">
-                        60 = 2² × 3 × 5<br>
-                        84 = 2² × 3 × 7
+                    <div class="ejemplo-label" style="font-size: 15px;">EJEMPLO: MCD de 18 y 24</div>
+                    <p><span style="color:white"><strong>Paso 1: Hallar todos los divisores de cada número:</strong></span></p>
+                    <div class="factor-prime" style="color:#f1e261;">
+                        D(18) = {1, 2, 3, 6, 9, 18}<br>
+                        D(24) = {1, 2, 3, 4, 6, 8, 12, 24}<br>
+                    </div>         
+                    <p><span style="color:white"><strong>Paso 2: Buscar los divisores COMUNES (los que aparecen en las dos listas):</strong></span></p>
+                    <div class="factor-prime" style="color:#f1e261;">
+                        Divisores Comunes = {1, 2, 3, 6}<br>
                     </div>
-                    <p>Factores comunes: 2 y 3. Menor exponente: 2² (exponente 2) y 3¹ → <strong>2² × 3 = 4 × 3 = 12</strong></p>
-                    <p>✅ mcd(60, 84) = 12</p>
+                    <p><span style="color:white"><strong>Paso 3: El mayor de los divisores comunes es el MCD:</strong></span></p>
+                    <div class="factor-prime" style="color:#f1e261;">
+                        ✅ MCD (18,24) = 6<br></div>
+                    </div>
+                <h2>Método 2: Descomposición en factores primos</h2>
+                <div class="ejemplo-box3">
+                <p><strong>🔧 Pasos para hallar el MCD con factores primos:</strong></p>
+                <p style="color:#f97370; padding-left: 2em;">→ <span style="color:white">Paso 1: Descomponer cada número en sus factores primos.</span></p>
+                <p style="color:#f97370; padding-left: 2em;">→ <span style="color:white">Paso 2: Identificar los factores primos COMUNES a todos los números.</span></p>
+                <p style="color:#f97370; padding-left: 2em;">→ <span style="color:white">Paso 3: De los factores comunes, elegir los que tienen el MENOR exponente.</span></p>
+                <p style="color:#f97370; padding-left: 2em;">→ <span style="color:white">Paso 4: Multiplicar esos factores. El resultado es el MCD.</span></p>
                 </div>
-
-                <h2>📐 Método 2: Método abreviado (divisiones sucesivas)</h2>
-                <p>Se dividen todos los números por un primo común hasta que ya no haya divisor común. El MCD es el producto de los divisores usados.</p>
                 <div class="ejemplo-box">
-                    <div class="ejemplo-label">MCD de 120, 180 y 240</div>
-                    <table class="metodo-tabla">
-                        <thead><tr><th>120</th><th>180</th><th>240</th><th>Factor primo</th></tr></thead>
-                        <tbody>
-                            <tr><td>60</td><td>90</td><td>120</td><td>2</td></tr>
-                            <tr><td>30</td><td>45</td><td>60</td><td>2</td></tr>
-                            <tr><td>15</td><td>45</td><td>30</td><td>3</td></tr>
-                            <tr><td>5</td><td>15</td><td>10</td><td>5</td></tr>
-                            <tr><td>1</td><td>3</td><td>2</td><td>—</td></tr>
-                        </tbody>
-                    </table>
-                    <p>Factores usados: 2 × 2 × 3 × 5 = <strong>60</strong>. mcd(120,180,240) = 60.</p>
-                </div>
+                    <div class="ejemplo-label" style="font-size: 15px;">EJEMPLO: MCD de 60 y 84</div>
+                    <p><span style="color:white"><strong>Paso 1: Descomponer en factores primos (árbol o divisiones sucesivas):</strong></span></p>
+                <!-- ========= DESCOMPOSICIONES LADO A LADO: IZQUIERDA (60) y DERECHA (84) ========= -->
+                <div class="descomposicion-row">
+                    <!-- Tarjeta izquierda: número 60 -->
+                    <div class="descomposicion-card">
+                        <div class="card-title"><span>📌 Descomposición de 60</span></div>
+                        <div class="cuadricula-descomposicion">
+                            <div class="num-izquierda">60</div><div class="v-line-divisora"></div><div class="num-derecha">2</div>
+                            <div class="num-izquierda">30</div><div class="v-line-divisora"></div><div class="num-derecha">2</div>
+                            <div class="num-izquierda">15</div><div class="v-line-divisora"></div><div class="num-derecha">3</div>
+                            <div class="num-izquierda">5</div><div class="v-line-divisora"></div><div class="num-derecha">5</div>
+                            <div class="num-izquierda">1</div><div class="v-line-divisora"></div><div class="num-derecha"></div>
+                        </div>
+                        <div class="pie-factores" style="color:#facc15; font-size: 20px;">60 = 2² × 3 × 5</div>
+                    </div>
 
+                    <!-- Tarjeta derecha: número 84 (ejemplo distinto para comparar) -->
+                    <div class="descomposicion-card">
+                        <div class="card-title"><span>📌 Descomposición de 84</span></div>
+                        <div class="cuadricula-descomposicion">
+                            <div class="num-izquierda">84</div><div class="v-line-divisora"></div><div class="num-derecha">2</div>
+                            <div class="num-izquierda">42</div><div class="v-line-divisora"></div><div class="num-derecha">2</div>
+                            <div class="num-izquierda">21</div><div class="v-line-divisora"></div><div class="num-derecha">3</div>
+                            <div class="num-izquierda">7</div><div class="v-line-divisora"></div><div class="num-derecha">7</div>
+                            <div class="num-izquierda">1</div><div class="v-line-divisora"></div><div class="num-derecha"></div>
+                            </div>
+                        <div class="pie-factores" style="color:#facc15; font-size: 20px;">84 = 2² × 3 × 7</div>
+                    </div>
+                    </div>
+                    <p><span style="color:white"><strong>Paso 2: Determinar los Factores comunes entre 60 y 84:</strong></span></p>
+                    <div class="descomposicion-card" style="color:#86efac">Factores comunes:<span style="color:#a5d6ff"> 2 y 3 (aparecen en las dos descomposiciones)</span></div>
+                    <p><span style="color:white"><strong>Paso 3: Se toman los Factores comunes con el menor exponente</strong></span></p>
+                    <div class="descomposicion-card" style="color:#86efac">Para este caso sería:<span style="color:#a5d6ff"> 2² y 3¹</span></div>
+                    <p><span style="color:white"><strong>Paso 4: Se multiplican los datos obtenidos y se obtiene el MCD</strong></span></p>
+                    <div class="descomposicion-card" style="color:#a5d6ff; padding-left: 3em;">2² x 3 = 4 x 3 = 12</p>
+                    <span style="color:#86efac; margin-left: -2em;">✅ MCD (60,84) = 12</span></div>
+                    <p><span style="color:white"><strong>Verificación</strong></span></p>
+                    <div class="descomposicion-card" style="color:#86efac">60 ÷ 12 = 5 ✓ <span style="color:#facc15;"> ••••••</span> 84 ÷ 12 = 7 ✓</div>
+                </div>
+                <h2>Método 3: Método abreviado (simultáneo)</h2>
+                <div class="ejemplo-box3">
+                <p><strong>🔧 Pasos del método abreviado:</strong></p>
+                <p style="color:#f97370; padding-left: 2em;">→ <span style="color:white">Paso 1: Escribir los números uno al lado del otro.</span></p>
+                <p style="color:#f97370; padding-left: 2em;">→ <span style="color:white">Paso 2: Dividir SIMULTÁNEAMENTE todos los números entre un factor primo
+                <span style="color:white; padding-left: 1.38em;">COMÚN a todos.</span></span></p>
+                <p style="color:#f97370; padding-left: 2em;">→ <span style="color:white">Paso 3: Repetir hasta que ya no haya un primo que divida a TODOS a la vez.</span></p>
+                <p style="color:#f97370; padding-left: 2em;">→ <span style="color:white">Paso 4: Multiplicar todos los factores primos usados. Ese es el MCD.</span></p>
+                </div>
+                
+                <!-- ========= NUEVO EJEMPLO: TRES COLUMNAS 120, 180, 240 (DESPUÉS DEL MÉTODO ABREVIADO) ========= -->
+                <div class="ejemplo-box">
+                    <div class="ejemplo-label" style="font-size: 15px;">EJEMPLO: Hallar el MCD 120, 180 y 240 usando el método abreviado</div>
+                    <p><span style="color:white"><strong>Paso 1, 2 y 3: Escribir los números, dividir por factores primos comunes y Repetir hasta que ya no haya un primo que divida a TODOS a la vez.:</strong></span></p>
+                    <div class="descomposicion-row">
+                        <!-- Tarjeta izquierda: 120 -->
+                        <div class="descomposicion-card">
+                            <div class="card-title"><span>📌 120</span></div>
+                            <div class="cuadricula-descomposicion">
+                                <div class="num-izquierda">120</div><div class="v-line-divisora"></div><div class="num-derecha">2</div>
+                                <div class="num-izquierda">60</div><div class="v-line-divisora"></div><div class="num-derecha">2</div>
+                                <div class="num-izquierda">30</div><div class="v-line-divisora"></div><div class="num-derecha">3</div>
+                                <div class="num-izquierda">10</div><div class="v-line-divisora"></div><div class="num-derecha">5</div>
+                                <div class="num-izquierda">2</div><div class="v-line-divisora"></div><div class="num-derecha"></div>
+                            </div>
+                            </div>
+
+                        <!-- Tarjeta centro: 180 -->
+                        <div class="descomposicion-card">
+                            <div class="card-title"><span>📌 180</span></div>
+                            <div class="cuadricula-descomposicion">
+                                <div class="num-izquierda">180</div><div class="v-line-divisora"></div><div class="num-derecha">2</div>
+                                <div class="num-izquierda">90</div><div class="v-line-divisora"></div><div class="num-derecha">2</div>
+                                <div class="num-izquierda">45</div><div class="v-line-divisora"></div><div class="num-derecha">3</div>
+                                <div class="num-izquierda">15</div><div class="v-line-divisora"></div><div class="num-derecha">5</div>
+                                <div class="num-izquierda">3</div><div class="v-line-divisora"></div><div class="num-derecha"></div>
+                            </div>
+                            </div>
+
+                        <!-- Tarjeta derecha: 240 -->
+                        <div class="descomposicion-card">
+                            <div class="card-title"><span>📌 240</span></div>
+                            <div class="cuadricula-descomposicion">
+                                <div class="num-izquierda">240</div><div class="v-line-divisora"></div><div class="num-derecha">2</div>
+                                <div class="num-izquierda">120</div><div class="v-line-divisora"></div><div class="num-derecha">2</div>
+                                <div class="num-izquierda">60</div><div class="v-line-divisora"></div><div class="num-derecha">3</div>
+                                <div class="num-izquierda">20</div><div class="v-line-divisora"></div><div class="num-derecha">5</div>
+                                <div class="num-izquierda">4</div><div class="v-line-divisora"></div><div class="num-derecha"></div>
+                            </div>
+                            </div>
+                            <span class="pie-factores" style="color:#facc15; font-size: 1.3rem;">Ahora no existe ningún número primo que divida simultaneamente a 2, 3 y 4. Se detiene el proceso.</span>
+                    <div></div></div>
+                            <p><span style="color:white"><strong>Paso 4: Multiplicar todos los factores primos usados</strong></span></p>
+                    <div class="descomposicion-card" style="background:rgba(139,92,246,0.2); margin:0.5rem 0; color:#c084fc;">
+                    <span style="color:#86efac; font-size: 20px;">2 x 2 x 3 x 5 = 60<span style="font-size: 3rem; color: rgb(170, 58, 58);"> → </span>✅ MCD(120, 180, 240) = 60</span>
+                    </div>
+                    <p><span style="color:white"><strong>Verificación:</strong></span></p>
+                    <div class="descomposicion-card" style="background:rgba(139,92,246,0.2); margin:0.5rem 0;">
+                        <div style="color:#86efac">120 ÷ 60 = 2 <span style="color:rgb(170, 58, 58); font-size: 3rem;">✓ </span><span style="color:#facc15;"> ••••••</span> 180 ÷ 60 = 3 <span style="color:rgb(170, 58, 58);font-size: 3rem;">✓ </span><span style="color:#facc15;"> ••••••</span> 240 ÷ 60 = 4 <span style="color:rgb(170, 58, 58);font-size: 3rem;">✓</span></div></div>
+                    </div>
                 <h2>📖 Problema contextualizado (La Mojana)</h2>
                 <div class="ejemplo-box">
                     <p><strong>Don Raúl, pescador del caño Mojana, tiene tres redes de 48 m, 60 m y 72 m. Quiere cortarlas en trozos iguales de la mayor longitud posible. ¿Cuánto mide cada trozo?</strong></p>
-                    <p>Hallamos MCD(48,60,72):</p>
-                    <p>48 = 2⁴ × 3, 60 = 2² × 3 × 5, 72 = 2³ × 3² → comunes: 2² y 3¹ → MCD = 4×3 = <strong>12 m</strong>.</p>
-                    <p>Cada trozo medirá 12 metros. 🎣</p>
-                </div>
+                    <p><span style="color:white"><strong>Identificamos qué debemos hallar: el MCD de 48, 60 y 72.</strong></span></p>
+                    <div class="descomposicion-row">
+                        <!-- Tarjeta izquierda: 48 -->
+                        <div class="descomposicion-card">
+                            <div class="card-title"><span>📌 48</span></div>
+                            <div class="cuadricula-descomposicion">
+                                <div class="num-izquierda">48</div><div class="v-line-divisora"></div><div class="num-derecha">2</div>
+                                <div class="num-izquierda">24</div><div class="v-line-divisora"></div><div class="num-derecha">2</div>
+                                <div class="num-izquierda">12</div><div class="v-line-divisora"></div><div class="num-derecha">3</div>
+                                <div class="num-izquierda">4</div><div class="v-line-divisora"></div><div class="num-derecha"></div>
+                                </div>
+                            </div>
 
+                        <!-- Tarjeta centro: 60 -->
+                        <div class="descomposicion-card">
+                            <div class="card-title"><span>📌 60</span></div>
+                            <div class="cuadricula-descomposicion">
+                                <div class="num-izquierda">60</div><div class="v-line-divisora"></div><div class="num-derecha">2</div>
+                                <div class="num-izquierda">30</div><div class="v-line-divisora"></div><div class="num-derecha">2</div>
+                                <div class="num-izquierda">15</div><div class="v-line-divisora"></div><div class="num-derecha">3</div>
+                                <div class="num-izquierda">5</div><div class="v-line-divisora"></div><div class="num-derecha"></div>
+                                </div>
+                            </div>
+
+                        <!-- Tarjeta derecha: 72 -->
+                        <div class="descomposicion-card">
+                            <div class="card-title"><span>📌 72</span></div>
+                            <div class="cuadricula-descomposicion">
+                                <div class="num-izquierda">72</div><div class="v-line-divisora"></div><div class="num-derecha">2</div>
+                                <div class="num-izquierda">36</div><div class="v-line-divisora"></div><div class="num-derecha">2</div>
+                                <div class="num-izquierda">18</div><div class="v-line-divisora"></div><div class="num-derecha">3</div>
+                                <div class="num-izquierda">6</div><div class="v-line-divisora"></div><div class="num-derecha"></div>
+                                </div>
+                            </div>
+                            <span class="pie-factores" style="color:#facc15; font-size: 1.3rem;">Ahora no existe ningún número primo que divida simultaneamente a 4, 5 y 6. Se detiene el proceso.</span>
+                    <div></div></div>
+                            <p><span style="color:white"><strong>Paso 4: Multiplicar todos los factores primos usados</strong></span></p>
+                    <div class="descomposicion-card" style="background:rgba(139,92,246,0.2); margin:0.5rem 0; color:#c084fc;">
+                    <span style="color:#86efac; font-size: 20px;">2 x 2 x 3 = 12<span style="font-size: 3rem; color: rgb(170, 58, 58);"> → </span>✅ MCD(48, 60, 72) = 12</span>
+                    <p style="color:#c084fc; font-size: 20px;">Cada trozo de malla debe medir 12 metros.</p>
+                    </div>
+                    <p><span style="color:white"><strong>Verificación:</strong></span></p>
+                    <div class="descomposicion-card" style="background:rgba(139,92,246,0.2); margin:0.5rem 0;">
+                        <div style="color:#86efac">120 ÷ 60 = 2 <span style="color:rgb(170, 58, 58); font-size: 3rem;">✓ </span><span style="color:#facc15;"> ••••••</span> 180 ÷ 60 = 3 <span style="color:rgb(170, 58, 58);font-size: 3rem;">✓ </span><span style="color:#facc15;"> ••••••</span> 240 ÷ 60 = 4 <span style="color:rgb(170, 58, 58);font-size: 3rem;">✓</span></div></div>
+                    
+                </div>
+                <div class="ejemplo-box3">
                 <h2>✏️ EJERCICIOS PROPUESTOS - MCD</h2>
-                <div class="ejercicios-section" style="background: rgba(239,68,68,0.05); border-color: #f97370;">
-                    <ul class="grid-ejercicios">
-                        <li><span class="badge">8</span> mcd(12, 18) =</li>
-                        <li><span class="badge">9</span> mcd(24, 36) =</li>
-                        <li><span class="badge">10</span> mcd(45, 60) =</li>
-                        <li><span class="badge">11</span> mcd(48, 72, 96) =</li>
-                        <li><span class="badge">12</span> mcd(100, 150, 250) =</li>
+                <ul class="grid-ejercicios">
+                        <li><span class="badge">1</span> MCD(12, 18)</li>
+                        <li><span class="badge">2</span> MCD(24, 36)</li>
+                        <li><span class="badge">3</span> MCD(45, 60)</li>
+                        <li><span class="badge">4</span> MCD(48, 72, 96)</li>
+                        <li><span class="badge">5</span> MCD(100, 150, 250)</li>
                     </ul>
                     <h3 style="color:#f97316;">Problemas de aplicación</h3>
                     <ul class="grid-ejercicios">
-                        <li><span class="badge">13</span> En la tienda de Palmarito hay 36 mangos, 54 guanábanas y 90 cocos. Quiere formar paquetes con la misma cantidad de cada fruta. ¿Cuántos paquetes y cuántas frutas de cada tipo?</li>
-                        <li><span class="badge">14</span> Tres rollos de cinta: 80 cm, 120 cm y 200 cm. Cortar en pedazos iguales más largos posibles. ¿Longitud de cada pedazo?</li>
-                        <li><span class="badge">15</span> Terreno de 96 m × 72 m, estacas a igual distancia máxima. ¿Distancia entre estacas?</li>
+                        <li><span class="badge">6</span> En la tienda de Luisa hay 36 mangos, 54 guanábanas y 90 cocos. Ell quiere formar paquetes con la misma cantidad de cada fruta, usando todas las frutas. ¿Cuántos paquetes puede formar y cuántas frutas de cada tipo irán en cada paquete?</li>
+                        <li><span class="badge">7</span> La profesora tiene tres rollos de cinta: uno de 80 cm, otro de 120 cm y otro de 200 cm. Quiere cortarlos en pedazos iguales de la mayor longitud posible sin que sobre cinta. ¿Cuánto debe medir cada pedazo?</li>
+                        <li><span class="badge">8</span> Un agricultor quiere cercar un terreno rectangular de 96 m de largo y 72 m de ancho con estacas colocadas a igual distancia. ¿Cuál es la mayor distancia posible entre estaca y estaca?</li>
                     </ul>
                 </div>
 
                 <!-- PARTE 2: MÍNIMO COMÚN MÚLTIPLO -->
                 <h1>✨ Mínimo Común Múltiplo (MCM)</h1>
-                <p>El <strong>Mínimo Común Múltiplo</strong> es el menor número (distinto de cero) que es múltiplo común de dos o más números. Útil para eventos que coinciden periódicamente.</p>
-
+                <p>El <strong>Mínimo Común Múltiplo (MCM)</strong> de dos o más números es el menor número (distinto de cero) que es múltiplo de todos ellos al mismo tiempo. También se escribe mcm(a, b).</p>
+                <div class="ejemplo-box2">
+                <strong>¿Cuando lo usamos?</strong>
+                <p style="color:#03f5f9; padding-left: 2em;">→ <span style="color:white">Cuando queremos saber cuándo coinciden dos o más eventos que se repiten
+                <span style="color:white; padding-left: 1.38em;">periódicamente.</span></span></p>
+                <p style="color:#03f5f9; padding-left: 2em;">→ <span style="color:white">Cuando necesitamos encontrar el menor número que sea divisible por varios
+                <span style="color:white; padding-left: 1.38em;">números a la vez.</span></span></p>    
+                <p style="color:#03f5f9; padding-left: 2em;">→ <span style="color:white">Cuando sumamos o restamos fracciones (se usa para hallar el denominador
+                <span style="color:white; padding-left: 1.38em;">común).</span></span></p></div>
                 <h2>🔧 Método con conjuntos de múltiplos</h2>
                 <div class="ejemplo-box">
                     <div class="ejemplo-label">MCM de 4 y 6</div>
@@ -378,7 +639,7 @@
                     </ul>
                 </div>
 
-                <!-- PARTE 5: ACTIVIDAD INTEGRADORA - LA MOJANA -->
+                <!-- ACTIVIDAD INTEGRADORA -->
                 <h1>🌿 Actividad integradora: Un día en el caño Mojana</h1>
                 <p><em>La comunidad de Palmarito organiza una feria cultural. Ayuda resolviendo usando MCD y MCM.</em></p>
                 <ul class="grid-ejercicios" style="grid-template-columns: 1fr;">
@@ -389,7 +650,6 @@
                     <li><span class="badge">32</span> Tres canoas: regresan cada 6, 9 y 15 días. Si salen juntas hoy, ¿cuántos días pasan para que vuelvan a coincidir?</li>
                 </ul>
 
-                <!-- Respuestas sugeridas (no se muestran en el PDF pero se puede dejar espacio) -->
                 <hr class="sep">
                 <div style="background: #0f172a; border-radius: 24px; padding: 1rem; text-align: center; margin-top: 2rem;">
                     💡 <strong>Recuerda:</strong> el MCD se usa para dividir en partes iguales la mayor posible; el MCM sirve para predecir cuándo dos o más eventos volverán a ocurrir juntos.
